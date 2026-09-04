@@ -139,11 +139,6 @@ function Index() {
       {/* Hero */}
       <section className="relative w-full overflow-hidden bg-ink">
         <div className="relative aspect-video w-full">
-          <img
-            src={heroPoster}
-            alt="Koa Studio showreel"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
           <iframe
             src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
             title="Koa Studio showreel"
