@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Koa Studio is a full-service creative direction and production studio. Concept to final cut: photography, video and brand identity.",
+          "Koa Studio is a full-service creative direction and production studio. Concept to final cut: photography, video, motion and brand identity.",
       },
       { property: "og:title", content: "Koa Studio — Creative Direction & Production" },
       {
