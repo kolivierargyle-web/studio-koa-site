@@ -204,7 +204,7 @@ function Index() {
       {/* Work grid */}
       <section id="work" aria-label="Selected work">
         <h2 className="sr-only">Selected work</h2>
-        <div className="grid grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 lg:grid-cols-4">
           {tiles.map((tile, i) => (
             <GridTile key={i} tile={tile} />
           ))}
