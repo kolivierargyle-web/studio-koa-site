@@ -45,8 +45,9 @@ const tiles: Tile[] = [
 
   { kind: "image", slug: "night-tailoring" },
   { kind: "image", slug: "wave-print" },
-  { kind: "image", slug: "kit-still-life" },
   { kind: "image", slug: "chocolate-capital" },
+  { kind: "image", slug: "kit-still-life" },
+ 
 
   { kind: "image", slug: "table-for-one" },
   { kind: "image", slug: "delivered-by-magic" },
