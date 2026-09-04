@@ -191,7 +191,7 @@ function Index() {
             <br />
             &amp; production studio. Concept to final cut.
             <br />
-            Photography, video and brand identity.
+            Photography, video, motion and brand identity.
             <br />
             We build the right team for every project,
             <br />
