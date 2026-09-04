@@ -223,7 +223,7 @@ function Index() {
             className="font-display text-paper"
             style={{
               fontFamily: "Poppins, sans-serif",
-              fontSize: "80px",
+              fontSize: "50px",
               fontWeight: 700,
               lineHeight: "normal",
             }}
