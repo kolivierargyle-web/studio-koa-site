@@ -14,7 +14,7 @@ import tile13 from "@/assets/tile-13.jpg";
 import tile14 from "@/assets/tile-14.jpg";
 import tile15 from "@/assets/tile-15.jpg";
 import tile16 from "@/assets/tile-16.jpg";
-
+import tile17 from "@/assets/tile-17.jpg";
 export type Project = {
   slug: string;
   title: string;
@@ -202,6 +202,17 @@ export const projects: Project[] = [
       "Packaging design and product photography for a small-batch roaster, from label illustration to final cut.",
     image: tile15,
     credits: ["Design: Koa Studio", "Photography: M. Kohl", "Illustration: Nell Park"],
+  },
+    {
+    slug: "rider-in-style",
+    title: "Rider In Style",
+    client: "Your Client",
+    discipline: "Your discipline",
+    year: "2026",
+    summary:
+      "Add your project summary here.",
+    image: tile17,
+    credits: ["Credit 1", "Credit 2", "Credit 3"],
   },
 ];
 
