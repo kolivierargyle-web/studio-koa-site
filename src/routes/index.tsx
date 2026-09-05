@@ -58,7 +58,7 @@ const tiles: Tile[] = [
   { kind: "graphic", slug: "faster-than-you", src: graphicRetro, alt: "Gorillas retro grid" },
   { kind: "image", slug: "faster-than-you" },
   { kind: "image", slug: "own-blend" },
-  { kind: "blank" },
+  { kind: "image", slug: "rider-in-style" },
 ];
 
 
