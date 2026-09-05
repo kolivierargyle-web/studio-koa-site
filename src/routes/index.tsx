@@ -245,7 +245,7 @@ function Index() {
               className="transition-opacity hover:opacity-60"
               style={{
                 fontFamily: "Poppins, sans-serif",
-                fontSize: "20px",
+                fontSize: "18px",
                 fontWeight: 500,
                 lineHeight: "normal",
               }}
@@ -257,7 +257,7 @@ function Index() {
             className="flex items-center justify-between border-t-2 border-paper px-[45px] py-11 uppercase"
             style={{
               fontFamily: "Poppins, sans-serif",
-              fontSize: "24px",
+              fontSize: "20px",
               fontWeight: 400,
               lineHeight: "normal",
             }}
