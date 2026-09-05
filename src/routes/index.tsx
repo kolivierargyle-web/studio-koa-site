@@ -184,7 +184,7 @@ function Index() {
               fontFamily: "Poppins, sans-serif",
               fontSize: "clamp(1.25rem, 3.5vw, 40px)",
               fontWeight: 600,
-              lineHeight: "1.02",
+              lineHeight: "1.05",
             }}
           >
             Koa studio is a full-service creative direction
