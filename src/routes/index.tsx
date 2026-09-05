@@ -38,8 +38,9 @@ const tiles: Tile[] = [
   { kind: "graphic", slug: "faster-than-you", src: graphicFaster, alt: "Faster than you." },
   { kind: "image", slug: "retire-rich" },
 
-  { kind: "image", slug: "matchday" },
+
   { kind: "image", slug: "second-season" },
+  { kind: "image", slug: "matchday" },
   { kind: "image", slug: "hold-form" },
   { kind: "image", slug: "first-touch" },
 
