@@ -185,6 +185,7 @@ function Index() {
               fontSize: "clamp(1.25rem, 3.5vw, 40px)",
               fontWeight: 400,
               lineHeight: "1.02",
+              fontStyle: "italic",
             }}
           >
             Koa studio is a full-service creative direction
