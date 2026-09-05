@@ -229,7 +229,7 @@ function Index() {
         </div>
         <div>
           <div
-            className="flex items-end justify-between px-[45px] py-11"
+            className="flex items-end justify-between px-[40px] py-11"
           >
             <a
               href="https://instagram.com"
