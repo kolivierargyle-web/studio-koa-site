@@ -151,7 +151,7 @@ function Index() {
 
       {/* Nav bar */}
       <nav className="sticky top-0 z-30 bg-ink">
-        <div className="flex items-center justify-between px-4 py-[15px] text-[22px] font-medium text-paper sm:px-6">
+        <div className="flex items-center justify-between px-4 py-[15px] text-[18px] font-medium text-paper sm:px-6">
           <div className="flex items-center">
             <a href="#about" className="transition-opacity hover:opacity-60">
               About
