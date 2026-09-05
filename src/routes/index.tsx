@@ -232,7 +232,7 @@ function Index() {
             className="flex items-end justify-between px-[40px] py-11"
           >
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/koastudio"
               target="_blank"
               rel="noreferrer"
               aria-label="Koa Studio on Instagram"
