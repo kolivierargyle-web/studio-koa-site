@@ -183,7 +183,7 @@ function Index() {
             style={{
               fontFamily: "Poppins, sans-serif",
               fontSize: "clamp(1.25rem, 3.5vw, 40px)",
-              fontWeight: 300,
+              fontWeight: 200,
               lineHeight: "1.02",
               fontStyle: "italic",
             }}
