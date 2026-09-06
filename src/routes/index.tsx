@@ -174,33 +174,33 @@ function Index() {
         </div>
       </nav>
 
-      {/* Intro */}
-      <section id="about" className="px-[clamp(1rem,5.2vw,75px)] py-[clamp(5rem,14.8vw,213px)]">
-        <h2 className="sr-only">About Koa Studio</h2>
-        <div className="mx-auto flex min-h-[306px] max-w-[1296px] items-center justify-center">
-          <p
-            id="services"
-            className="text-center text-ink"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "clamp(0.95rem, 3.5vw, 32px)",
-              fontWeight: 600,
-              lineHeight: "1.1",
-            }}
-          >
-           Koa studio is a full-service<br />
-           creative direction & production studio.<br />
-           From concept to final cut.<br />
-           <br />
-           Photography, video, motion
-           & brand identity.<br />
-           <br />
-           We build the right team for every project,<br />
-           delivering impactful work without the cost<br />
-           or complexity of a large agency.
-          </p>
-        </div>
-      </section>
+   {/* Intro */}
+<section id="about" className="px-[clamp(1rem,5.2vw,75px)] py-[clamp(5rem,14.8vw,213px)]">
+  <h2 className="sr-only">About Koa Studio</h2>
+  <div className="mx-auto flex min-h-[306px] max-w-[1296px] items-center justify-center">
+    <p
+      id="services"
+      className="text-center text-ink"
+      style={{
+        fontFamily: "Poppins, sans-serif",
+        fontSize: "clamp(0.95rem, 3.5vw, 32px)",
+        fontWeight: 600,
+        lineHeight: "1.1",
+      }}
+    >
+      Koa studio is a full-service<br />
+      creative direction & production studio.<br />
+      From concept to final cut.<br />
+      <br />
+      Photography, video, motion<br />
+      and brand identity.<br />
+      <br />
+      We build the right team for every project,<br />
+      delivering impactful work without the cost<br />
+      or complexity of a large agency.
+    </p>
+  </div>
+</section>
 
       {/* Work grid */}
       <section id="work" aria-label="Selected work">
