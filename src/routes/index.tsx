@@ -157,7 +157,7 @@ function Index() {
             <a href="#about" className="transition-opacity hover:opacity-60">
               About
             </a>
-            <span className="w-[32px] sm:w-[45px] h-[22px]" aria-hidden="true" />
+            <span className="w-[40px] sm:w-[45px] h-[22px]" aria-hidden="true" />
             <a href="#services" className="transition-opacity hover:opacity-60">
               Services
             </a>
@@ -166,7 +166,7 @@ function Index() {
             <a href="#work" className="transition-opacity hover:opacity-60">
               Creative spotlight
             </a>
-            <span className="w-[32px] sm:w-[45px] h-[22px]" aria-hidden="true" />
+            <span className="w-[40px] sm:w-[45px] h-[22px]" aria-hidden="true" />
             <a href="#contact" className="transition-opacity hover:opacity-60">
               Contact
             </a>
