@@ -152,12 +152,12 @@ function Index() {
 
       {/* Nav bar */}
       <nav className="sticky top-0 z-30 bg-ink">
-        <div className="flex items-center justify-between px-4 py-[15px] text-[18px] font-medium text-paper sm:px-6">
+        <div className="flex items-center justify-between px-4 py-[15px] text-[14px] sm:text-[18px] font-medium text-paper sm:px-6">
           <div className="flex items-center">
             <a href="#about" className="transition-opacity hover:opacity-60">
               About
             </a>
-            <span className="w-[45px] h-[22px]" aria-hidden="true" />
+            <span className="w-[20px] sm:w-[45px] h-[22px]" aria-hidden="true" />
             <a href="#services" className="transition-opacity hover:opacity-60">
               Services
             </a>
@@ -166,7 +166,7 @@ function Index() {
             <a href="#work" className="transition-opacity hover:opacity-60">
               Creative spotlight
             </a>
-            <span className="w-[45px] h-[22px]" aria-hidden="true" />
+            <span className="w-[20px] sm:w-[45px] h-[22px]" aria-hidden="true" />
             <a href="#contact" className="transition-opacity hover:opacity-60">
               Contact
             </a>
