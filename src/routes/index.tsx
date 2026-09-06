@@ -175,7 +175,7 @@ function Index() {
       </nav>
 
       {/* Intro */}
-      <section id="about" className="px-[clamp(1.5rem,5.2vw,75px)] py-[clamp(5rem,14.8vw,213px)]">
+      <section id="about" className="px-[clamp(1rem,5.2vw,75px)] py-[clamp(5rem,14.8vw,213px)]">
         <h2 className="sr-only">About Koa Studio</h2>
         <div className="mx-auto flex min-h-[306px] max-w-[1296px] items-center justify-center">
           <p
