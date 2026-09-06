@@ -183,9 +183,9 @@ function Index() {
             className="text-center text-ink"
             style={{
               fontFamily: "Poppins, sans-serif",
-              fontSize: "clamp(1rem, 3.5vw, 40px)",
+              fontSize: "clamp(0.95rem, 3.5vw, 32px)",
               fontWeight: 600,
-              lineHeight: "1.3",
+              lineHeight: "1.1",
             }}
           >
            Koa studio is a full-service<br />
