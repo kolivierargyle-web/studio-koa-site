@@ -188,17 +188,16 @@ function Index() {
               lineHeight: "1.3",
             }}
           >
-            Koa studio is a full-service creative direction
-            <br />
-            &amp; production studio. From concept to final cut.
-            <br />
-            Photography, video, motion and brand identity.
-            <br />
-            We build the right team for every project,
-            <br />
-            delivering impactful work without the cost
-            <br />
-            or complexity of a large agency.
+           Koa studio is a full-service<br />
+           creative direction & production studio.<br />
+           From concept to final cut.<br />
+           <br />
+           Photography, video, motion<br />
+           and brand identity.<br />
+           <br />
+           We build the right team for every project,<br />
+           delivering impactful work without the cost<br />
+           or complexity of a large agency.
           </p>
         </div>
       </section>
