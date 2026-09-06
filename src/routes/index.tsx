@@ -192,7 +192,7 @@ function Index() {
 creative direction & production studio.<br />
 <br />
 From concept to final cut.<br />
-Photography, Video, Motion & Brand Identity.<br />
+Photography, video, motion & brand Identity.<br />
 <br />
       We build the right team for every project,<br />
       delivering impactful work without the cost<br />
