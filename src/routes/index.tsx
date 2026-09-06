@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
 
 import heroPoster from "@/assets/hero-poster.jpg";
+import headerFallback from "@/assets/01.Header_fallback_up.jpg";
 import graphicFaster from "@/assets/graphic-faster.jpg";
 import graphicNeon from "@/assets/graphic-neon.jpg";
 import graphicRetro from "@/assets/graphic-retro.jpg";
@@ -141,6 +142,11 @@ function Index() {
       {/* Hero */}
       <section className="relative w-full overflow-hidden bg-ink">
         <div className="relative aspect-video w-full">
+<img
+  src={headerFallback}
+  alt="Koa Studio"
+  className="absolute inset-0 w-full h-full object-cover"
+/>
           <iframe
             src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
             title="Koa Studio showreel"
