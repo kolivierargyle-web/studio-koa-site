@@ -34,7 +34,7 @@ type Tile =
   | { kind: "blank" };
 
 const tiles: Tile[] = [
-  { kind: "image", slug: "quiet-gold" },
+  { kind: "image", slug: "shyla-london" },
   { kind: "image", slug: "terrace-hours" },
   { kind: "graphic", slug: "faster-than-you", src: graphicFaster, alt: "Faster than you." },
   { kind: "image", slug: "retire-rich" },
