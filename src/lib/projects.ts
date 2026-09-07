@@ -24,6 +24,8 @@ export type Project = {
   summary: string;
   image: string;
   credits: string[];
+  heroes?: string[];
+  gallery?: string[];
 };
 
 export const projects: Project[] = [
