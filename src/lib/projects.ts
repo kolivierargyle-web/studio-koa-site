@@ -15,6 +15,19 @@ import tile14 from "@/assets/tile-14.jpg";
 import tile15 from "@/assets/tile-15.jpg";
 import tile16 from "@/assets/tile-16.jpg";
 import tile17 from "@/assets/tile-17.jpg";
+import shylaHeader from "@/assets/0-shyla-header.png";
+import shylaGrid1 from "@/assets/shyla-grid-1.png";
+import shylaGrid2 from "@/assets/shyla-grid-2.png";
+import shylaGrid3 from "@/assets/shyla-grid-3.png";
+import shylaGrid4 from "@/assets/shyla-grid-4.png";
+import shylaGrid5 from "@/assets/shyla-grid-5.png";
+import shylaGrid6 from "@/assets/shyla-grid-6.png";
+import shylaGrid7 from "@/assets/shyla-grid-7.png";
+import shylaGrid8 from "@/assets/shyla-grid-8.png";
+import shylaGrid9 from "@/assets/shyla-grid-9.png";
+import shylaGrid10 from "@/assets/shyla-grid-10.png";
+import shylaGrid11 from "@/assets/shyla-grid-11.png";
+import shylaGrid12 from "@/assets/shyla-grid-12.png";
 export type Project = {
   slug: string;
   title: string;
@@ -216,6 +229,20 @@ export const projects: Project[] = [
     image: tile17,
     credits: ["Credit 1", "Credit 2", "Credit 3"],
   },
+    {
+    slug: "shyla-london",
+    title: "Shyla London",
+    client: "Shyla London",
+    discipline: "Jewellery — Product photography",
+    year: "2026",
+    summary:
+      "Stills shoot for Shyla London, a fresh, elegant jewellery brand creating delicate, high-quality pieces. Morally motivated, Shyla offers timeless, wearable jewellery designed to suit women of all ages.\n\nThe photography direction draws from the brand's clean, contemporary aesthetic, combining soft, organic shapes with a refined and understated feel.",
+    image: shylaHeader,
+    heroes: [shylaHeader],
+    gallery: [shylaGrid1, shylaGrid2, shylaGrid3, shylaGrid4, shylaGrid5, shylaGrid6, shylaGrid7, shylaGrid8, shylaGrid9, shylaGrid10, shylaGrid11, shylaGrid12],
+    credits: ["Creative production: Koa Studio", "Photography: Sofia Farnesi"],
+  },
 ];
+
 
 export const projectBySlug = (slug: string) => projects.find((p) => p.slug === slug);
