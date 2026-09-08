@@ -66,7 +66,7 @@ function ProjectPage() {
             {project.title}
           </h1>
         </header>
-        
+
         <section className="mx-auto max-w-[829px] bg-paper px-6 text-center mb-[114px]">
           <p className="whitespace-pre-line text-[25px] font-normal leading-[140%] text-ink">
             {project.summary}
@@ -97,7 +97,7 @@ function ProjectPage() {
           </ul>
         </section>
       </article>
-      
+
       <footer className="bg-ink text-paper px-[38px] pt-[188px] pb-[26px]">
         <p className="font-display text-[32px] font-bold leading-normal text-paper text-center mb-[110px]">
           Koa Studio
