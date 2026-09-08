@@ -181,29 +181,20 @@ function Index() {
       </nav>
 
    {/* Intro */}
-<section id="about" className="px-[clamp(1rem,5.2vw,75px)] py-[clamp(5rem,14.8vw,213px)]">
-  <h2 className="sr-only">About Koa Studio</h2>
-  <div className="mx-auto flex min-h-[306px] max-w-[1296px] items-center justify-center">
-    <p
-      id="services"
-      className="text-center text-ink"
-      style={{
-        fontFamily: "Poppins, sans-serif",
-        fontSize: "clamp(0.95rem, 3.5vw, 35px)",
-        fontWeight: 600,
-        lineHeight: "1.1",
-      }}
-    >
-      Koa studio is a compact full-service<br />
-creative direction & production studio.<br />
-<br />
-From concept to final cut.<br />
-Photography, video, motion & brand Identity.<br />
-<br />
-We build the right team for every project,<br />
-      delivering impactful work without the cost<br />
-      or complexity of a large agency.
-    </p>
+<section id="about" className="px-[clamp(0.65rem,3.38vw,49px)] py-[clamp(3.25rem,9.62vw,138px)]">
+  <div className="mx-auto flex min-h-[199px] max-w-[1296px] items-center justify-center">
+    <div className="text-center">
+      <h2 className="font-display text-4xl font-bold leading-tight sm:text-5xl">
+        Koa studio is a compact full-service creative direction & production studio.
+      </h2>
+      <p className="mt-8 text-lg font-normal leading-relaxed sm:mt-12">
+        From concept to final cut. <br />
+        Photography, video, motion & brand identity.
+      </p>
+      <p className="mt-8 text-lg font-normal leading-relaxed sm:mt-12">
+        We build the right team for every project, delivering impactful work without the cost or complexity of a large agency.
+      </p>
+    </div>
   </div>
 </section>
 {/* Featured Projects Bar */}
