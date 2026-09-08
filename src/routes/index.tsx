@@ -209,15 +209,7 @@ We build the right team for every project,<br />
 {/* Featured Projects Bar */}
 <section className="w-full bg-black">
   <div style={{ width: "100%", height: "63px", display: "flex", alignItems: "center", justifyContent: "flex-start", paddingLeft: "30px" }}>
-    <h2 style={{
-      color: "#FFF",
-      textAlign: "left",
-      fontFamily: "Poppins, sans-serif",
-      fontSize: "25px",
-      fontStyle: "normal",
-      fontWeight: 500,
-      lineHeight: "140%"
-    }}>
+    <h2 className="text-[14px] sm:text-[18px] font-medium text-paper">
       Featured Projects
     </h2>
   </div>
