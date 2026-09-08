@@ -235,9 +235,7 @@ export const projects: Project[] = [
     client: "Shyla London",
     discipline: "Jewellery — Product photography",
     year: "2026",
-    summary:
-      "Stills shoot for Shyla London, a fresh, elegant jewellery brand creating delicate, high-quality pieces. Morally motivated, Shyla offers timeless, wearable jewellery designed to suit women of all ages.\n\nThe photography direction draws from the brand's clean, contemporary aesthetic, combining soft, organic shapes with a refined and understated feel.",
-    image: shylaHeader,
+   summary: "Stills shoot for Shyla London, a fresh, elegant jewellery brand\ncreating delicate, high-quality pieces. Morally motivated,\nShyla offers timeless, wearable jewellery designed to suit\nwomen of all ages.\n\nThe photography direction draws from the brand's clean,\ncontemporary aesthetic, combining soft, organic shapes with\na refined and understated feel.",
     heroes: [shylaHeader],
     gallery: [shylaGrid1, shylaGrid2, shylaGrid3, shylaGrid4, shylaGrid5, shylaGrid6, shylaGrid7, shylaGrid8, shylaGrid9, shylaGrid10, shylaGrid11, shylaGrid12],
     credits: ["Creative production: Koa Studio", "Photography: Sofia Farnesi"],
