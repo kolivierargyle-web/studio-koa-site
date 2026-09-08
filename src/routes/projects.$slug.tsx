@@ -98,26 +98,61 @@ function ProjectPage() {
         </section>
       </article>
 
-      <footer className="bg-ink text-paper px-[38px] pt-[188px] pb-[26px]">
-        <p className="font-display text-[32px] font-bold leading-normal text-paper text-center mb-[110px]">
-          Koa Studio
-        </p>
-
-        <div className="flex items-center justify-between border-t border-b border-paper py-[49px] mb-[52px]">
-          <a href="https://www.instagram.com/_koa_studio/" target="_blank" rel="noreferrer" aria-label="Koa Studio on Instagram" className="transition-opacity hover:opacity-60">
-            <Instagram className="h-[20px] w-[20px]" strokeWidth={1.5} />
-          </a>
-          <a href="mailto:kat@studio-koa.com" className="text-[14px] font-normal leading-normal transition-opacity hover:opacity-60">
-            kat@studio-koa.com
-          </a>
-        </div>
-
-        <div className="flex items-center justify-between text-[12px] font-[600] uppercase leading-[18px] tracking-[0.08em]">
-          <span>London</span>
-          <span>Berlin</span>
-          <span>World Wide</span>
-        </div>
-      </footer>
+   <footer id="contact" className="bg-ink text-paper">
+  <div className="px-6 pb-[27px] pt-[177px] text-center">
+    <p
+      className="font-display text-paper"
+      style={{
+        fontFamily: "Poppins, sans-serif",
+        fontSize: "40px",
+        fontWeight: 700,
+        lineHeight: "normal",
+      }}
+    >
+      Koa Studio
+    </p>
+  </div>
+  <div>
+    <div
+      className="flex items-end justify-between px-[40px] py-11"
+    >
+      
+        href="https://www.instagram.com/_koa_studio/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Koa Studio on Instagram"
+        className="transition-opacity hover:opacity-60"
+      >
+        <Instagram className="h-[34px] w-[34px]" strokeWidth={1.5} />
+      </a>
+      
+        href="mailto:kat@studio-koa.com"
+        className="transition-opacity hover:opacity-60"
+        style={{
+          fontFamily: "Poppins, sans-serif",
+          fontSize: "18px",
+          fontWeight: 500,
+          lineHeight: "normal",
+        }}
+      >
+        kat@studio-koa.com
+      </a>
+    </div>
+    <div
+      className="flex items-center justify-between border-t-2 border-paper px-[45px] py-11 uppercase"
+      style={{
+        fontFamily: "Poppins, sans-serif",
+        fontSize: "20px",
+        fontWeight: 400,
+        lineHeight: "normal",
+      }}
+    >
+      <span>London</span>
+      <span>Berlin</span>
+      <span>World Wide</span>
+    </div>
+  </div>
+</footer>
     </main>
   );
 }
