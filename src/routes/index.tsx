@@ -184,14 +184,14 @@ function Index() {
 <section id="about" className="px-[clamp(0.65rem,3.38vw,49px)] py-[clamp(3.25rem,9.62vw,138px)]">
   <div className="mx-auto flex min-h-[199px] max-w-[1296px] items-center justify-center">
     <div className="text-center">
-      <p className="text-base font-bold leading-relaxed sm:text-lg">
+      <p className="text-3xl sm:text-4xl font-bold leading-relaxed sm:mt-12">
         Koa studio is a compact full-service creative direction & production studio.
       </p>
-      <p className="mt-8 text-base font-bold leading-relaxed sm:mt-12 sm:text-lg">
+      <p className="mt-8 text-3xl sm:text-4xl font-bold leading-relaxed sm:mt-12">
         From concept to final cut. <br />
         Photography, video, motion & brand identity.
       </p>
-      <p className="mt-8 text-base font-bold leading-relaxed sm:mt-12 sm:text-lg">
+      <p className="mt-8 text-3xl sm:text-4xl font-bold leading-relaxed sm:mt-12">
         We build the right team for every project, delivering impactful work without the cost or complexity of a large agency.
       </p>
     </div>
