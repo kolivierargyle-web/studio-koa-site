@@ -104,19 +104,10 @@ function ProjectPage() {
         </p>
 
         <div className="flex items-center justify-between border-t border-b border-paper py-[49px] mb-[52px]">
-          
-            href="https://www.instagram.com/_koa_studio/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Koa Studio on Instagram"
-            className="transition-opacity hover:opacity-60"
-          >
+          <a href="https://www.instagram.com/_koa_studio/" target="_blank" rel="noreferrer" aria-label="Koa Studio on Instagram" className="transition-opacity hover:opacity-60">
             <Instagram className="h-[20px] w-[20px]" strokeWidth={1.5} />
           </a>
-          
-            href="mailto:kat@studio-koa.com"
-            className="text-[14px] font-normal leading-normal transition-opacity hover:opacity-60"
-          >
+          <a href="mailto:kat@studio-koa.com" className="text-[14px] font-normal leading-normal transition-opacity hover:opacity-60">
             kat@studio-koa.com
           </a>
         </div>
