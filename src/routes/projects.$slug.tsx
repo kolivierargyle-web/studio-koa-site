@@ -49,10 +49,7 @@ function ProjectPage() {
       </nav>
 
       <article>
-        <div
-          className="flex flex-col items-center bg-paper px-[clamp(1rem,7vw,350px)] pt-0"
-          style={{ marginBottom: "72px" }}
-        >
+        <div className="flex flex-col items-center bg-paper px-[clamp(1rem,7vw,350px)] pt-0 mb-[72px]">
           {(project.heroes ?? [project.image]).map((src, i) => (
             <img
               key={src}
@@ -64,16 +61,13 @@ function ProjectPage() {
           ))}
         </div>
 
-        <header className="bg-paper px-6 text-center" style={{ marginBottom: "46px" }}>
+        <header className="bg-paper px-6 text-center mb-[46px]">
           <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-[50px]">
             {project.title}
           </h1>
         </header>
 
-        <section
-          className="mx-auto max-w-[829px] bg-paper px-6 text-center"
-          style={{ marginBottom: "114px" }}
-        >
+        <section className="mx-auto max-w-[829px] bg-paper px-6 text-center mb-[114px]">
           <p className="whitespace-pre-line text-[25px] font-normal leading-[140%] text-ink">
             {project.summary}
           </p>
@@ -104,41 +98,33 @@ function ProjectPage() {
         </section>
       </article>
 
-      <footer className="bg-ink text-paper">
-        <div className="px-[38px]" style={{ paddingTop: "188px", paddingBottom: "26px" }}>
-          <p
-            className="font-display text-[32px] font-bold leading-normal text-paper"
-            style={{ marginBottom: "110px", textAlign: "center" }}
-          >
-            Koa Studio
-          </p>
+      <footer className="bg-ink text-paper px-[38px] pt-[188px] pb-[26px]">
+        <p className="font-display text-[32px] font-bold leading-normal text-paper text-center mb-[110px]">
+          Koa Studio
+        </p>
 
-          <div
-            className="flex items-center justify-between border-b border-t border-paper"
-            style={{ padding: "49px 0", marginBottom: "52px" }}
+        <div className="flex items-center justify-between border-t border-b border-paper py-[49px] mb-[52px]">
+          
+            href="https://www.instagram.com/_koa_studio/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Koa Studio on Instagram"
+            className="transition-opacity hover:opacity-60"
           >
-            
-              href="https://www.instagram.com/_koa_studio/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Koa Studio on Instagram"
-              className="transition-opacity hover:opacity-60"
-            >
-              <Instagram className="h-[20px] w-[20px]" strokeWidth={1.5} />
-            </a>
-            
-              href="mailto:kat@studio-koa.com"
-              className="text-[14px] font-normal leading-normal transition-opacity hover:opacity-60"
-            >
-              kat@studio-koa.com
-            </a>
-          </div>
+            <Instagram className="h-[20px] w-[20px]" strokeWidth={1.5} />
+          </a>
+          
+            href="mailto:kat@studio-koa.com"
+            className="text-[14px] font-normal leading-normal transition-opacity hover:opacity-60"
+          >
+            kat@studio-koa.com
+          </a>
+        </div>
 
-          <div className="flex items-center justify-between text-[12px] font-[600] uppercase leading-[18px] tracking-[0.08em]">
-            <span>London</span>
-            <span>Berlin</span>
-            <span>World Wide</span>
-          </div>
+        <div className="flex items-center justify-between text-[12px] font-[600] uppercase leading-[18px] tracking-[0.08em]">
+          <span>London</span>
+          <span>Berlin</span>
+          <span>World Wide</span>
         </div>
       </footer>
     </main>
