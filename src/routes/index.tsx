@@ -198,6 +198,9 @@ function Index() {
     </div>
   </div>
 </section>
+{/* Black banner divider */}
+<div className="w-full bg-black h-1"></div>
+
       {/* Work grid */}
       <section id="work" aria-label="Selected work">
         <h2 className="sr-only">Selected work</h2>
