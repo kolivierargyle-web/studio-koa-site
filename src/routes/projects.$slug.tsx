@@ -61,7 +61,7 @@ function ProjectPage() {
           ))}
         </div>
 
-        <header className="bg-paper px-6 text-center mb-[46px]">
+        <header className="bg-paper px-6 text-center mb-[56px]">
           <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-[50px]">
             {project.title}
           </h1>
