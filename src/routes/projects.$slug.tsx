@@ -1,6 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Instagram } from "lucide-react";
-
 import { projectBySlug } from "@/lib/projects";
 
 export const Route = createFileRoute("/projects/$slug")({
@@ -12,7 +11,10 @@ export const Route = createFileRoute("/projects/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Project unavailable — Koa Studio" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "Project unavailable — Koa Studio" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const { project } = loaderData;
@@ -47,7 +49,10 @@ function ProjectPage() {
       </nav>
 
       <article>
-        <div className="flex flex-col items-center bg-paper px-[clamp(1rem,7vw,350px)] pt-0" style={{ marginBottom: "72px" }}>
+        <div
+          className="flex flex-col items-center bg-paper px-[clamp(1rem,7vw,350px)] pt-0"
+          style={{ marginBottom: "72px" }}
+        >
           {(project.heroes ?? [project.image]).map((src, i) => (
             <img
               key={src}
@@ -65,7 +70,10 @@ function ProjectPage() {
           </h1>
         </header>
 
-        <section className="mx-auto max-w-[829px] bg-paper px-6 text-center" style={{ marginBottom: "114px" }}>
+        <section
+          className="mx-auto max-w-[829px] bg-paper px-6 text-center"
+          style={{ marginBottom: "114px" }}
+        >
           <p className="whitespace-pre-line text-[25px] font-normal leading-[140%] text-ink">
             {project.summary}
           </p>
@@ -98,11 +106,17 @@ function ProjectPage() {
 
       <footer className="bg-ink text-paper">
         <div className="px-[38px]" style={{ paddingTop: "188px", paddingBottom: "26px" }}>
-          <p className="font-display text-[32px] font-bold leading-normal text-paper" style={{ marginBottom: "110px", textAlign: "center" }}>
+          <p
+            className="font-display text-[32px] font-bold leading-normal text-paper"
+            style={{ marginBottom: "110px", textAlign: "center" }}
+          >
             Koa Studio
           </p>
 
-          <div className="flex items-center justify-between border-b border-t border-paper" style={{ padding: "49px 0", marginBottom: "52px" }}>
+          <div
+            className="flex items-center justify-between border-b border-t border-paper"
+            style={{ padding: "49px 0", marginBottom: "52px" }}
+          >
             
               href="https://www.instagram.com/_koa_studio/"
               target="_blank"
