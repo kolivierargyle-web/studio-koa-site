@@ -194,7 +194,7 @@ function Index() {
         lineHeight: "1.1",
       }}
     >
-      Koa studio is a full-service<br />
+      Koa studio is a compact full-service<br />
 creative direction & production studio.<br />
 <br />
 From concept to final cut.<br />
