@@ -181,7 +181,7 @@ function Index() {
       </nav>
 
    {/* Intro */}
-<section id="about" className="px-[clamp(0.52rem,2.7vw,39px)] py-[clamp(2.6rem,7.7vw,110px)]">
+<section id="about" className="px-[clamp(0.36rem,1.89vw,27px)] py-[clamp(1.82rem,5.4vw,77px)]">
   <div className="mx-auto flex min-h-[199px] max-w-[1296px] items-center justify-center">
     <div className="text-center">
       <p className="text-3xl sm:text-4xl font-bold leading-[0.96]">
