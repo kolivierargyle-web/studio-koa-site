@@ -181,10 +181,10 @@ function Index() {
       </nav>
 
    {/* Intro */}
-<section id="about" className="px-[clamp(0.65rem,3.38vw,49px)] py-[clamp(3.25rem,9.62vw,138px)]">
+<section id="about" className="px-[clamp(0.52rem,2.7vw,39px)] py-[clamp(2.6rem,7.7vw,110px)]">
   <div className="mx-auto flex min-h-[199px] max-w-[1296px] items-center justify-center">
     <div className="text-center">
-      <p className="text-3xl sm:text-4xl font-bold leading-snug">
+      <p className="text-3xl sm:text-4xl font-bold leading-[0.96]">
         Koa studio is a compact full-service <br />
         creative direction & production studio. <br />
         Concept to final cut.
