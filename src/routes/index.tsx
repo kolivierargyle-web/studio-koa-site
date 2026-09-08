@@ -206,6 +206,22 @@ We build the right team for every project,<br />
     </p>
   </div>
 </section>
+{/* Featured Projects Bar */}
+<section className="w-full bg-black">
+  <div style={{ width: "100%", maxWidth: "1447px", height: "63px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "center" }}>
+    <h2 style={{
+      color: "#FFF",
+      textAlign: "center",
+      fontFamily: "Poppins, sans-serif",
+      fontSize: "25px",
+      fontStyle: "normal",
+      fontWeight: 500,
+      lineHeight: "140%"
+    }}>
+      Featured Projects
+    </h2>
+  </div>
+</section>
 
       {/* Work grid */}
       <section id="work" aria-label="Selected work">
