@@ -208,10 +208,10 @@ We build the right team for every project,<br />
 </section>
 {/* Featured Projects Bar */}
 <section className="w-full bg-black">
-  <div style={{ width: "100%", maxWidth: "1447px", height: "63px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "center" }}>
+  <div style={{ width: "100%", maxWidth: "1447px", height: "63px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "flex-start", paddingLeft: "30px" }}>
     <h2 style={{
       color: "#FFF",
-      textAlign: "center",
+      textAlign: "left",
       fontFamily: "Poppins, sans-serif",
       fontSize: "25px",
       fontStyle: "normal",
