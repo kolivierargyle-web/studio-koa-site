@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Instagram } from "lucide-react";
 
-import { projectBySlug, projects } from "@/lib/projects";
+import { projectBySlug } from "@/lib/projects";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -31,8 +31,6 @@ export const Route = createFileRoute("/projects/$slug")({
 
 function ProjectPage() {
   const { project } = Route.useLoaderData();
-  const index = projects.findIndex((p) => p.slug === project.slug);
-  const next = projects[(index + 1) % projects.length]!;
 
   return (
     <main className="bg-paper text-ink">
@@ -49,27 +47,48 @@ function ProjectPage() {
       </nav>
 
       <article>
-        <img
-          src={project.image}
-          alt={`${project.title} — ${project.client}`}
-          width={768}
-          height={768}
-          className="h-[52vh] min-h-[320px] w-full object-cover sm:h-[74vh]"
-        />
+        <div className="flex flex-col items-center bg-paper px-[clamp(1rem,7vw,350px)] pt-0" style={{ marginBottom: "72px" }}>
+          {(project.heroes ?? [project.image]).map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt={`${project.title} — ${project.client}`}
+              className="aspect-[4/5] w-full max-w-[795px] object-cover"
+              loading={i === 0 ? "eager" : "lazy"}
+            />
+          ))}
+        </div>
 
-        <header className="px-6 pt-14 sm:pt-20">
-          <p className="text-center text-[11px] uppercase tracking-[0.18em] text-ink/50">
-            {project.client} · {project.year}
-          </p>
-          <h1 className="mt-4 text-center font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+        <header className="bg-paper px-6 text-center" style={{ marginBottom: "46px" }}>
+          <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-[50px]">
             {project.title}
           </h1>
-          <p className="mt-4 text-center text-sm text-ink/60">{project.discipline}</p>
         </header>
 
-        <section className="mx-auto max-w-2xl px-6 py-16 sm:py-20">
-          <p className="text-center text-[15px] leading-relaxed sm:text-base">{project.summary}</p>
-          <ul className="mt-12 space-y-2 text-center text-xs uppercase tracking-[0.08em] text-ink/50">
+        <section className="mx-auto max-w-[829px] bg-paper px-6 text-center" style={{ marginBottom: "114px" }}>
+          <p className="whitespace-pre-line text-[25px] font-normal leading-[140%] text-ink">
+            {project.summary}
+          </p>
+        </section>
+
+        {project.gallery && project.gallery.length > 0 && (
+          <section className="bg-paper px-2 sm:px-3 lg:px-0">
+            <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-[10px] sm:gap-[15px] lg:grid-cols-3">
+              {project.gallery.map((src) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt={`${project.title} — ${project.client}`}
+                  loading="lazy"
+                  className="aspect-[4/5] w-full object-cover"
+                />
+              ))}
+            </div>
+          </section>
+        )}
+
+        <section className="mx-auto max-w-2xl bg-paper px-6 py-16 text-center sm:py-20">
+          <ul className="space-y-2 text-xs uppercase tracking-[0.08em] text-ink/50">
             {project.credits.map((credit) => (
               <li key={credit}>{credit}</li>
             ))}
@@ -78,20 +97,34 @@ function ProjectPage() {
       </article>
 
       <footer className="bg-ink text-paper">
-        <Link
-          to="/projects/$slug"
-          params={{ slug: next.slug }}
-          className="group block px-6 py-20 text-center sm:py-28"
-        >
-          <span className="text-[11px] uppercase tracking-[0.18em] text-paper/50">Next project</span>
-          <span className="mt-4 block font-display text-4xl font-bold tracking-tight transition-opacity group-hover:opacity-60 sm:text-5xl lg:text-6xl">
-            {next.title}
-          </span>
-        </Link>
-        <div className="grid grid-cols-3 border-t border-paper/15 px-4 py-4 text-[11px] uppercase tracking-[0.08em] sm:px-6">
-          <span className="text-left">London</span>
-          <span className="text-center">Berlin</span>
-          <span className="text-right">World wide</span>
+        <div className="px-[38px]" style={{ paddingTop: "188px", paddingBottom: "26px" }}>
+          <p className="font-display text-[32px] font-bold leading-normal text-paper" style={{ marginBottom: "110px", textAlign: "center" }}>
+            Koa Studio
+          </p>
+
+          <div className="flex items-center justify-between border-b border-t border-paper" style={{ padding: "49px 0", marginBottom: "52px" }}>
+            
+              href="https://www.instagram.com/_koa_studio/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Koa Studio on Instagram"
+              className="transition-opacity hover:opacity-60"
+            >
+              <Instagram className="h-[20px] w-[20px]" strokeWidth={1.5} />
+            </a>
+            
+              href="mailto:kat@studio-koa.com"
+              className="text-[14px] font-normal leading-normal transition-opacity hover:opacity-60"
+            >
+              kat@studio-koa.com
+            </a>
+          </div>
+
+          <div className="flex items-center justify-between text-[12px] font-[600] uppercase leading-[18px] tracking-[0.08em]">
+            <span>London</span>
+            <span>Berlin</span>
+            <span>World Wide</span>
+          </div>
         </div>
       </footer>
     </main>
