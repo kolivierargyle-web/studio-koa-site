@@ -68,7 +68,7 @@ function ProjectPage() {
         </header>
 
         <section className="mx-auto max-w-[829px] bg-paper px-6 text-center mb-[114px]">
-          <p className="whitespace-pre-line text-[25px] font-normal leading-[140%] text-ink">
+          <p className="whitespace-pre-line text-[20px] font-normal leading-[140%] text-ink">
             {project.summary}
           </p>
         </section>
