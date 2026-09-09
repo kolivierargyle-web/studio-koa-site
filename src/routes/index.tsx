@@ -164,7 +164,7 @@ function Index() {
         </div>
       </section>
 {/* Intro */}
-<section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(3rem,8.8vw,132px)]">
+<section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(3.1rem,9.2vw,138px)]">
   <div className="mx-auto flex min-h-[199px] max-w-[1296px] items-center justify-center">
     <div className="text-center">
       <p className="text-xl sm:text-3xl md:text-5xl font-bold leading-[1.1] max-w-[1200px]">
