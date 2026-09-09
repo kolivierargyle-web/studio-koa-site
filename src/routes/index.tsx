@@ -189,6 +189,15 @@ function Index() {
     </div>
   </nav>
 </section>
+{/* Work grid */}
+<section id="work" aria-label="Selected work">
+  <h2 className="sr-only">Selected work</h2>
+  <div className="grid grid-cols-2 gap-1s m:grid-cols-3 lg:grid-cols-4">
+    {tiles.map((tile, i) => (
+      <GridTile key={i} tile={tile} />
+    ))}
+  </div>
+</section>
       {/* Footer */}
       <footer id="contact" className="bg-ink text-paper">
         <div className="px-6 pb-[27px] pt-[177px] text-center">
