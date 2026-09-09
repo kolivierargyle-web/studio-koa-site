@@ -187,12 +187,12 @@ function Index() {
 <nav className="w-full bg-black text-paper">
   <div className="flex items-center justify-between px-[40px] py-4">
     <div className="flex gap-8">
-      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className={`text-[14px] transition-colors hover:opacity-60 ${activeNav === 'about' ? 'text-[#DBFF52]' : ''}`}>About</a>
-      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className={`text-[14px] transition-colors hover:opacity-60 ${activeNav === 'services' ? 'text-[#DBFF52]' : ''}`}>Services</a>
+      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-[14px] transition-colors hover:opacity-60" style={{color: activeNav === 'about' ? '#DBFF52' : 'white'}}>About</a>
+      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-[14px] transition-colors hover:opacity-60" style={{color: activeNav === 'services' ? '#DBFF52' : 'white'}}>Services</a>
     </div>
     <div className="flex gap-8">
-      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className={`text-[14px] transition-colors hover:opacity-60 ${activeNav === 'work' ? 'text-[#DBFF52]' : ''}`}>Creative spotlight</a>
-      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className={`text-[14px] transition-colors hover:opacity-60 ${activeNav === 'contact' ? 'text-[#DBFF52]' : ''}`}>Contact</a>
+      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-[14px] transition-colors hover:opacity-60" style={{color: activeNav === 'work' ? '#DBFF52' : 'white'}}>Creative spotlight</a>
+      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-[14px] transition-colors hover:opacity-60" style={{color: activeNav === 'contact' ? '#DBFF52' : 'white'}}>Contact</a>
     </div>
   </div>
 </nav>
