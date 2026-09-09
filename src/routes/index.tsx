@@ -187,12 +187,12 @@ function Index() {
 <nav className="w-full bg-black">
   <div className="flex items-center justify-between px-[40px] py-4">
     <div className="flex gap-8">
-      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-[14px] transition-colors hover:opacity-60" style={{color: activeNav === 'about' ? 'rgb(219, 255, 82)' : 'white'}}>About</a>
-      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-[14px] transition-colors hover:opacity-60" style={{color: activeNav === 'services' ? 'rgb(219, 255, 82)' : 'white'}}>Services</a>
+      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-[14px] hover:opacity-60" style={{color: activeNav === 'about' ? 'red' : 'white'}}>About</a>
+      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-[14px] hover:opacity-60" style={{color: activeNav === 'services' ? 'red' : 'white'}}>Services</a>
     </div>
     <div className="flex gap-8">
-      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-[14px] transition-colors hover:opacity-60" style={{color: activeNav === 'work' ? 'rgb(219, 255, 82)' : 'white'}}>Creative spotlight</a>
-      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-[14px] transition-colors hover:opacity-60" style={{color: activeNav === 'contact' ? 'rgb(219, 255, 82)' : 'white'}}>Contact</a>
+      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-[14px] hover:opacity-60" style={{color: activeNav === 'work' ? 'red' : 'white'}}>Creative spotlight</a>
+      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-[14px] hover:opacity-60" style={{color: activeNav === 'contact' ? 'red' : 'white'}}>Contact</a>
     </div>
   </div>
 </nav>
