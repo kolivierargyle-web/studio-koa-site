@@ -168,7 +168,7 @@ function Index() {
   <div className="mx-auto flex min-h-[199px] max-w-[1296px] items-center justify-center">
     <div className="text-center">
       <p className="text-xl sm:text-3xl md:text-5xl font-bold leading-[1.1] max-w-[750px] md:max-w-[1000px]">
-        Koa studio is a compact full-service<br className="hidden md:block" /> creative direction & production studio. Concept to final cut. Photography, video &<br className="hidden md:block" /> brand identity. We build the right team for every project, delivering impactful work without the<br className="hidden md:block" /> cost or complexity of a large agency.
+        Koa studio is a compact full-service<br className="hidden md:block" /> creative direction & production studio.<br className="hidden md:block" /> Concept to final cut. Photography, video &<br className="hidden md:block" /> brand identity. We build the right team for every<br className="hidden md:block" /> project, delivering impactful work without the<br className="hidden md:block" /> cost or complexity of a large agency.
       </p>
     </div>
   </div>
