@@ -184,15 +184,15 @@ function Index() {
 </section>
 {/* Navigation Bar */}
 <section>
-<nav className="w-full bg-black">
-  <div className="flex items-center justify-between px-[40px] py-4">
-    <div className="flex gap-8">
-      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-[14px] hover:opacity-60" style={{color: activeNav === 'about' ? 'red' : 'white'}}>About</a>
-      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-[14px] hover:opacity-60" style={{color: activeNav === 'services' ? 'red' : 'white'}}>Services</a>
+<nav style={{width: '100%', backgroundColor: 'black'}}>
+  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '40px', paddingRight: '40px', paddingTop: '16px', paddingBottom: '16px'}}>
+    <div style={{display: 'flex', gap: '32px'}}>
+      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} style={{color: activeNav === 'about' ? 'red' : 'white', fontSize: '14px', textDecoration: 'none'}}>About</a>
+      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} style={{color: activeNav === 'services' ? 'red' : 'white', fontSize: '14px', textDecoration: 'none'}}>Services</a>
     </div>
-    <div className="flex gap-8">
-      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-[14px] hover:opacity-60" style={{color: activeNav === 'work' ? 'red' : 'white'}}>Creative spotlight</a>
-      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-[14px] hover:opacity-60" style={{color: activeNav === 'contact' ? 'red' : 'white'}}>Contact</a>
+    <div style={{display: 'flex', gap: '32px'}}>
+      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} style={{color: activeNav === 'work' ? 'red' : 'white', fontSize: '14px', textDecoration: 'none'}}>Creative spotlight</a>
+      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} style={{color: activeNav === 'contact' ? 'red' : 'white', fontSize: '14px', textDecoration: 'none'}}>Contact</a>
     </div>
   </div>
 </nav>
