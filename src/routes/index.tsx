@@ -184,7 +184,7 @@ const handleNavClick = (e, section) => {
       <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-white hover:text-[#BB95FF] cursor-pointer no-underline">Services</a>
     </div>
     <div className="flex gap-[8px] sm:gap-[32px]">
-      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-white hover:text-[#BB95FF] cursor-pointer no-underline flex items-center gap-[4px]">Work <span>▼</span></a>
+      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-white hover:text-[#BB95FF] cursor-pointer no-underline">Work</a>
     </div>
     <div className="flex gap-[8px] sm:gap-[32px] absolute right-[20px] sm:right-[40px]">
       <a href="#spotlight" onClick={(e) => handleNavClick(e, 'spotlight')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-white hover:text-[#BB95FF] cursor-pointer no-underline">Creative spotlight</a>
