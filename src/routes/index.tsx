@@ -177,15 +177,15 @@ function Index() {
 <section className="w-full bg-black">
   <nav className="flex items-center justify-center px-[20px] sm:px-[40px] py-[16px] relative">
     <div className="flex gap-[16px] sm:gap-[32px] absolute left-[20px] sm:left-[40px]">
-      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-sm sm:text-lg text-white hover:text-[#BB95FF] cursor-pointer no-underline">About</a>
-      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-sm sm:text-lg text-white hover:text-[#BB95FF] cursor-pointer no-underline">Services</a>
+      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-xs sm:text-sm md:text-lg text-white hover:text-[#BB95FF] cursor-pointer no-underline">About</a>
+      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-xs sm:text-sm md:text-lg text-white hover:text-[#BB95FF] cursor-pointer no-underline">Services</a>
     </div>
     <div className="flex gap-[16px] sm:gap-[32px]">
-      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-sm sm:text-lg text-white hover:text-[#BB95FF] cursor-pointer no-underline flex items-center gap-[4px]">Work <span>▼</span></a>
+      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-xs sm:text-sm md:text-lg text-white hover:text-[#BB95FF] cursor-pointer no-underline flex items-center gap-[4px]">Work <span>▼</span></a>
     </div>
     <div className="flex gap-[16px] sm:gap-[32px] absolute right-[20px] sm:right-[40px]">
-      <a href="#spotlight" onClick={(e) => handleNavClick(e, 'spotlight')} className="text-sm sm:text-lg text-white hover:text-[#BB95FF] cursor-pointer no-underline">Creative spotlight</a>
-      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-sm sm:text-lg text-white hover:text-[#BB95FF] cursor-pointer no-underline">Contact</a>
+      <a href="#spotlight" onClick={(e) => handleNavClick(e, 'spotlight')} className="text-xs sm:text-sm md:text-lg text-white hover:text-[#BB95FF] cursor-pointer no-underline">Creative spotlight</a>
+      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-xs sm:text-sm md:text-lg text-white hover:text-[#BB95FF] cursor-pointer no-underline">Contact</a>
     </div>
   </nav>
 </section>
