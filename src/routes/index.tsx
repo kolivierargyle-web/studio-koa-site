@@ -184,7 +184,7 @@ function Index() {
 </section>
 {/* Navigation Bar */}
 <section>
-<nav className="w-full bg-black text-paper">
+<nav className="w-full bg-black">
   <div className="flex items-center justify-between px-[40px] py-4">
     <div className="flex gap-8">
       <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-[14px] transition-colors hover:opacity-60" style={{color: activeNav === 'about' ? '#DBFF52' : 'white'}}>About</a>
