@@ -181,7 +181,8 @@ function Index() {
       <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-xs sm:text-sm text-white hover:text-[#BB95FF] cursor-pointer no-underline">Services</a>
     </div>
     <div className="flex gap-[16px] sm:gap-[32px]">
-      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-xs sm:text-sm text-white hover:text-[#BB95FF] cursor-pointer no-underline">Creative spotlight</a>
+      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-xs sm:text-sm text-white hover:text-[#BB95FF] cursor-pointer no-underline flex items-center gap-[4px]">Work <span>▼</span></a>
+      <a href="#spotlight" onClick={(e) => handleNavClick(e, 'spotlight')} className="text-xs sm:text-sm text-white hover:text-[#BB95FF] cursor-pointer no-underline">Creative spotlight</a>
       <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-xs sm:text-sm text-white hover:text-[#BB95FF] cursor-pointer no-underline">Contact</a>
     </div>
   </nav>
