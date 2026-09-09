@@ -167,26 +167,24 @@ function Index() {
 <section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(2.7rem,8vw,120px)]">
   <div className="mx-auto flex min-h-[199px] max-w-[1296px] items-center justify-center">
     <div className="text-center">
-      <p className="text-3xl sm:text-4xl font-bold leading-[0.96] max-w-[750px]">
+      <p className="text-xl sm:text-3xl md:text-4xl font-bold leading-[0.96] max-w-[750px]">
         Koa studio is a compact full-service creative direction & production studio. Concept to final cut. Photography, video & brand identity. We build the right team for every project, delivering impactful work without the cost or complexity of a large agency.
       </p>
     </div>
   </div>
 </section>
 {/* Navigation Bar */}
-<section>
-<nav style={{width: '100%', backgroundColor: 'black'}}>
-  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '40px', paddingRight: '40px', paddingTop: '16px', paddingBottom: '16px'}}>
-    <div style={{display: 'flex', gap: '32px'}}>
-      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} style={{color: activeNav === 'about' ? '#BB95FF' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#BB95FF'} onMouseLeave={(e) => e.target.style.color = activeNav === 'about' ? '#BB95FF' : 'white'}>About</a>
-      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} style={{color: activeNav === 'services' ? '#BB95FF' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#BB95FF'} onMouseLeave={(e) => e.target.style.color = activeNav === 'services' ? '#BB95FF' : 'white'}>Services</a>
+<section className="w-full bg-black">
+  <nav className="flex items-center justify-between px-[20px] sm:px-[40px] py-[16px]">
+    <div className="flex gap-[16px] sm:gap-[32px]">
+      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-xs sm:text-sm text-white hover:text-[#BB95FF] cursor-pointer no-underline">About</a>
+      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-xs sm:text-sm text-white hover:text-[#BB95FF] cursor-pointer no-underline">Services</a>
     </div>
-    <div style={{display: 'flex', gap: '32px'}}>
-      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} style={{color: activeNav === 'work' ? '#BB95FF' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#BB95FF'} onMouseLeave={(e) => e.target.style.color = activeNav === 'work' ? '#BB95FF' : 'white'}>Creative spotlight</a>
-      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} style={{color: activeNav === 'contact' ? '#BB95FF' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#BB95FF'} onMouseLeave={(e) => e.target.style.color = activeNav === 'contact' ? '#BB95FF' : 'white'}>Contact</a>
+    <div className="flex gap-[16px] sm:gap-[32px]">
+      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-xs sm:text-sm text-white hover:text-[#BB95FF] cursor-pointer no-underline">Creative spotlight</a>
+      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-xs sm:text-sm text-white hover:text-[#BB95FF] cursor-pointer no-underline">Contact</a>
     </div>
-  </div>
-</nav>
+  </nav>
 </section>
 {/* Work grid */}
 <section id="work" aria-label="Selected work">
