@@ -190,13 +190,26 @@ function Index() {
   </nav>
 </section>
 {/* Work grid */}
-<section id="work" aria-label="Selected work">
-  <h2 className="sr-only">Selected work</h2>
-  <div className="grid grid-cols-2 gap-1s m:grid-cols-3 lg:grid-cols-4">
-    {tiles.map((tile, i) => (
-      <GridTile key={i} tile={tile} />
-    ))}
+<section id="work" aria-label="Selected work" className="w-full px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(5.52rem,16.5vw,250px)]">
+  <div className="mx-auto max-w-[1296px]">
+    <h2 className="sr-only">Selected work</h2>
+    <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 lg:grid-cols-4">
+      {tiles.map((tile, i) => (
+        <GridTile key={i} tile={tile} />
+      ))}
+    </div>
   </div>
+</section>
+
+<script>
+  const handleNavClick = (e, section) => {
+    e.preventDefault();
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+</script>
 </section>
       {/* Footer */}
       <footer id="contact" className="bg-ink text-paper">
