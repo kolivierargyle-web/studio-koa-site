@@ -123,11 +123,14 @@ function GridTile({ tile }: { tile: Tile }) {
 function Index() {
   const [activeNav, setActiveNav] = useState(null);
 
-  const handleNavClick = (e, link) => {
-    e.preventDefault();
-    setActiveNav(link);
-  };
-
+const handleNavClick = (e, section) => {
+  e.preventDefault();
+  setActiveNav(section);
+  const element = document.getElementById(section);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
   return (
     <main className="bg-paper">
       {/* Title bar */}
@@ -199,17 +202,7 @@ function Index() {
       ))}
     </div>
   </div>
-</section>
 
-<script>
-  const handleNavClick = (e, section) => {
-    e.preventDefault();
-    const element = document.getElementById(section);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-</script>
 </section>
       {/* Footer */}
       <footer id="contact" className="bg-ink text-paper">
