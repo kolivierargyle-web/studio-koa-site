@@ -187,26 +187,25 @@ function Index() {
 <nav style={{width: '100%', backgroundColor: 'black'}}>
   <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '40px', paddingRight: '40px', paddingTop: '16px', paddingBottom: '16px'}}>
     <div style={{display: 'flex', gap: '32px'}}>
-      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} style={{color: activeNav === 'about' ? '#DBFF52' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#DBFF52'} onMouseLeave={(e) => e.target.style.color = activeNav === 'about' ? '#DBFF52' : 'white'}>About</a>
-      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} style={{color: activeNav === 'services' ? '#DBFF52' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#DBFF52'} onMouseLeave={(e) => e.target.style.color = activeNav === 'services' ? '#DBFF52' : 'white'}>Services</a>
+      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} style={{color: activeNav === 'about' ? '#BB95FF' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#BB95FF'} onMouseLeave={(e) => e.target.style.color = activeNav === 'about' ? '#BB95FF' : 'white'}>About</a>
+      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} style={{color: activeNav === 'services' ? '#BB95FF' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#BB95FF'} onMouseLeave={(e) => e.target.style.color = activeNav === 'services' ? '#BB95FF' : 'white'}>Services</a>
     </div>
     <div style={{display: 'flex', gap: '32px'}}>
-      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} style={{color: activeNav === 'work' ? '#DBFF52' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#DBFF52'} onMouseLeave={(e) => e.target.style.color = activeNav === 'work' ? '#DBFF52' : 'white'}>Creative spotlight</a>
-      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} style={{color: activeNav === 'contact' ? '#DBFF52' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#DBFF52'} onMouseLeave={(e) => e.target.style.color = activeNav === 'contact' ? '#DBFF52' : 'white'}>Contact</a>
+      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} style={{color: activeNav === 'work' ? '#BB95FF' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#BB95FF'} onMouseLeave={(e) => e.target.style.color = activeNav === 'work' ? '#BB95FF' : 'white'}>Creative spotlight</a>
+      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} style={{color: activeNav === 'contact' ? '#BB95FF' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#BB95FF'} onMouseLeave={(e) => e.target.style.color = activeNav === 'contact' ? '#BB95FF' : 'white'}>Contact</a>
     </div>
   </div>
 </nav>
 </section>
-
-      {/* Work grid */}
-      <section id="work" aria-label="Selected work">
-        <h2 className="sr-only">Selected work</h2>
-        <div className="grid grid-cols-2 gap-1s m:grid-cols-3 lg:grid-cols-4">
-          {tiles.map((tile, i) => (
-            <GridTile key={i} tile={tile} />
-          ))}
-        </div>
-      </section>
+{/* Work grid */}
+<section id="work" aria-label="Selected work">
+  <h2 className="sr-only">Selected work</h2>
+  <div className="grid grid-cols-2 gap-1s m:grid-cols-3 lg:grid-cols-4">
+    {tiles.map((tile, i) => (
+      <GridTile key={i} tile={tile} />
+    ))}
+  </div>
+</section>
 
       {/* Footer */}
       <footer id="contact" className="bg-ink text-paper">
