@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from 'react';
 import { Instagram } from "lucide-react";
 
 import heroPoster from "@/assets/hero-poster.jpg";
@@ -120,6 +121,13 @@ function GridTile({ tile }: { tile: Tile }) {
 }
 
 function Index() {
+  const [activeNav, setActiveNav] = useState(null);
+
+  const handleNavClick = (e, link) => {
+    e.preventDefault();
+    setActiveNav(link);
+  };
+
   return (
     <main className="bg-paper">
       {/* Title bar */}
@@ -156,30 +164,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Nav bar */}
-      <nav className="sticky top-0 z-30 bg-ink">
-        <div className="flex items-center justify-between px-4 py-[15px] text-[14px] sm:text-[18px] font-medium text-paper sm:px-6">
-          <div className="flex items-center">
-            <a href="#about" className="transition-opacity hover:opacity-60">
-              About
-            </a>
-            <span className="w-[30px] sm:w-[45px] h-[22px]" aria-hidden="true" />
-            <a href="#services" className="transition-opacity hover:opacity-60">
-              Services
-            </a>
-          </div>
-          <div className="flex items-center">
-            <a href="#work" className="transition-opacity hover:opacity-60">
-              Creative spotlight
-            </a>
-            <span className="w-[30px] sm:w-[45px] h-[22px]" aria-hidden="true" />
-            <a href="#contact" className="transition-opacity hover:opacity-60">
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
-
    {/* Intro */}
 <section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(2.2rem,6.5vw,94px)]">
   <div className="mx-auto flex min-h-[199px] max-w-[1296px] items-center justify-center">
@@ -198,8 +182,21 @@ function Index() {
     </div>
   </div>
 </section>
-{/* Black banner divider */}
-<div className="w-full bg-black h-[0.86rem]"></div>
+{/* Navigation Bar */}
+<section>
+<nav className="w-full bg-black text-paper">
+  <div className="flex items-center justify-between px-[40px] py-4">
+    <div className="flex gap-8">
+      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-[14px] transition-colors hover:opacity-60" style={{color: activeNav === 'about' ? '#DBFF52' : 'inherit'}}>About</a>
+      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-[14px] transition-colors hover:opacity-60" style={{color: activeNav === 'services' ? '#DBFF52' : 'inherit'}}>Services</a>
+    </div>
+    <div className="flex gap-8">
+      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-[14px] transition-colors hover:opacity-60" style={{color: activeNav === 'work' ? '#DBFF52' : 'inherit'}}>Creative spotlight</a>
+      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-[14px] transition-colors hover:opacity-60" style={{color: activeNav === 'contact' ? '#DBFF52' : 'inherit'}}>Contact</a>
+    </div>
+  </div>
+</nav>
+</section>
 
       {/* Work grid */}
       <section id="work" aria-label="Selected work">
