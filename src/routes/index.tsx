@@ -193,10 +193,10 @@ const handleNavClick = (e, section) => {
   </nav>
 </section>
 {/* Work grid */}
-<section id="work" aria-label="Selected work" className="w-full px-[clamp(0.44rem,2.3vw,33px)]">
+<section id="work" aria-label="Selected work" className="w-full px-0">
   <div className="w-full">
     <h2 className="sr-only">Selected work</h2>
-    <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 lg:grid-cols-4">
+    <div className="grid grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-4">
       {tiles.map((tile, i) => (
         <GridTile key={i} tile={tile} />
       ))}
