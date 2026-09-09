@@ -182,19 +182,12 @@ function Index() {
     </div>
     <div className="flex gap-[16px] sm:gap-[32px]">
       <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-xs sm:text-sm text-white hover:text-[#BB95FF] cursor-pointer no-underline flex items-center gap-[4px]">Work <span>▼</span></a>
+    </div>
+    <div className="flex gap-[16px] sm:gap-[32px]">
       <a href="#spotlight" onClick={(e) => handleNavClick(e, 'spotlight')} className="text-xs sm:text-sm text-white hover:text-[#BB95FF] cursor-pointer no-underline">Creative spotlight</a>
       <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-xs sm:text-sm text-white hover:text-[#BB95FF] cursor-pointer no-underline">Contact</a>
     </div>
   </nav>
-</section>
-{/* Work grid */}
-<section id="work" aria-label="Selected work">
-  <h2 className="sr-only">Selected work</h2>
-  <div className="grid grid-cols-2 gap-1s m:grid-cols-3 lg:grid-cols-4">
-    {tiles.map((tile, i) => (
-      <GridTile key={i} tile={tile} />
-    ))}
-  </div>
 </section>
 
       {/* Footer */}
