@@ -187,12 +187,12 @@ function Index() {
 <nav style={{width: '100%', backgroundColor: 'black'}}>
   <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '40px', paddingRight: '40px', paddingTop: '16px', paddingBottom: '16px'}}>
     <div style={{display: 'flex', gap: '32px'}}>
-      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} style={{color: activeNav === 'about' ? 'red' : 'white', fontSize: '14px', textDecoration: 'none'}}>About</a>
-      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} style={{color: activeNav === 'services' ? 'red' : 'white', fontSize: '14px', textDecoration: 'none'}}>Services</a>
+      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} style={{color: activeNav === 'about' ? '#DBFF52' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#DBFF52'} onMouseLeave={(e) => e.target.style.color = activeNav === 'about' ? '#DBFF52' : 'white'}>About</a>
+      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} style={{color: activeNav === 'services' ? '#DBFF52' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#DBFF52'} onMouseLeave={(e) => e.target.style.color = activeNav === 'services' ? '#DBFF52' : 'white'}>Services</a>
     </div>
     <div style={{display: 'flex', gap: '32px'}}>
-      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} style={{color: activeNav === 'work' ? 'red' : 'white', fontSize: '14px', textDecoration: 'none'}}>Creative spotlight</a>
-      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} style={{color: activeNav === 'contact' ? 'red' : 'white', fontSize: '14px', textDecoration: 'none'}}>Contact</a>
+      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} style={{color: activeNav === 'work' ? '#DBFF52' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#DBFF52'} onMouseLeave={(e) => e.target.style.color = activeNav === 'work' ? '#DBFF52' : 'white'}>Creative spotlight</a>
+      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} style={{color: activeNav === 'contact' ? '#DBFF52' : 'white', fontSize: '14px', textDecoration: 'none', cursor: 'pointer'}} onMouseEnter={(e) => e.target.style.color = '#DBFF52'} onMouseLeave={(e) => e.target.style.color = activeNav === 'contact' ? '#DBFF52' : 'white'}>Contact</a>
     </div>
   </div>
 </nav>
