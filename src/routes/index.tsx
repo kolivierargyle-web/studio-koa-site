@@ -175,6 +175,7 @@ const handleNavClick = (e, section) => {
       </p>
     </div>
   </div>
+</section>
 {/* Navigation Bar */}
 <section className="w-full bg-white">
   <nav className="flex items-center justify-center px-[20px] sm:px-[40px] py-[60px] relative">
