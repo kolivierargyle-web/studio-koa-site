@@ -170,7 +170,7 @@ const handleNavClick = (e, section) => {
 <section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(5.52rem,16.5vw,250px)]">
   <div className="mx-auto flex min-h-[199px] max-w-full items-center justify-center">
     <div className="text-center w-full">
-      <p className="text-xl sm:text-3xl md:text-[4.65rem] leading-[1.1] max-w-[750px] md:max-w-[3000px]" style={{ fontFamily: 'Besley, serif', fontWeight: '500' }}>
+      <p className="text-xl sm:text-3xl md:text-[5.35rem] leading-[1.1] max-w-[750px] md:max-w-[3000px]" style={{ fontFamily: 'Besley, serif', fontWeight: '500' }}>
         <span style={{ fontStyle: 'italic' }}>Koa studio is a compact full-service<br className="hidden md:block" />creative direction & production studio.</span><br className="hidden md:block" />Photography, video, motion & identity.<br className="hidden md:block" />We build the right team for every project,<br className="hidden md:block" />delivering impactful work without the<br className="hidden md:block" />cost or complexity of a large agency.
       </p>
     </div>
