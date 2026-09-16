@@ -130,11 +130,23 @@ const throttleRef = useRef(null);
 useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
-    if (!container) return;
+    const heroSection = document.querySelector('section.bg-ink');
+    const introSection = document.getElementById('about');
     
+    if (!container || !heroSection || !introSection) return;
+    
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    const introBottom = introSection.offsetTop + introSection.offsetHeight;
     const currentScrollY = window.scrollY;
-    // Translate at same rate as scroll, adjust 0.5 for speed (lower = slower)
-    container.style.transform = `translateY(-${currentScrollY * 0.5}px)`;
+    
+    if (currentScrollY > introSection.offsetTop) {
+      const scrolledDistance = currentScrollY - introSection.offsetTop;
+      const maxTranslate = introBottom - heroBottom;
+      const translateAmount = Math.min(scrolledDistance * 0.5, maxTranslate);
+      container.style.transform = `translateY(-${translateAmount}px)`;
+    } else {
+      container.style.transform = 'translateY(0)';
+    }
   };
 
   window.addEventListener('scroll', handleScroll);
