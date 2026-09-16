@@ -129,14 +129,18 @@ const throttleRef = useRef(null);
 useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
-    if (!container) return;
+    const introSection = document.getElementById('about');
+    
+    if (!container || !introSection) return;
+    
+    const introTop = introSection.offsetTop;
+    const introHeight = introSection.offsetHeight;
+    const introMidpoint = introTop + (introHeight / 2);
     
     const currentScrollY = window.scrollY;
-    // Test: scroll happens after 800px
-    const testTrigger = 800;
     
-    if (currentScrollY > testTrigger) {
-      const scrolledPast = currentScrollY - testTrigger;
+    if (currentScrollY > introMidpoint) {
+      const scrolledPast = currentScrollY - introMidpoint;
       container.style.transform = `translateY(-${scrolledPast}px)`;
     } else {
       container.style.transform = 'translateY(0)';
