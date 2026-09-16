@@ -131,19 +131,15 @@ useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
     const heroSection = document.querySelector('section.bg-ink');
-    const introSection = document.getElementById('about');
     
-    if (!container || !heroSection || !introSection) return;
+    if (!container || !heroSection) return;
     
     const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-    const introBottom = introSection.offsetTop + introSection.offsetHeight;
     const currentScrollY = window.scrollY;
     
-    if (currentScrollY > introSection.offsetTop) {
-      const scrolledDistance = currentScrollY - introSection.offsetTop;
-      const maxTranslate = introBottom - heroBottom;
-      const translateAmount = Math.min(scrolledDistance * 0.5, maxTranslate);
-      container.style.transform = `translateY(-${translateAmount}px)`;
+    if (currentScrollY > heroBottom) {
+      const scrolledPastHero = currentScrollY - heroBottom;
+      container.style.transform = `translateY(-${scrolledPastHero}px)`;
     } else {
       container.style.transform = 'translateY(0)';
     }
