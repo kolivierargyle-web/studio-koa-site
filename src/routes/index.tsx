@@ -133,10 +133,22 @@ useEffect(() => {
     
     throttleRef.current = true;
     setTimeout(() => {
+      const heroSection = document.querySelector('section.bg-ink'); // The hero/video section
+      if (!heroSection) {
+        throttleRef.current = false;
+        return;
+      }
+      
+      const heroBottom = heroSection.getBoundingClientRect().bottom + window.scrollY;
       const currentScrollY = window.scrollY;
       
-      if (currentScrollY > lastScrollYRef.current) {
-        setIsNavVisible(false);
+      // Only start animation after scrolling past the hero
+      if (currentScrollY > heroBottom) {
+        if (currentScrollY > lastScrollYRef.current) {
+          setIsNavVisible(false);
+        } else {
+          setIsNavVisible(true);
+        }
       } else {
         setIsNavVisible(true);
       }
