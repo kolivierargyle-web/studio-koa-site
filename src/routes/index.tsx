@@ -123,35 +123,32 @@ function GridTile({ tile }: { tile: Tile }) {
 function Index() {
   const [activeNav, setActiveNav] = useState(null);
   
-  // ADD ALL THIS:
+const [isNavVisible, setIsNavVisible] = useState(true);
+const lastScrollYRef = useRef(0);
+const throttleRef = useRef(null);
 
-  const lastScrollYRef = useRef(0);
-  const throttleRef = useRef(null);
 useEffect(() => {
   const handleScroll = () => {
     if (throttleRef.current) return;
     
     throttleRef.current = true;
     setTimeout(() => {
-      const navSection = document.querySelector('section.bg-white');
-      if (!navSection) {
-        throttleRef.current = false;
-        return;
-      }
-      
-      const navPosition = navSection.getBoundingClientRect().top + window.scrollY;
       const currentScrollY = window.scrollY;
       
-      if (currentScrollY > navPosition - window.innerHeight) {
-        const translateAmount = Math.min(currentScrollY - navPosition, 300);
-        navSection.style.transform = `translateY(-${translateAmount}px)`;
+      if (currentScrollY > lastScrollYRef.current) {
+        setIsNavVisible(false);
       } else {
-        navSection.style.transform = 'translateY(0)';
+        setIsNavVisible(true);
       }
       
+      lastScrollYRef.current = currentScrollY;
       throttleRef.current = false;
     }, 100);
   };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
   window.addEventListener('scroll', handleScroll);
   return () => window.removeEventListener('scroll', handleScroll);
