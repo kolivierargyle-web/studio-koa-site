@@ -212,8 +212,24 @@ const handleNavClick = (e, section) => {
     </div>
   </div>
 </section>
+{/* Navigation Bar */}
+<section className={`w-full bg-white border-t-2 border-b-2 border-black transition-transform duration-300 ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+  <nav className="flex items-center justify-center px-[20px] sm:px-[40px] py-[60px] relative">
+    <div className="flex gap-[8px] sm:gap-[32px] absolute left-[20px] sm:left-[40px]">
+      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">About</a>
+      <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">Services</a>
+      <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">Work</a>
+    </div>
+    <div className="flex gap-[8px] sm:gap-[32px] absolute right-[20px] sm:right-[40px]">
+      <a href="#spotlight" onClick={(e) => handleNavClick(e, 'spotlight')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">Creative spotlight</a>
+      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">Contact</a>
+    </div>
+  </nav>
+</section>
+
+
 {/* Work grid */}
-<section id="work" aria-label="Selected work" className="w-full px-0 transition-transform duration-300">
+className={`w-full px-0 transition-transform duration-300 ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}
   <div className="w-full">
     <h2 className="sr-only">Selected work</h2>
     <div className="grid grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-4">
