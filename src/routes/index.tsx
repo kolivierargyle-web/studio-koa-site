@@ -129,15 +129,13 @@ const throttleRef = useRef(null);
 useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
-    const introSection = document.getElementById('about');
+    if (!container) return;
     
-    if (!container || !introSection) return;
-    
-    const introTop = introSection.offsetTop;
     const currentScrollY = window.scrollY;
+    const triggerPoint = 600; // Adjust this number
     
-    if (currentScrollY > introTop) {
-      const scrolledPast = currentScrollY - introTop;
+    if (currentScrollY > triggerPoint) {
+      const scrolledPast = currentScrollY - triggerPoint;
       container.style.transform = `translateY(-${scrolledPast * 2}px)`;
     } else {
       container.style.transform = 'translateY(0)';
