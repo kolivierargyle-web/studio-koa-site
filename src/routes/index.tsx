@@ -129,15 +129,12 @@ const throttleRef = useRef(null);
 useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
-    const heroSection = document.querySelector('[data-hero]');
+    const heroSection = document.querySelector('section.bg-ink');
     
     if (!container || !heroSection) return;
     
-    const heroRect = heroSection.getBoundingClientRect();
-    const heroBottom = heroRect.bottom + window.scrollY;
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
     const currentScrollY = window.scrollY;
-    
-    console.log('Hero bottom:', heroBottom, 'Current scroll:', currentScrollY); // debug
     
     if (currentScrollY > heroBottom) {
       const scrolledPastHero = currentScrollY - heroBottom;
