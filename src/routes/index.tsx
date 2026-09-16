@@ -197,7 +197,7 @@ const handleNavClick = (e, section) => {
         </div>
       </section>
 {/* Intro */}
-<section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] pt-[clamp(5.52rem,16.5vw,250px)] pb-[clamp(22.08rem,66vw,1000px)]">
+<section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(5.52rem,16.5vw,250px)]">
   <div className="mx-auto flex min-h-[199px] max-w-full items-center justify-center">
     <div className="text-center w-full">
       <h2 className="text-xl sm:text-3xl md:text-[4.65rem] leading-[1.1] max-w-[750px] md:max-w-[3000px]" style={{ fontFamily: 'Besley', fontWeight: '500' }}>
