@@ -123,24 +123,24 @@ function GridTile({ tile }: { tile: Tile }) {
 function Index() {
   const [activeNav, setActiveNav] = useState(null);
 const [isNavVisible, setIsNavVisible] = useState(true);
-const [lastScrollY, setLastScrollY] = useState(0);
+const lastScrollYRef = useRef(0);
 
 useEffect(() => {
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
     
-    if (currentScrollY > lastScrollY) {
+    if (currentScrollY > lastScrollYRef.current) {
       setIsNavVisible(false);
     } else {
       setIsNavVisible(true);
     }
     
-    setLastScrollY(currentScrollY);
+    lastScrollYRef.current = currentScrollY;
   };
 
   window.addEventListener('scroll', handleScroll);
   return () => window.removeEventListener('scroll', handleScroll);
-}, [lastScrollY]);
+}, []);
 
 const handleNavClick = (e, section) => {
   e.preventDefault();
