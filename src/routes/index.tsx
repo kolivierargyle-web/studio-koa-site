@@ -126,16 +126,18 @@ function Index() {
 const [isNavVisible, setIsNavVisible] = useState(true);
 const lastScrollYRef = useRef(0);
 const throttleRef = useRef(null);
-
 useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
-    const heroSection = document.querySelector('section.bg-ink');
+    const heroSection = document.querySelector('[data-hero]');
     
     if (!container || !heroSection) return;
     
-    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    const heroRect = heroSection.getBoundingClientRect();
+    const heroBottom = heroRect.bottom + window.scrollY;
     const currentScrollY = window.scrollY;
+    
+    console.log('Hero bottom:', heroBottom, 'Current scroll:', currentScrollY); // debug
     
     if (currentScrollY > heroBottom) {
       const scrolledPastHero = currentScrollY - heroBottom;
@@ -176,22 +178,22 @@ const handleNavClick = (e, section) => {
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="relative w-full overflow-hidden bg-ink">
-        <div className="relative aspect-video w-full">
-<img
-  src={headerFallback}
-  alt="Koa Studio"
-  className="absolute inset-0 w-full h-full object-cover"
-/>
-          <iframe
-            src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
-            title="Koa Studio showreel"
-            allow="autoplay; fullscreen; picture-in-picture"
-            className="absolute inset-0 h-full w-full border-0"
-          />
-        </div>
-      </section>
+{/* Hero */}
+<section className="relative w-full overflow-hidden bg-ink" data-hero>
+  <div className="relative aspect-video w-full">
+    <img
+      src={headerFallback}
+      alt="Koa Studio"
+      className="absolute inset-0 w-full h-full object-cover"
+    />
+    <iframe
+      src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
+      title="Koa Studio showreel"
+      allow="autoplay; fullscreen; picture-in-picture"
+      className="absolute inset-0 h-full w-full border-0"
+    />
+  </div>
+</section>
 {/* Intro */}
 <section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(5.52rem,16.5vw,250px)]">
   <div className="mx-auto flex min-h-[199px] max-w-full items-center justify-center">
