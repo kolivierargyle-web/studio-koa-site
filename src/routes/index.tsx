@@ -134,7 +134,7 @@ useEffect(() => {
     
     if (!container || !heroSection) return;
     
-    const heroBottom = heroSection.getBoundingClientRect().bottom + window.scrollY;
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
     const currentScrollY = window.scrollY;
     
     if (currentScrollY > heroBottom) {
