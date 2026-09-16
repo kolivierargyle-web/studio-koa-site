@@ -149,10 +149,6 @@ useEffect(() => {
   window.addEventListener('scroll', handleScroll);
   return () => window.removeEventListener('scroll', handleScroll);
 }, []);
-
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
 const handleNavClick = (e, section) => {
   e.preventDefault();
   setActiveNav(section);
