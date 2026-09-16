@@ -124,34 +124,38 @@ function Index() {
   const [activeNav, setActiveNav] = useState(null);
   
   // ADD ALL THIS:
-  const [isNavVisible, setIsNavVisible] = useState(true);
+
   const lastScrollYRef = useRef(0);
   const throttleRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (throttleRef.current) return;
-      
-      throttleRef.current = true;
-      setTimeout(() => {
-        const currentScrollY = window.scrollY;
-        
-        if (currentScrollY > lastScrollYRef.current) {
-          setIsNavVisible(false);
-        } else {
-          setIsNavVisible(true);
-        }
-        
-        lastScrollYRef.current = currentScrollY;
+useEffect(() => {
+  const handleScroll = () => {
+    if (throttleRef.current) return;
+    
+    throttleRef.current = true;
+    setTimeout(() => {
+      const navSection = document.querySelector('section.bg-white');
+      if (!navSection) {
         throttleRef.current = false;
-      }, 100);
-    };
+        return;
+      }
+      
+      const navPosition = navSection.getBoundingClientRect().top + window.scrollY;
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > navPosition - window.innerHeight) {
+        const translateAmount = Math.min(currentScrollY - navPosition, 300);
+        navSection.style.transform = `translateY(-${translateAmount}px)`;
+      } else {
+        navSection.style.transform = 'translateY(0)';
+      }
+      
+      throttleRef.current = false;
+    }, 100);
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  // END ADD
-
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 const handleNavClick = (e, section) => {
   e.preventDefault();
   setActiveNav(section);
@@ -216,7 +220,7 @@ const handleNavClick = (e, section) => {
   </div>
 </section>
 {/* Work grid */}
-<section id="work" aria-label="Selected work" className={`w-full px-0 transition-transform duration-300 ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+<section id="work" aria-label="Selected work" className="w-full px-0 transition-transform duration-300">
   <div className="w-full">
     <h2 className="sr-only">Selected work</h2>
     <div className="grid grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-4">
