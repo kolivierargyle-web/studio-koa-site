@@ -133,22 +133,10 @@ useEffect(() => {
     
     throttleRef.current = true;
     setTimeout(() => {
-      const navSection = document.querySelector('section.bg-white');
-      if (!navSection) {
-        throttleRef.current = false;
-        return;
-      }
-      
-      const navPosition = navSection.getBoundingClientRect().top + window.scrollY;
       const currentScrollY = window.scrollY;
       
-      // Only start animation after scrolling past the nav bar position
-      if (currentScrollY > navPosition - 100) {
-        if (currentScrollY > lastScrollYRef.current) {
-          setIsNavVisible(false);
-        } else {
-          setIsNavVisible(true);
-        }
+      if (currentScrollY > lastScrollYRef.current) {
+        setIsNavVisible(false);
       } else {
         setIsNavVisible(true);
       }
