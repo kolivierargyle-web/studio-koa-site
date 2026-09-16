@@ -123,9 +123,25 @@ function GridTile({ tile }: { tile: Tile }) {
 function Index() {
   const [activeNav, setActiveNav] = useState(null);
   
-const [isNavVisible, setIsNavVisible] = useState(true);
-const lastScrollYRef = useRef(0);
-const throttleRef = useRef(null);
+useEffect(() => {
+  const handleScroll = () => {
+    const container = document.querySelector('[data-scroll-container]');
+    if (!container) return;
+    
+    const currentScrollY = window.scrollY;
+    const triggerPoint = 1000;
+    
+    if (currentScrollY > triggerPoint) {
+      const scrolledPast = currentScrollY - triggerPoint;
+      container.style.transform = `translateY(-${scrolledPast * 2}px)`;
+    } else {
+      container.style.transform = 'translateY(0)';
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
 const handleNavClick = (e, section) => {
   e.preventDefault();
