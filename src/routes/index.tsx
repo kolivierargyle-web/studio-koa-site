@@ -216,7 +216,7 @@ const handleNavClick = (e, section) => {
   </div>
 </section>
 {/* Navigation Bar */}
-<section className={`w-full bg-white border-t-2 border-b-2 border-black transition-transform duration-300 ${isNavVisible ? 'translate-y-0' : 'translate-y-full'}`}>
+<section className={`w-full bg-white border-t-2 border-b-2 border-black transition-transform duration-300 ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}>
   <nav className="flex items-center justify-center px-[20px] sm:px-[40px] py-[60px] relative">
     <div className="flex gap-[8px] sm:gap-[32px] absolute left-[20px] sm:left-[40px]">
       <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">About</a>
