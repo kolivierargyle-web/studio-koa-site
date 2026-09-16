@@ -129,7 +129,7 @@ useEffect(() => {
     if (!container) return;
     
     const currentScrollY = window.scrollY;
-    const triggerPoint = 1200;
+    const triggerPoint = 1150;
     
     if (currentScrollY > triggerPoint) {
       const scrolledPast = currentScrollY - triggerPoint;
