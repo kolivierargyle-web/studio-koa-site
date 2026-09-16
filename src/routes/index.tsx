@@ -226,7 +226,6 @@ const handleNavClick = (e, section) => {
     </div>
   </div>
 </section>
-</section>  {/* <- ADD THIS to close the Navigation Bar section */}
 
       {/* Footer */}
       <footer id="contact" className="bg-ink text-paper">
