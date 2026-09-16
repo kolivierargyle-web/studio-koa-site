@@ -229,7 +229,7 @@ const handleNavClick = (e, section) => {
 
 
 {/* Work grid */}
-className={`w-full px-0 transition-transform duration-300 ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}
+<section id="work" aria-label="Selected work" className={`w-full px-0 transition-transform duration-300 ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}>
   <div className="w-full">
     <h2 className="sr-only">Selected work</h2>
     <div className="grid grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-4">
