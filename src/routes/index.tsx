@@ -141,7 +141,7 @@ useEffect(() => {
     
     if (currentScrollY > introMidpoint) {
       const scrolledPast = currentScrollY - introMidpoint;
-      container.style.transform = `translateY(-${scrolledPast}px)`;
+      container.style.transform = `translateY(-${scrolledPast * 2}px)`;
     } else {
       container.style.transform = 'translateY(0)';
     }
