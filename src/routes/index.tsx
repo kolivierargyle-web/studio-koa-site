@@ -140,18 +140,17 @@ useEffect(() => {
         return;
       }
       
-      const heroBottom = heroSection.getBoundingClientRect().bottom + window.scrollY;
-      const introBottom = introSection.getBoundingClientRect().bottom + window.scrollY;
+      const heroBottom = heroSection.offsetHeight;
+      const introSection_elem = document.getElementById('about');
+      const introTop = introSection_elem.offsetTop;
+      const introBottom = introTop + introSection_elem.offsetHeight;
       const currentScrollY = window.scrollY;
       
       if (currentScrollY > introBottom) {
-        // Scrolled past intro - start moving up
         const scrolledPastIntro = currentScrollY - introBottom;
-        // Max distance = hero bottom position
-        const maxDistance = Math.max(0, introBottom - heroBottom);
-        // Gradually translate, capped at maxDistance
-        const translateAmount = Math.min(scrolledPastIntro * 0.5, maxDistance); // 0.5 = slower
-        container.style.transform = `translateY(-${translateAmount}px)`;
+        const maxDistance = introBottom - heroBottom;
+        const translateAmount = Math.min(scrolledPastIntro, maxDistance);
+        container.style.transform = `translateY(-${translateAmount * 0.5}px)`;
       } else {
         container.style.transform = 'translateY(0)';
       }
