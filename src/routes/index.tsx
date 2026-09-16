@@ -174,7 +174,7 @@ const handleNavClick = (e, section) => {
         <span style={{ fontStyle: 'italic' }}>Koa studio is a compact full-service<br className="hidden md:block" />creative direction & production studio.</span><br className="hidden md:block" />Photography, video, motion & identity.<br className="hidden md:block" />We build the right team for every project,<br className="hidden md:block" />delivering impactful work without the<br className="hidden md:block" />cost or complexity of a large agency.
       </p>
     </div>
-  </div>
+   </section>
 {/* Navigation Bar */}
 <section className="w-full bg-white border-b-2 border-black">
   <nav className="flex items-center justify-center px-[20px] sm:px-[40px] py-[60px] relative">
