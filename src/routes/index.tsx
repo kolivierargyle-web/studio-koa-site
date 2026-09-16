@@ -129,34 +129,12 @@ const throttleRef = useRef(null);
 
 useEffect(() => {
   const handleScroll = () => {
-    throttleRef.current = true;
-    setTimeout(() => {
-      const heroSection = document.querySelector('section.bg-ink');
-      const introSection = document.getElementById('about');
-      const container = document.querySelector('[data-scroll-container]');
-      
-      if (!heroSection || !introSection || !container) {
-        throttleRef.current = false;
-        return;
-      }
-      
-      const heroBottom = heroSection.offsetHeight;
-      const introSection_elem = document.getElementById('about');
-      const introTop = introSection_elem.offsetTop;
-      const introBottom = introTop + introSection_elem.offsetHeight;
-      const currentScrollY = window.scrollY;
-      
-      if (currentScrollY > introBottom) {
-        const scrolledPastIntro = currentScrollY - introBottom;
-        const maxDistance = introBottom - heroBottom;
-        const translateAmount = Math.min(scrolledPastIntro, maxDistance);
-        container.style.transform = `translateY(-${translateAmount * 0.5}px)`;
-      } else {
-        container.style.transform = 'translateY(0)';
-      }
-      
-      throttleRef.current = false;
-    }, 100);
+    const container = document.querySelector('[data-scroll-container]');
+    if (!container) return;
+    
+    const currentScrollY = window.scrollY;
+    // Translate at same rate as scroll, adjust 0.5 for speed (lower = slower)
+    container.style.transform = `translateY(-${currentScrollY * 0.5}px)`;
   };
 
   window.addEventListener('scroll', handleScroll);
