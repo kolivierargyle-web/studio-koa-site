@@ -133,10 +133,22 @@ useEffect(() => {
     
     throttleRef.current = true;
     setTimeout(() => {
+      const navSection = document.querySelector('section.bg-white');
+      if (!navSection) {
+        throttleRef.current = false;
+        return;
+      }
+      
+      const navPosition = navSection.getBoundingClientRect().top + window.scrollY;
       const currentScrollY = window.scrollY;
       
-      if (currentScrollY > lastScrollYRef.current) {
-        setIsNavVisible(false);
+      // Only start animation after scrolling past the nav bar position
+      if (currentScrollY > navPosition - 100) {
+        if (currentScrollY > lastScrollYRef.current) {
+          setIsNavVisible(false);
+        } else {
+          setIsNavVisible(true);
+        }
       } else {
         setIsNavVisible(true);
       }
@@ -149,6 +161,7 @@ useEffect(() => {
   window.addEventListener('scroll', handleScroll);
   return () => window.removeEventListener('scroll', handleScroll);
 }, []);
+
 const handleNavClick = (e, section) => {
   e.preventDefault();
   setActiveNav(section);
