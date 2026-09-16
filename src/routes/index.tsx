@@ -129,31 +129,33 @@ const throttleRef = useRef(null);
 
 useEffect(() => {
   const handleScroll = () => {
-    if (throttleRef.current) return;
-    
     throttleRef.current = true;
     setTimeout(() => {
-      const heroSection = document.querySelector('section.bg-ink'); // The hero/video section
-      if (!heroSection) {
+      const heroSection = document.querySelector('section.bg-ink');
+      const introSection = document.getElementById('about');
+      const container = document.querySelector('[data-scroll-container]');
+      
+      if (!heroSection || !introSection || !container) {
         throttleRef.current = false;
         return;
       }
       
       const heroBottom = heroSection.getBoundingClientRect().bottom + window.scrollY;
+      const introBottom = introSection.getBoundingClientRect().bottom + window.scrollY;
       const currentScrollY = window.scrollY;
       
-      // Only start animation after scrolling past the hero
-      if (currentScrollY > heroBottom) {
-        if (currentScrollY > lastScrollYRef.current) {
-          setIsNavVisible(false);
-        } else {
-          setIsNavVisible(true);
-        }
+      if (currentScrollY > introBottom) {
+        // Scrolled past intro - start moving up
+        const scrolledPastIntro = currentScrollY - introBottom;
+        // Max distance = hero bottom position
+        const maxDistance = Math.max(0, introBottom - heroBottom);
+        // Gradually translate, capped at maxDistance
+        const translateAmount = Math.min(scrolledPastIntro * 0.5, maxDistance); // 0.5 = slower
+        container.style.transform = `translateY(-${translateAmount}px)`;
       } else {
-        setIsNavVisible(true);
+        container.style.transform = 'translateY(0)';
       }
       
-      lastScrollYRef.current = currentScrollY;
       throttleRef.current = false;
     }, 100);
   };
@@ -226,7 +228,7 @@ const handleNavClick = (e, section) => {
   </div>
 </section>
 {/* Navigation Bar & Work Grid Container */}
-<div className={`transition-transform duration-1000 ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+<div className="transition-transform" data-scroll-container>
   {/* Navigation Bar */}
   <section className="w-full bg-white border-t-2 border-b-2 border-black">
     <nav className="flex items-center justify-center px-[20px] sm:px-[40px] py-[60px] relative">
@@ -241,7 +243,6 @@ const handleNavClick = (e, section) => {
       </div>
     </nav>
   </section>
-
   {/* Work grid */}
   <section id="work" aria-label="Selected work" className="w-full px-0">
     <div className="w-full">
