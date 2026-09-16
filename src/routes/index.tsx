@@ -134,13 +134,10 @@ useEffect(() => {
     if (!container || !introSection) return;
     
     const introTop = introSection.offsetTop;
-    const introHeight = introSection.offsetHeight;
-    const introMidpoint = introTop + (introHeight / 2);
-    
     const currentScrollY = window.scrollY;
     
-    if (currentScrollY > introMidpoint) {
-      const scrolledPast = currentScrollY - introMidpoint;
+    if (currentScrollY > introTop) {
+      const scrolledPast = currentScrollY - introTop;
       container.style.transform = `translateY(-${scrolledPast * 2}px)`;
     } else {
       container.style.transform = 'translateY(0)';
