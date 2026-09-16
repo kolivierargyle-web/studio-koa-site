@@ -129,12 +129,17 @@ const throttleRef = useRef(null);
 useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
-    const heroSection = document.querySelector('section.bg-ink');
+    const heroSection = document.querySelector('[data-hero]');
+    const introSection = document.getElementById('about');
     
     if (!container || !heroSection) return;
     
-    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    const heroRect = heroSection.getBoundingClientRect();
+    const heroBottom = heroRect.bottom + window.scrollY;
+    const containerTop = container.getBoundingClientRect().top + window.scrollY;
     const currentScrollY = window.scrollY;
+    
+    console.log('Hero bottom:', Math.round(heroBottom), 'Container top:', Math.round(containerTop), 'Current scroll:', Math.round(currentScrollY));
     
     if (currentScrollY > heroBottom) {
       const scrolledPastHero = currentScrollY - heroBottom;
@@ -147,7 +152,6 @@ useEffect(() => {
   window.addEventListener('scroll', handleScroll);
   return () => window.removeEventListener('scroll', handleScroll);
 }, []);
-
 const handleNavClick = (e, section) => {
   e.preventDefault();
   setActiveNav(section);
