@@ -131,17 +131,18 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+
+useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
     const introSection = document.getElementById('about');
     
     if (!container || !introSection) return;
     
-    const introRect = introSection.getBoundingClientRect();
-    const triggerPoint = introRect.top + window.scrollY;
+    const triggerPoint = introSection.offsetTop - 400; // Start 400px before intro
     const currentScrollY = window.scrollY;
-    
-    console.log('Trigger:', Math.round(triggerPoint), 'Current:', Math.round(currentScrollY));
     
     if (currentScrollY >= triggerPoint) {
       const scrollPast = currentScrollY - triggerPoint;
