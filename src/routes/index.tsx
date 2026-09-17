@@ -157,7 +157,7 @@ function Index() {
       </section>
 
 {/* Intro */}
-<section id="about" className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,190px)]">
+<section id="about" className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,200px)]">
   <div className="mx-auto flex min-h-[199px] max-w-[1600px] items-center justify-center">
     <div className="text-center">
       <div style={{
