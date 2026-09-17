@@ -127,7 +127,11 @@ const maxScrollAttemptRef = useRef(0);
 const containerTranslateRef = useRef(0);
 
 useEffect(() => {
-  const handleWheel = (e) => {
+  window.scrollTo(0, 0);
+}, []);
+
+useEffect(() => {
+  const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
     const introSection = document.getElementById('about');
     
@@ -137,17 +141,15 @@ useEffect(() => {
     const currentScrollY = window.scrollY;
     
     if (currentScrollY >= introTop) {
-      // At intro - prevent normal scroll, move container instead
-      e.preventDefault();
-      containerTranslateRef.current += e.deltaY;
-      container.style.transform = `translateY(-${containerTranslateRef.current}px)`;
+      const scrollPastIntro = currentScrollY - introTop;
+      container.style.transform = `translateY(-${scrollPastIntro}px)`;
     } else {
-      containerTranslateRef.current = 0;
+      container.style.transform = 'translateY(0)';
     }
   };
 
-  window.addEventListener('wheel', handleWheel, { passive: false });
-  return () => window.removeEventListener('wheel', handleWheel);
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
 }, []);
 
 const handleNavClick = (e, section) => {
