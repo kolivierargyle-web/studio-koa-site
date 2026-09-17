@@ -128,22 +128,22 @@ const lastScrollRef = useRef(0);
 useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
-    if (!container) return;
+    const introSection = document.getElementById('about');
     
+    if (!container || !introSection) return;
+    
+    const introTop = introSection.offsetTop;
     const currentScrollY = window.scrollY;
-    const isScrollingDown = currentScrollY > lastScrollRef.current;
-    const triggerPoint = 900;
     
-    if (currentScrollY > triggerPoint) {
-      if (isScrollingDown) {
-        const scrolledPast = currentScrollY - triggerPoint;
-        container.style.transform = `translateY(-${scrolledPast}px)`;
-      } else {
-        // Scrolling up - reverse it
-        const scrolledPast = currentScrollY - triggerPoint;
-        container.style.transform = `translateY(-${scrolledPast}px)`;
-      }
+    if (currentScrollY > introTop) {
+      // Past intro - move nav/grid up with scroll
+      const scrolledPastIntro = currentScrollY - introTop;
+      container.style.transform = `translateY(-${scrolledPastIntro}px)`;
+      
+      // Lock scroll at intro position
+      window.scrollTo(0, introTop);
     } else {
+      // Before intro - normal scroll
       container.style.transform = 'translateY(0)';
     }
     
@@ -153,7 +153,6 @@ useEffect(() => {
   window.addEventListener('scroll', handleScroll);
   return () => window.removeEventListener('scroll', handleScroll);
 }, []);
-
 
 const handleNavClick = (e, section) => {
   e.preventDefault();
