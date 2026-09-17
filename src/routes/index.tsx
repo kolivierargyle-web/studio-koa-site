@@ -124,8 +124,10 @@ function Index() {
   const [activeNav, setActiveNav] = useState(null);
 const maxScrollAttemptRef = useRef(0);
 
+const containerTranslateRef = useRef(0);
+
 useEffect(() => {
-  const handleScroll = () => {
+  const handleWheel = (e) => {
     const container = document.querySelector('[data-scroll-container]');
     const introSection = document.getElementById('about');
     
@@ -134,28 +136,18 @@ useEffect(() => {
     const introTop = introSection.offsetTop;
     const currentScrollY = window.scrollY;
     
-    // Track max scroll attempt
-    if (currentScrollY > maxScrollAttemptRef.current) {
-      maxScrollAttemptRef.current = currentScrollY;
-    }
-    
-    if (maxScrollAttemptRef.current > introTop) {
-      // Use max attempt, not current
-      const scrollPastIntro = maxScrollAttemptRef.current - introTop;
-      container.style.transform = `translateY(-${scrollPastIntro}px)`;
-      
-      // Lock scroll
-      setTimeout(() => {
-        window.scrollTo(0, introTop);
-      }, 0);
+    if (currentScrollY >= introTop) {
+      // At intro - prevent normal scroll, move container instead
+      e.preventDefault();
+      containerTranslateRef.current += e.deltaY;
+      container.style.transform = `translateY(-${containerTranslateRef.current}px)`;
     } else {
-      container.style.transform = 'translateY(0)';
-      maxScrollAttemptRef.current = currentScrollY;
+      containerTranslateRef.current = 0;
     }
   };
 
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
+  window.addEventListener('wheel', handleWheel, { passive: false });
+  return () => window.removeEventListener('wheel', handleWheel);
 }, []);
 
 const handleNavClick = (e, section) => {
