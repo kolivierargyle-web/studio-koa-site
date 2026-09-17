@@ -157,7 +157,7 @@ function Index() {
       </section>
 
 {/* Intro */}
-<section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(3.3rem,9.75vw,190px)]">
+<section id="about" className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,190px)]">
   <div className="mx-auto flex min-h-[199px] max-w-[1400px] items-center justify-center">
     <div className="text-center">
       <div style={{
@@ -171,12 +171,13 @@ function Index() {
           <span style={{ fontStyle: "italic" }}>
             Koa studio is a compact full-service<br />creative direction & production studio.
           </span>
-          {" "}Photography, video, motion & identity.<br />We build the right team for every project,<br />delivering impactful work without the cost or complexity of a large<br />agency.
+          {" "}Photography, video, motion & identity.<br />We build the right team for every project,<br />delivering impactful work without the<br />cost or complexity of a large agency.
         </p>
       </div>
     </div>
   </div>
 </section>
+
 {/* Black banner divider */}
 <div className="w-full bg-black h-[0.2rem]"></div>
 
