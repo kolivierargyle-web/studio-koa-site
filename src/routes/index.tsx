@@ -141,6 +141,8 @@ function Index() {
         </section>
       </div>
 
+      {showFixedNav && <div style={{ height: "3000px" }} />}
+
       <footer id="contact" className="bg-ink text-paper">
         <div className="px-6 pb-[27px] pt-[177px] text-center">
           <p className="font-display text-paper" style={{ fontFamily: "Poppins, sans-serif", fontSize: "40px", fontWeight: 700, lineHeight: "normal" }}>Koa Studio</p>
