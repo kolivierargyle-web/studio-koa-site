@@ -126,8 +126,11 @@ const maxScrollAttemptRef = useRef(0);
 
 const containerTranslateRef = useRef(0);
 
+const scrollAttemptRef = useRef(0);
+
 useEffect(() => {
   window.scrollTo(0, 0);
+  scrollAttemptRef.current = 0;
 }, []);
 
 useEffect(() => {
@@ -141,12 +144,14 @@ useEffect(() => {
     const currentScrollY = window.scrollY;
     
     if (currentScrollY >= triggerPoint) {
-      const scrollPast = currentScrollY - triggerPoint;
-      container.style.transform = `translateY(-${scrollPast}px)`;
+      // Track how much they tried to scroll past trigger
+      scrollAttemptRef.current = currentScrollY - triggerPoint;
+      container.style.transform = `translateY(-${scrollAttemptRef.current}px)`;
       
-      // Lock page scroll at trigger point
+      // Lock page scroll
       window.scrollTo(0, triggerPoint);
     } else {
+      scrollAttemptRef.current = 0;
       container.style.transform = 'translateY(0)';
     }
   };
