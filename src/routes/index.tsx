@@ -122,6 +122,7 @@ function GridTile({ tile }: { tile: Tile }) {
 
 function Index() {
   const [activeNav, setActiveNav] = useState(null);
+
 const lastScrollRef = useRef(0);
 
 useEffect(() => {
@@ -131,14 +132,22 @@ useEffect(() => {
     
     const currentScrollY = window.scrollY;
     const isScrollingDown = currentScrollY > lastScrollRef.current;
-    const triggerPoint = 900; // Start earlier
+    const triggerPoint = 900;
+    
+    if (currentScrollY > triggerPoint) {
+      if (isScrollingDown) {
+        const scrolledPast = currentScrollY - triggerPoint;
+        container.style.transform = `translateY(-${scrolledPast}px)`;
+      } else {
+        // Scrolling up - reverse it
+        const scrolledPast = currentScrollY - triggerPoint;
+        container.style.transform = `translateY(-${scrolledPast}px)`;
+      }
+    } else {
+      container.style.transform = 'translateY(0)';
+    }
     
     lastScrollRef.current = currentScrollY;
-    
-    if (isScrollingDown && currentScrollY > triggerPoint) {
-      const scrolledPast = currentScrollY - triggerPoint;
-      container.style.transform = `translateY(-${scrolledPast}px)`;
-    }
   };
 
   window.addEventListener('scroll', handleScroll);
