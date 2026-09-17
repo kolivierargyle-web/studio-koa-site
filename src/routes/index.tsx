@@ -157,7 +157,7 @@ function Index() {
       </section>
 
 {/* Intro */}
-<section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(2.2rem,6.5vw,94px)]">
+<section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(3.3rem,9.75vw,141px)]">
   <div className="mx-auto flex min-h-[199px] max-w-[1296px] items-center justify-center">
     <div className="text-center">
       <div style={{
@@ -168,10 +168,10 @@ function Index() {
       }}>
         <p style={{ fontStyle: "italic", fontWeight: 400, margin: 0 }}>
           Koa studio is a compact full-service <br />
-          creative direction & production studio.
+          creative direction & production studio. <br />
+          Photography, video, motion & identity.
         </p>
-        <p style={{ fontWeight: 500, margin: "0.5em 0 0 0" }}>
-          Photography, video, motion & identity. <br />
+        <p style={{ fontWeight: 400, margin: "0.5em 0 0 0" }}>
           We build the right team for every project, <br />
           delivering impactful work without the <br />
           cost or complexity of a large agency.
