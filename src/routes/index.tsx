@@ -122,18 +122,27 @@ function GridTile({ tile }: { tile: Tile }) {
 
 function Index() {
   const [activeNav, setActiveNav] = useState(null);
+const lastScrollRef = useRef(0);
+
 useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
-    if (!container) return;
+    const heroSection = document.querySelector('[data-hero]');
     
+    if (!container || !heroSection) return;
+    
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
     const currentScrollY = window.scrollY;
-    const triggerPoint = 1500;
+    const isScrollingDown = currentScrollY > lastScrollRef.current;
     
-    if (currentScrollY > triggerPoint) {
-      const scrolledPast = currentScrollY - triggerPoint;
+    lastScrollRef.current = currentScrollY;
+    
+    // Only animate if scrolling down AND past hero bottom
+    if (isScrollingDown && currentScrollY > heroBottom) {
+      const scrolledPast = currentScrollY - heroBottom;
       container.style.transform = `translateY(-${scrolledPast * 2}px)`;
-    } else {
+    } else if (!isScrollingDown) {
+      // Keep it still when scrolling up
       container.style.transform = 'translateY(0)';
     }
   };
