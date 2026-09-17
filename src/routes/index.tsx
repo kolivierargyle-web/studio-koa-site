@@ -106,20 +106,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Intro Section */}
-      <section id="about" className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,200px)]">
-        <div className="mx-auto flex min-h-[199px] max-w-[1600px] items-center justify-center">
-          <div className="text-center">
-            <div style={{ fontFamily: "Besley, serif", fontSize: "75px", lineHeight: "1.056", textAlign: "center", fontWeight: 400 }}>
-              <p style={{ margin: 0 }}>
-                <span style={{ fontStyle: "italic" }}>Koa studio is a compact full-service<br />creative direction & production studio.</span>
-                {" "}Photography, video, motion & identity.<br />We build the right team for every project,<br />delivering impactful work without the<br />cost or complexity of a large agency.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Black Divider Line */}
       <div className="w-full bg-black h-[0.1rem]" />
 
@@ -138,8 +124,22 @@ function Index() {
         </div>
       </nav>
 
+      {/* Intro Section */}
+      <section id="about" className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,200px)]">
+        <div className="mx-auto flex min-h-[199px] max-w-[1600px] items-center justify-center">
+          <div className="text-center">
+            <div style={{ fontFamily: "Besley, serif", fontSize: "75px", lineHeight: "1.056", textAlign: "center", fontWeight: 400 }}>
+              <p style={{ margin: 0 }}>
+                <span style={{ fontStyle: "italic" }}>Koa studio is a compact full-service<br />creative direction & production studio.</span>
+                {" "}Photography, video, motion & identity.<br />We build the right team for every project,<br />delivering impactful work without the<br />cost or complexity of a large agency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Work Grid */}
-   <section id="work" aria-label="Selected work" style={{ display: showGrid ? "block" : "none", opacity: showGrid ? 1 : 0, transition: "opacity 0.5s ease-in-out" }}>
+      <section id="work" aria-label="Selected work" style={{ display: showGrid ? "block" : "none", opacity: showGrid ? 1 : 0, transition: "opacity 0.5s ease-in-out" }}>
         <h2 className="sr-only">Selected work</h2>
         <div className="grid grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-4">
           {tiles.map((tile, i) => (<GridTile key={i} tile={tile} />))}
