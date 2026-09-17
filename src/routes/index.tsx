@@ -129,7 +129,6 @@ function Index() {
 
   return (
     <main className="bg-paper">
-      {/* Hero */}
       <section className="relative w-full overflow-hidden bg-ink">
         <div className="relative aspect-video w-full">
           <img
@@ -146,7 +145,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Intro */}
       <section id="about" className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,200px)]">
         <div className="mx-auto flex min-h-[199px] max-w-[1600px] items-center justify-center">
           <div className="text-center">
@@ -168,37 +166,23 @@ function Index() {
         </div>
       </section>
 
-      {/* Scrolling nav and grid container */}
       <div style={{ transform: `translateY(-${navWorkTransform}px)` }}>
-        {/* Black banner divider */}
         <div className="w-full bg-black h-[0.1rem]"></div>
 
-        {/* Nav bar */}
         <nav className="w-full bg-paper">
           <div className="flex items-center justify-between text-[24px] font-medium text-ink uppercase" style={{ paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
             <div className="flex items-center gap-8">
-              <a href="#about" className="transition-opacity hover:opacity-60">
-                About
-              </a>
-              <a href="#services" className="transition-opacity hover:opacity-60">
-                Services
-              </a>
-              <a href="#work" className="transition-opacity hover:opacity-60">
-                Work
-              </a>
+              <a href="#about" className="transition-opacity hover:opacity-60">About</a>
+              <a href="#services" className="transition-opacity hover:opacity-60">Services</a>
+              <a href="#work" className="transition-opacity hover:opacity-60">Work</a>
             </div>
             <div className="flex items-center gap-8">
-              <a href="#work" className="transition-opacity hover:opacity-60">
-                Creative spotlight
-              </a>
-              <a href="#contact" className="transition-opacity hover:opacity-60">
-                Contact
-              </a>
+              <a href="#work" className="transition-opacity hover:opacity-60">Creative spotlight</a>
+              <a href="#contact" className="transition-opacity hover:opacity-60">Contact</a>
             </div>
           </div>
         </nav>
 
-        {/* Work grid */}
         <section id="work" aria-label="Selected work">
           <h2 className="sr-only">Selected work</h2>
           <div className="grid grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-4">
@@ -209,7 +193,6 @@ function Index() {
         </section>
       </div>
 
-      {/* Footer */}
       <footer id="contact" className="bg-ink text-paper">
         <div className="px-6 pb-[27px] pt-[177px] text-center">
           <p
