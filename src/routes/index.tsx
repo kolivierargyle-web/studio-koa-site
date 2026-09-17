@@ -160,17 +160,23 @@ function Index() {
 <section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(2.2rem,6.5vw,94px)]">
   <div className="mx-auto flex min-h-[199px] max-w-[1296px] items-center justify-center">
     <div className="text-center">
-      <p className="text-3xl sm:text-4xl font-bold leading-[0.96]">
-        Koa studio is a compact full-service <br />
-        creative direction & production studio. <br />
-        Concept to final cut.
-        <br />
-        <br />
-        Photography, video, motion & brand identity. <br />
-        We build the right team for every project, <br />
-        delivering impactful work without the cost <br />
-        or complexity of a large agency.
-      </p>
+      <div style={{
+        fontFamily: "Besley, serif",
+        fontSize: "52.44px",
+        lineHeight: "1.3",
+        textAlign: "center",
+      }}>
+        <p style={{ fontStyle: "italic", fontWeight: 400, margin: 0 }}>
+          Koa studio is a compact full-service <br />
+          creative direction & production studio.
+        </p>
+        <p style={{ fontWeight: 500, margin: "0.5em 0 0 0" }}>
+          Photography, video, motion & identity. <br />
+          We build the right team for every project, <br />
+          delivering impactful work without the <br />
+          cost or complexity of a large agency.
+        </p>
+      </div>
     </div>
   </div>
 </section>
