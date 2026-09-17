@@ -131,14 +131,6 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
-
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
-
-useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
     const heroSection = document.querySelector('[data-hero]');
@@ -147,7 +139,7 @@ useEffect(() => {
     
     const heroBottom = heroSection 
       ? heroSection.offsetTop + heroSection.offsetHeight 
-      : 800; // Fallback value
+      : 600;
     
     const currentScrollY = window.scrollY;
     
