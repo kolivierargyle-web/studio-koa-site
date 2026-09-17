@@ -182,9 +182,12 @@ function Index() {
 <div className="w-full bg-black h-[0.43rem]"></div>
 V
 
+{/* Black banner divider */}
+<div className="w-full bg-black h-[0.2rem]"></div>
+
 {/* Nav bar */}
 <nav className="w-full bg-paper">
-  <div className="flex items-center justify-between text-[24px] font-medium text-ink" style={{ height: "95px", paddingLeft: "33px", paddingRight: "33px", paddingTop: "1.56rem", paddingBottom: "1.56rem" }}>
+  <div className="flex items-center justify-between text-[24px] font-medium text-ink" style={{ paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
     <div className="flex items-center gap-8">
       <a href="#about" className="transition-opacity hover:opacity-60">
         About
@@ -210,7 +213,7 @@ V
       {/* Work grid */}
       <section id="work" aria-label="Selected work">
         <h2 className="sr-only">Selected work</h2>
-        <div className="grid grid-cols-2 gap-1 m:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-4">
           {tiles.map((tile, i) => (
             <GridTile key={i} tile={tile} />
           ))}
