@@ -78,7 +78,7 @@ function GridTile({ tile }: { tile: Tile }) {
 
 function Index() {
   const [scrollY, setScrollY] = useState(0);
-  const heroIntroHeight = 2400;
+  const heroIntroHeight = 3600;
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
