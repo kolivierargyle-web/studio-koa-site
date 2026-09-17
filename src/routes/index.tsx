@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import heroPoster from "@/assets/hero-poster.jpg";
 import headerFallback from "@/assets/01.Header_fallback_up.jpg";
@@ -78,15 +78,21 @@ function GridTile({ tile }: { tile: Tile }) {
 
 function Index() {
   const [scrollY, setScrollY] = useState(0);
-  const heroIntroHeight = 3600;
+  const [introHeight, setIntroHeight] = useState(0);
+  const introRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
+    
+    if (introRef.current) {
+      setIntroHeight(introRef.current.offsetTop + introRef.current.offsetHeight);
+    }
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const shouldSnap = scrollY >= heroIntroHeight;
+  const shouldSnap = scrollY >= introHeight;
 
   return (
     <main className="bg-paper">
@@ -113,7 +119,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="about" className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,200px)]">
+      <section id="about" ref={introRef} className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,200px)]">
         <div className="mx-auto flex min-h-[199px] max-w-[1600px] items-center justify-center">
           <div className="text-center">
             <div style={{ fontFamily: "Besley, serif", fontSize: "75px", lineHeight: "1.056", textAlign: "center", fontWeight: 400 }}>
@@ -149,7 +155,7 @@ function Index() {
         </section>
       </div>
 
-      {shouldSnap && <div style={{ height: "2200px" }} />}
+      {shouldSnap && <div style={{ height: "3000px" }} />}
 
       <footer id="contact" className="bg-ink text-paper">
         <div className="px-6 pb-[27px] pt-[177px] text-center">
