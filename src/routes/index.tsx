@@ -141,6 +141,8 @@ useEffect(() => {
     const triggerPoint = introRect.top + window.scrollY;
     const currentScrollY = window.scrollY;
     
+    console.log('Trigger:', Math.round(triggerPoint), 'Current:', Math.round(currentScrollY));
+    
     if (currentScrollY >= triggerPoint) {
       const scrollPast = currentScrollY - triggerPoint;
       container.style.transform = `translateY(-${scrollPast}px)`;
