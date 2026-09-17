@@ -179,10 +179,6 @@ function Index() {
 </section>
 
 {/* Black banner divider */}
-<div className="w-full bg-black h-[0.43rem]"></div>
-V
-
-{/* Black banner divider */}
 <div className="w-full bg-black h-[0.2rem]"></div>
 
 {/* Nav bar */}
