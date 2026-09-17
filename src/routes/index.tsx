@@ -180,7 +180,7 @@ function Index() {
 
 {/* Black banner divider */}
 <div className="w-full bg-black h-[0.43rem]"></div>
-
+V
 
 {/* Nav bar */}
 <nav className="w-full bg-paper">
@@ -211,7 +211,7 @@ style={{ height: "95px", paddingLeft: "33px", paddingRight: "33px", paddingTop: 
       {/* Work grid */}
       <section id="work" aria-label="Selected work">
         <h2 className="sr-only">Selected work</h2>
-        <div className="grid grid-cols-2 gap-1s m:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-1 m:grid-cols-3 lg:grid-cols-4">
           {tiles.map((tile, i) => (
             <GridTile key={i} tile={tile} />
           ))}
