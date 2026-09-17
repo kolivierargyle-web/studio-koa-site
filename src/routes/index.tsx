@@ -123,7 +123,7 @@ function GridTile({ tile }: { tile: Tile }) {
 function Index() {
   const [activeNav, setActiveNav] = useState(null);
 
-const lastScrollRef = useRef(0);
+const lastAttemptRef = useRef(0);
 
 useEffect(() => {
   const handleScroll = () => {
@@ -134,27 +134,22 @@ useEffect(() => {
     
     const introTop = introSection.offsetTop;
     const currentScrollY = window.scrollY;
-    const attemptedScroll = currentScrollY; // Where they tried to scroll
     
-    if (attemptedScroll > introTop) {
-      // Calculate how much they scrolled since last time
-      const scrollDelta = attemptedScroll - lastScrollRef.current;
+    if (currentScrollY > introTop) {
+      // User tried to scroll past intro
+      const scrollDelta = currentScrollY - lastAttemptRef.current;
       
-      // Get current transform and apply delta
-      const style = container.style.transform;
-      const match = style.match(/-?\d+/);
-      const currentTranslate = match ? parseInt(match[0]) : 0;
-      const newTranslate = currentTranslate - scrollDelta;
+      // Move container up by the delta
+      container.style.transform = `translateY(${-scrollDelta}px)`;
       
-      container.style.transform = `translateY(${newTranslate}px)`;
-      
-      // Lock scroll at intro
+      // Lock scroll back to intro
+      lastAttemptRef.current = introTop;
       window.scrollTo(0, introTop);
     } else {
+      // Normal scroll, reset
       container.style.transform = 'translateY(0)';
+      lastAttemptRef.current = currentScrollY;
     }
-    
-    lastScrollRef.current = attemptedScroll; // Store attempted position
   };
 
   window.addEventListener('scroll', handleScroll);
