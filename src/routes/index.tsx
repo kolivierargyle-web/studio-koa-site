@@ -156,29 +156,30 @@ function Index() {
         </div>
       </section>
 
-      {/* Nav bar */}
-      <nav className="sticky top-0 z-30 bg-ink">
-        <div className="flex items-center justify-between px-4 py-[15px] text-[14px] sm:text-[18px] font-medium text-paper sm:px-6">
-          <div className="flex items-center">
-            <a href="#about" className="transition-opacity hover:opacity-60">
-              About
-            </a>
-            <span className="w-[30px] sm:w-[45px] h-[22px]" aria-hidden="true" />
-            <a href="#services" className="transition-opacity hover:opacity-60">
-              Services
-            </a>
-          </div>
-          <div className="flex items-center">
-            <a href="#work" className="transition-opacity hover:opacity-60">
-              Creative spotlight
-            </a>
-            <span className="w-[30px] sm:w-[45px] h-[22px]" aria-hidden="true" />
-            <a href="#contact" className="transition-opacity hover:opacity-60">
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
+ {/* Nav bar - sits on top of work grid, scrolls with it */}
+<nav className="w-full bg-ink" style={{ width: '1447px', height: '79px' }}>
+  <div className="flex items-center justify-between px-[40px] h-full text-[16px] font-medium text-paper">
+    <div className="flex items-center gap-[32px]">
+      <a href="#about" className="transition-opacity hover:opacity-60">
+        About
+      </a>
+      <a href="#services" className="transition-opacity hover:opacity-60">
+        Services
+      </a>
+      <a href="#work" className="transition-opacity hover:opacity-60">
+        Work
+      </a>
+    </div>
+    <div className="flex items-center gap-[32px]">
+      <a href="#spotlight" className="transition-opacity hover:opacity-60">
+        Creative spotlight
+      </a>
+      <a href="#contact" className="transition-opacity hover:opacity-60">
+        Contact
+      </a>
+    </div>
+  </div>
+</nav>
 
    {/* Intro */}
 <section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(2.2rem,6.5vw,94px)]">
