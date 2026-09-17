@@ -131,26 +131,23 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
-
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
-
-useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
     const introSection = document.getElementById('about');
     
     if (!container || !introSection) return;
     
-    const triggerPoint = introSection.offsetTop - 500; // Start 400px before intro
+    const triggerPoint = introSection.offsetTop - 400;
     const currentScrollY = window.scrollY;
     
     if (currentScrollY >= triggerPoint) {
       const scrollPast = currentScrollY - triggerPoint;
       container.style.transform = `translateY(-${scrollPast}px)`;
+      
+      // Lock page scroll at trigger point
+      window.scrollTo(0, triggerPoint);
+    } else {
+      container.style.transform = 'translateY(0)';
     }
   };
 
