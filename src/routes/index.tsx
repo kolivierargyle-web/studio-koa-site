@@ -156,31 +156,7 @@ function Index() {
         </div>
       </section>
 
-      {/* Nav bar */}
-      <nav className="sticky top-0 z-30 bg-ink">
-        <div className="flex items-center justify-between px-4 py-[15px] text-[14px] sm:text-[18px] font-medium text-paper sm:px-6">
-          <div className="flex items-center">
-            <a href="#about" className="transition-opacity hover:opacity-60">
-              About
-            </a>
-            <span className="w-[30px] sm:w-[45px] h-[22px]" aria-hidden="true" />
-            <a href="#services" className="transition-opacity hover:opacity-60">
-              Services
-            </a>
-          </div>
-          <div className="flex items-center">
-            <a href="#work" className="transition-opacity hover:opacity-60">
-              Creative spotlight
-            </a>
-            <span className="w-[30px] sm:w-[45px] h-[22px]" aria-hidden="true" />
-            <a href="#contact" className="transition-opacity hover:opacity-60">
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
-
-   {/* Intro */}
+{/* Intro */}
 <section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(2.2rem,6.5vw,94px)]">
   <div className="mx-auto flex min-h-[199px] max-w-[1296px] items-center justify-center">
     <div className="text-center">
@@ -198,8 +174,34 @@ function Index() {
     </div>
   </div>
 </section>
+
 {/* Black banner divider */}
 <div className="w-full bg-black h-[0.43rem]"></div>
+
+{/* Nav bar */}
+<nav className="w-full bg-black">
+  <div className="flex items-center justify-between px-6 py-5 text-[16px] font-medium text-paper h-[79px]">
+    <div className="flex items-center gap-8">
+      <a href="#about" className="transition-opacity hover:opacity-60">
+        About
+      </a>
+      <a href="#services" className="transition-opacity hover:opacity-60">
+        Services
+      </a>
+      <a href="#work" className="transition-opacity hover:opacity-60">
+        Work
+      </a>
+    </div>
+    <div className="flex items-center gap-8">
+      <a href="#work" className="transition-opacity hover:opacity-60">
+        Creative spotlight
+      </a>
+      <a href="#contact" className="transition-opacity hover:opacity-60">
+        Contact
+      </a>
+    </div>
+  </div>
+</nav>
 
       {/* Work grid */}
       <section id="work" aria-label="Selected work">
