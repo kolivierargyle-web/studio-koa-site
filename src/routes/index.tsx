@@ -106,24 +106,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Black Divider Line */}
-      <div className="w-full bg-black h-[0.1rem]" />
-
-      {/* Nav Bar */}
-      <nav className="w-full bg-paper">
-        <div className="flex items-center justify-between text-[24px] font-medium text-ink uppercase" style={{ paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
-          <div className="flex items-center gap-8">
-            <a href="#about" className="transition-opacity hover:opacity-60">About</a>
-            <a href="#services" className="transition-opacity hover:opacity-60">Services</a>
-            <a href="#work" onClick={() => setShowGrid(!showGrid)} className="transition-opacity hover:opacity-60">Work</a>
-          </div>
-          <div className="flex items-center gap-8">
-            <a href="#work" onClick={() => setShowGrid(!showGrid)} className="transition-opacity hover:opacity-60">Creative spotlight</a>
-            <a href="#contact" className="transition-opacity hover:opacity-60">Contact</a>
-          </div>
-        </div>
-      </nav>
-
       {/* Intro Section */}
       <section id="about" className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,200px)]">
         <div className="mx-auto flex min-h-[199px] max-w-[1600px] items-center justify-center">
@@ -138,8 +120,27 @@ function Index() {
         </div>
       </section>
 
+      {/* Black Divider Line */}
+      <div className="w-full bg-black h-[0.1rem]" />
+
+      {/* Nav Bar */}
+<nav className="w-full bg-ink">
+  <div className="flex items-center justify-between text-[24px] font-medium text-paper uppercase"
+      style={{ paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
+          <div className="flex items-center gap-8">
+            <a href="#about" className="transition-opacity hover:opacity-60">About</a>
+            <a href="#services" className="transition-opacity hover:opacity-60">Services</a>
+            <a href="#work" onClick={() => setShowGrid(!showGrid)} className="transition-opacity hover:opacity-60">Work</a>
+          </div>
+          <div className="flex items-center gap-8">
+            <a href="#work" onClick={() => setShowGrid(!showGrid)} className="transition-opacity hover:opacity-60">Creative spotlight</a>
+            <a href="#contact" className="transition-opacity hover:opacity-60">Contact</a>
+          </div>
+        </div>
+      </nav>
+
       {/* Work Grid */}
-      <section id="work" aria-label="Selected work" style={{ display: showGrid ? "block" : "none", opacity: showGrid ? 1 : 0, transition: "opacity 0.5s ease-in-out" }}>
+   <section id="work" aria-label="Selected work" style={{ display: showGrid ? "block" : "none", opacity: showGrid ? 1 : 0, transition: "opacity 0.5s ease-in-out" }}>
         <h2 className="sr-only">Selected work</h2>
         <div className="grid grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-4">
           {tiles.map((tile, i) => (<GridTile key={i} tile={tile} />))}
