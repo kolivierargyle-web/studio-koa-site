@@ -156,30 +156,39 @@ function Index() {
         </div>
       </section>
 
-{/* Nav bar - sits on top of work grid, scrolls with it */}
-<nav className="w-full bg-black">
-  <div className="flex items-center justify-between px-[40px] py-[18px] text-[14px] font-medium text-white">
-    <div className="flex items-center gap-[40px]">
-      <a href="#about" className="transition-opacity hover:opacity-60">
-        About
-      </a>
-      <a href="#services" className="transition-opacity hover:opacity-60">
-        Services
-      </a>
-      <a href="#work" className="transition-opacity hover:opacity-60">
-        Work
-      </a>
+{/* Work grid */}
+<section id="work" aria-label="Selected work" className="relative">
+  {/* Nav bar - sits on top of work grid */}
+  <nav className="absolute top-0 left-0 right-0 w-full bg-black z-10">
+    <div className="flex items-center justify-between px-[40px] py-[18px] text-[14px] font-medium text-white">
+      <div className="flex items-center gap-[40px]">
+        <a href="#about" className="transition-opacity hover:opacity-60">
+          About
+        </a>
+        <a href="#services" className="transition-opacity hover:opacity-60">
+          Services
+        </a>
+        <a href="#work" className="transition-opacity hover:opacity-60">
+          Work
+        </a>
+      </div>
+      <div className="flex items-center gap-[40px]">
+        <a href="#spotlight" className="transition-opacity hover:opacity-60">
+          Creative spotlight
+        </a>
+        <a href="#contact" className="transition-opacity hover:opacity-60">
+          Contact
+        </a>
+      </div>
     </div>
-    <div className="flex items-center gap-[40px]">
-      <a href="#spotlight" className="transition-opacity hover:opacity-60">
-        Creative spotlight
-      </a>
-      <a href="#contact" className="transition-opacity hover:opacity-60">
-        Contact
-      </a>
-    </div>
+  </nav>
+  <h2 className="sr-only">Selected work</h2>
+  <div className="grid grid-cols-2 gap-1s m:grid-cols-3 lg:grid-cols-4">
+    {tiles.map((tile, i) => (
+      <GridTile key={i} tile={tile} />
+    ))}
   </div>
-</nav>
+</section>
 
    {/* Intro */}
 <section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(2.2rem,6.5vw,94px)]">
