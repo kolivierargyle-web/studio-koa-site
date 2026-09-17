@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 import heroPoster from "@/assets/hero-poster.jpg";
 import headerFallback from "@/assets/01.Header_fallback_up.jpg";
@@ -81,6 +81,7 @@ function Index() {
 
   return (
     <main className="bg-paper">
+      {/* Header */}
       <header className="w-full bg-ink">
         <div className="flex h-[100px] items-center justify-center px-4">
           <h1
@@ -97,6 +98,7 @@ function Index() {
         </div>
       </header>
 
+      {/* Hero Video */}
       <section className="relative w-full overflow-hidden bg-ink">
         <div className="relative aspect-video w-full">
           <img src={headerFallback} alt="Koa Studio" className="absolute inset-0 w-full h-full object-cover" />
@@ -104,6 +106,7 @@ function Index() {
         </div>
       </section>
 
+      {/* Intro Section */}
       <section id="about" className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,200px)]">
         <div className="mx-auto flex min-h-[199px] max-w-[1600px] items-center justify-center">
           <div className="text-center">
@@ -117,7 +120,10 @@ function Index() {
         </div>
       </section>
 
+      {/* Black Divider Line */}
       <div className="w-full bg-black h-[0.1rem]" />
+
+      {/* Nav Bar */}
       <nav className="w-full bg-paper">
         <div className="flex items-center justify-between text-[24px] font-medium text-ink uppercase" style={{ paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
           <div className="flex items-center gap-8">
@@ -132,13 +138,15 @@ function Index() {
         </div>
       </nav>
 
-      <section id="work" aria-label="Selected work" style={{ display: showGrid ? "block" : "none", opacity: showGrid ? 1 : 0, transition: "opacity 0.5s ease-in-out" }}>
+      {/* Work Grid */}
+      <section id="work" aria-label="Selected work" style={{ opacity: showGrid ? 1 : 0.3, transition: "opacity 0.5s ease-in-out" }}>
         <h2 className="sr-only">Selected work</h2>
         <div className="grid grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-4">
           {tiles.map((tile, i) => (<GridTile key={i} tile={tile} />))}
         </div>
       </section>
 
+      {/* Footer */}
       <footer id="contact" className="bg-ink text-paper">
         <div className="px-6 pb-[27px] pt-[177px] text-center">
           <p className="font-display text-paper" style={{ fontFamily: "Poppins, sans-serif", fontSize: "40px", fontWeight: 700, lineHeight: "normal" }}>Koa Studio</p>
