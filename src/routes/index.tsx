@@ -122,6 +122,8 @@ function GridTile({ tile }: { tile: Tile }) {
 
 function Index() {
   const [activeNav, setActiveNav] = useState(null);
+const maxScrollAttemptRef = useRef(0);
+
 useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
@@ -132,25 +134,30 @@ useEffect(() => {
     const introTop = introSection.offsetTop;
     const currentScrollY = window.scrollY;
     
-    if (currentScrollY > introTop) {
-      // Calculate how far they tried to scroll past intro
-      const scrollPastIntro = currentScrollY - introTop;
-      
-      // Apply transform
+    // Track max scroll attempt
+    if (currentScrollY > maxScrollAttemptRef.current) {
+      maxScrollAttemptRef.current = currentScrollY;
+    }
+    
+    if (maxScrollAttemptRef.current > introTop) {
+      // Use max attempt, not current
+      const scrollPastIntro = maxScrollAttemptRef.current - introTop;
       container.style.transform = `translateY(-${scrollPastIntro}px)`;
       
-      // Immediately lock scroll without triggering another event
+      // Lock scroll
       setTimeout(() => {
         window.scrollTo(0, introTop);
       }, 0);
     } else {
       container.style.transform = 'translateY(0)';
+      maxScrollAttemptRef.current = currentScrollY;
     }
   };
 
   window.addEventListener('scroll', handleScroll);
   return () => window.removeEventListener('scroll', handleScroll);
 }, []);
+
 const handleNavClick = (e, section) => {
   e.preventDefault();
   setActiveNav(section);
