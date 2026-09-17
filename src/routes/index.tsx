@@ -145,7 +145,7 @@ useEffect(() => {
     
     if (!container || !introSection) return;
     
-    const triggerPoint = introSection.offsetTop - 400; // Start 400px before intro
+    const triggerPoint = introSection.offsetTop - 600; // Start 400px before intro
     const currentScrollY = window.scrollY;
     
     if (currentScrollY >= triggerPoint) {
