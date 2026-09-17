@@ -122,14 +122,13 @@ function GridTile({ tile }: { tile: Tile }) {
 
 function Index() {
   const [activeNav, setActiveNav] = useState(null);
-  
 useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
     if (!container) return;
     
     const currentScrollY = window.scrollY;
-    const triggerPoint = 1150;
+    const triggerPoint = 1500;
     
     if (currentScrollY > triggerPoint) {
       const scrolledPast = currentScrollY - triggerPoint;
@@ -138,6 +137,10 @@ useEffect(() => {
       container.style.transform = 'translateY(0)';
     }
   };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
   window.addEventListener('scroll', handleScroll);
   return () => window.removeEventListener('scroll', handleScroll);
