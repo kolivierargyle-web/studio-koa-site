@@ -180,7 +180,7 @@ function Index() {
 
 {/* Nav bar */}
 <nav className="w-full bg-black">
-  <div className="flex items-center justify-between px-6 py-5 text-[16px] font-medium text-paper h-[79px]">
+  <div className="flex items-center justify-between px-6 py-5 text-[24px] font-medium text-paper h-[79px]">
     <div className="flex items-center gap-8">
       <a href="#about" className="transition-opacity hover:opacity-60">
         About
