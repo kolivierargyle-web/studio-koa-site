@@ -162,19 +162,15 @@ function Index() {
     <div className="text-center">
       <div style={{
         fontFamily: "Besley, serif",
-        fontSize: "52.44px",
-        lineHeight: "1.3",
+        fontSize: "62.93px",
+        lineHeight: "0.65",
         textAlign: "center",
       }}>
         <p style={{ fontStyle: "italic", fontWeight: 400, margin: 0 }}>
-          Koa studio is a compact full-service <br />
-          creative direction & production studio. <br />
-          Photography, video, motion & identity.
+          Koa studio is a compact full-service creative direction & production studio. Photography, video, motion & identity.
         </p>
         <p style={{ fontWeight: 400, margin: "0.5em 0 0 0" }}>
-          We build the right team for every project, <br />
-          delivering impactful work without the <br />
-          cost or complexity of a large agency.
+          We build the right team for every project, delivering impactful work without the cost or complexity of a large agency.
         </p>
       </div>
     </div>
