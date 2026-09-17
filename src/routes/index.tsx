@@ -124,6 +124,7 @@ function Index() {
   const [activeNav, setActiveNav] = useState(null);
 
 const lastScrollRef = useRef(0);
+const isLockingRef = useRef(false);
 
 useEffect(() => {
   const handleScroll = () => {
@@ -136,24 +137,27 @@ useEffect(() => {
     const currentScrollY = window.scrollY;
     
     if (currentScrollY > introTop) {
-      // Past intro - move nav/grid up with scroll
-      const scrolledPastIntro = currentScrollY - introTop;
-      container.style.transform = `translateY(-${scrolledPastIntro}px)`;
-      
-      // Lock scroll at intro position
-      window.scrollTo(0, introTop);
+      if (!isLockingRef.current) {
+        isLockingRef.current = true;
+        
+        // Calculate how much they tried to scroll past intro
+        const scrolledPastIntro = currentScrollY - introTop;
+        container.style.transform = `translateY(-${scrolledPastIntro}px)`;
+        
+        // Lock scroll at intro
+        window.scrollTo(0, introTop);
+        
+        isLockingRef.current = false;
+      }
     } else {
       // Before intro - normal scroll
       container.style.transform = 'translateY(0)';
     }
-    
-    lastScrollRef.current = currentScrollY;
   };
 
   window.addEventListener('scroll', handleScroll);
   return () => window.removeEventListener('scroll', handleScroll);
 }, []);
-
 const handleNavClick = (e, section) => {
   e.preventDefault();
   setActiveNav(section);
