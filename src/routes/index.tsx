@@ -131,14 +131,6 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
-
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
-
-useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
     const introSection = document.getElementById('about');
@@ -146,15 +138,12 @@ useEffect(() => {
     if (!container || !introSection) return;
     
     const introRect = introSection.getBoundingClientRect();
-    const introTop = introRect.top + window.scrollY; // Actual position
-    const triggerPoint = introTop; // Start at intro white padding
+    const triggerPoint = introRect.top + window.scrollY;
     const currentScrollY = window.scrollY;
     
     if (currentScrollY >= triggerPoint) {
       const scrollPast = currentScrollY - triggerPoint;
       container.style.transform = `translateY(-${scrollPast}px)`;
-    } else {
-      container.style.transform = 'translateY(0)';
     }
   };
 
