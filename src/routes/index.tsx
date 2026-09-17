@@ -78,6 +78,7 @@ function GridTile({ tile }: { tile: Tile }) {
 
 function Index() {
   const [scrollY, setScrollY] = useState(0);
+  const heroIntroHeight = 2400;
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -85,7 +86,7 @@ function Index() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-const navWorkTransform = Math.min(Math.max(scrollY - 1400, 0), 430);
+  const shouldSnap = scrollY >= heroIntroHeight;
 
   return (
     <main className="bg-paper">
@@ -125,7 +126,7 @@ const navWorkTransform = Math.min(Math.max(scrollY - 1400, 0), 430);
         </div>
       </section>
 
-      <div style={{ transform: `translateY(-${navWorkTransform}px)` }}>
+      <div style={{ position: shouldSnap ? "fixed" : "static", top: shouldSnap ? 0 : "auto", left: 0, right: 0, zIndex: 10, width: "100%" }}>
         <div className="w-full bg-black h-[0.1rem]" />
         <nav className="w-full bg-paper">
           <div className="flex items-center justify-between text-[24px] font-medium text-ink uppercase" style={{ paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
@@ -147,6 +148,8 @@ const navWorkTransform = Math.min(Math.max(scrollY - 1400, 0), 430);
           </div>
         </section>
       </div>
+
+      {shouldSnap && <div style={{ height: "1200px" }} />}
 
       <footer id="contact" className="bg-ink text-paper">
         <div className="px-6 pb-[27px] pt-[177px] text-center">
