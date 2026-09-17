@@ -96,6 +96,21 @@ function Index() {
         </div>
       </section>
 
+      {/* Nav Bar */}
+      <nav className="w-full bg-ink">
+        <div className="flex items-center justify-between text-[24px] font-medium text-paper uppercase" style={{ paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem", borderBottom: "1px solid white" }}>
+          <div className="flex items-center gap-8">
+            <a href="#about" className="transition-opacity hover:opacity-60">About</a>
+            <a href="#services" className="transition-opacity hover:opacity-60">Services</a>
+            <a href="#work" onClick={() => setShowGrid(!showGrid)} className="transition-opacity hover:opacity-60">Work</a>
+          </div>
+          <div className="flex items-center gap-8">
+            <a href="#work" onClick={() => setShowGrid(!showGrid)} className="transition-opacity hover:opacity-60">Creative spotlight</a>
+            <a href="#contact" className="transition-opacity hover:opacity-60">Contact</a>
+          </div>
+        </div>
+      </nav>
+
       {/* Intro Section */}
       <section id="about" className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,200px)]">
         <div className="mx-auto flex min-h-[199px] max-w-[1600px] items-center justify-center">
@@ -117,21 +132,6 @@ function Index() {
           {tiles.map((tile, i) => (<GridTile key={i} tile={tile} />))}
         </div>
       </section>
-
-      {/* Nav Bar */}
-      <nav className="w-full bg-ink">
-        <div className="flex items-center justify-between text-[24px] font-medium text-paper uppercase" style={{ paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem", borderBottom: "1px solid white" }}>
-          <div className="flex items-center gap-8">
-            <a href="#about" className="transition-opacity hover:opacity-60">About</a>
-            <a href="#services" className="transition-opacity hover:opacity-60">Services</a>
-            <a href="#work" onClick={() => setShowGrid(!showGrid)} className="transition-opacity hover:opacity-60">Work</a>
-          </div>
-          <div className="flex items-center gap-8">
-            <a href="#work" onClick={() => setShowGrid(!showGrid)} className="transition-opacity hover:opacity-60">Creative spotlight</a>
-            <a href="#contact" className="transition-opacity hover:opacity-60">Contact</a>
-          </div>
-        </div>
-      </nav>
 
       {/* Footer */}
       <footer id="contact" className="bg-ink text-paper">
