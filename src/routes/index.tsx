@@ -122,43 +122,6 @@ function GridTile({ tile }: { tile: Tile }) {
 
 function Index() {
   const [activeNav, setActiveNav] = useState(null);
-const maxScrollAttemptRef = useRef(0);
-
-const containerTranslateRef = useRef(0);
-
-const scrollAttemptRef = useRef(0);
-
-useEffect(() => {
-  window.scrollTo(0, 0);
-  scrollAttemptRef.current = 0;
-}, []);
-
-useEffect(() => {
-  const handleScroll = () => {
-    const container = document.querySelector('[data-scroll-container]');
-    const introSection = document.getElementById('about');
-    
-    if (!container || !introSection) return;
-    
-    const triggerPoint = introSection.offsetTop - 400;
-    const currentScrollY = window.scrollY;
-    
-    if (currentScrollY >= triggerPoint) {
-      // Track how much they tried to scroll past trigger
-      scrollAttemptRef.current = currentScrollY - triggerPoint;
-      container.style.transform = `translateY(-${scrollAttemptRef.current}px)`;
-      
-      // Lock page scroll
-      window.scrollTo(0, triggerPoint);
-    } else {
-      scrollAttemptRef.current = 0;
-      container.style.transform = 'translateY(0)';
-    }
-  };
-
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
 
 const handleNavClick = (e, section) => {
   e.preventDefault();
@@ -168,146 +131,162 @@ const handleNavClick = (e, section) => {
     element.scrollIntoView({ behavior: 'smooth' });
   }
 };
-  return (
-    <main className="bg-paper">
-      {/* Title bar */}
-      <header className="w-full bg-ink">
-        <div className="flex h-[100px] items-center justify-center px-4">
-          <h1
-            className="text-center text-paper"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "clamp(1.5rem, 5vw, 40px)",
-              fontWeight: 700,
-              lineHeight: "normal",
-            }}
-          >
-            Koa Studio
-          </h1>
-        </div>
-      </header>
+return (
+  <main className="bg-paper">
+    {/* Header */}
+    <header className="w-full bg-ink" style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 10 }}>
+      <div className="flex h-[100px] items-center justify-center px-4">
+        <h1
+          className="text-center text-paper"
+          style={{
+            fontFamily: "Poppins, sans-serif",
+            fontSize: "clamp(1.5rem, 5vw, 40px)",
+            fontWeight: 700,
+            lineHeight: "normal",
+          }}
+        >
+          Koa Studio
+        </h1>
+      </div>
+    </header>
 
-{/* Hero */}
-<section className="relative w-full overflow-hidden bg-ink" data-hero>
-  <div className="relative aspect-video w-full">
-    <img
-      src={headerFallback}
-      alt="Koa Studio"
-      className="absolute inset-0 w-full h-full object-cover"
-    />
-    <iframe
-      src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
-      title="Koa Studio showreel"
-      allow="autoplay; fullscreen; picture-in-picture"
-      className="absolute inset-0 h-full w-full border-0"
-    />
-  </div>
-</section>
-{/* Intro */}
-<section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(5.52rem,16.5vw,250px)]">
-  <div className="mx-auto flex min-h-[199px] max-w-full items-center justify-center">
-    <div className="text-center w-full">
-      <h2 className="text-xl sm:text-3xl md:text-[4.65rem] leading-[1.1] max-w-[750px] md:max-w-[3000px]" style={{ fontFamily: 'Besley', fontWeight: '500' }}>
-        <span style={{ fontStyle: 'italic' }}>Koa studio is a compact full-service</span>
-        <br className="hidden md:block" />
-        creative direction & production studio.
-        <br className="hidden md:block" />
-        Photography, video, motion & identity.
-        <br className="hidden md:block" />
-        We build the right team for every project,
-        <br className="hidden md:block" />
-        delivering impactful work without the
-        <br className="hidden md:block" />
-        cost or complexity of a large agency.
-      </h2>
+    {/* Hero */}
+    <section className="relative w-full overflow-hidden bg-ink" data-hero style={{ position: 'fixed', top: '100px', left: 0, width: '100%', zIndex: 9 }}>
+      <div className="relative aspect-video w-full">
+        <img
+          src={headerFallback}
+          alt="Koa Studio"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <iframe
+          src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
+          title="Koa Studio showreel"
+          allow="autoplay; fullscreen; picture-in-picture"
+          className="absolute inset-0 h-full w-full border-0"
+        />
+      </div>
+    </section>
+
+    {/* Scrollable content wrapper */}
+    <div style={{ paddingTop: 'calc(100px + 100vh)' }}>
+      {/* Intro */}
+      <section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(5.52rem,16.5vw,250px)]">
+
+    {/* Intro */}
+    <section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(5.52rem,16.5vw,250px)]">
+      <div className="mx-auto flex min-h-[199px] max-w-full items-center justify-center">
+        <div className="text-center w-full">
+          <h2 className="text-xl sm:text-3xl md:text-[4.65rem] leading-[1.1] max-w-[750px] md:max-w-[3000px]" style={{ fontFamily: 'Besley', fontWeight: '500' }}>
+            <span style={{ fontStyle: 'italic' }}>Koa studio is a compact full-service</span>
+            <br className="hidden md:block" />
+            creative direction & production studio.
+            <br className="hidden md:block" />
+            Photography, video, motion & identity.
+            <br className="hidden md:block" />
+            We build the right team for every project,
+            <br className="hidden md:block" />
+            delivering impactful work without the
+            <br className="hidden md:block" />
+            cost or complexity of a large agency.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    {/* Scrollable wrapper */}
+    <div style={{ paddingTop: 'calc(100px + 100vh)' }}>
+      {/* Navigation Bar & Work Grid Container */}
+      <div className="transition-transform" data-scroll-container>
+
+    {/* Navigation Bar & Work Grid Container */}
+    <div className="transition-transform" data-scroll-container style={{ position: 'relative', zIndex: 1 }}>
+      {/* Navigation Bar */}
+      <section className="w-full bg-white border-t-2 border-b-2 border-black">
+        <nav className="flex items-center justify-center px-[20px] sm:px-[40px] py-[60px] relative">
+          <div className="flex gap-[8px] sm:gap-[32px] absolute left-[20px] sm:left-[40px]">
+            <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">About</a>
+            <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">Services</a>
+            <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">Work</a>
+          </div>
+          <div className="flex gap-[8px] sm:gap-[32px] absolute right-[20px] sm:right-[40px]">
+            <a href="#spotlight" onClick={(e) => handleNavClick(e, 'spotlight')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">Creative spotlight</a>
+            <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">Contact</a>
+          </div>
+        </nav>
+      </section>
+
+      {/* Work grid */}
+      <section id="work" aria-label="Selected work" className="w-full px-0">
+        <div className="w-full">
+          <h2 className="sr-only">Selected work</h2>
+          <div className="grid grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-4">
+            {tiles.map((tile, i) => (
+              <GridTile key={i} tile={tile} />
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
-  </div>
-</section>
-{/* Navigation Bar & Work Grid Container */}
-<div className="transition-transform" data-scroll-container>
-  {/* Navigation Bar */}
-  <section className="w-full bg-white border-t-2 border-b-2 border-black">
-    <nav className="flex items-center justify-center px-[20px] sm:px-[40px] py-[60px] relative">
-      <div className="flex gap-[8px] sm:gap-[32px] absolute left-[20px] sm:left-[40px]">
-        <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">About</a>
-        <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">Services</a>
-        <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">Work</a>
-      </div>
-      <div className="flex gap-[8px] sm:gap-[32px] absolute right-[20px] sm:right-[40px]">
-        <a href="#spotlight" onClick={(e) => handleNavClick(e, 'spotlight')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">Creative spotlight</a>
-        <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-[10px] sm:text-sm md:text-[1.62rem] text-black hover:text-[#BB95FF] cursor-pointer no-underline">Contact</a>
-      </div>
-    </nav>
-  </section>
-  {/* Work grid */}
-  <section id="work" aria-label="Selected work" className="w-full px-0">
-    <div className="w-full">
-      <h2 className="sr-only">Selected work</h2>
-      <div className="grid grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-4">
-        {tiles.map((tile, i) => (
-          <GridTile key={i} tile={tile} />
-        ))}
-      </div>
-    </div>
-  </section>
+
+    {/* Footer */}
 </div>
-      {/* Footer */}
-      <footer id="contact" className="bg-ink text-paper">
-        <div className="px-6 pb-[27px] pt-[177px] text-center">
-          <p
-            className="font-display text-paper"
+
+    {/* Footer */}
+    <footer id="contact" className="bg-ink text-paper">
+      <div className="px-6 pb-[27px] pt-[177px] text-center">
+        <p
+          className="font-display text-paper"
+          style={{
+            fontFamily: "Poppins, sans-serif",
+            fontSize: "40px",
+            fontWeight: 700,
+            lineHeight: "normal",
+          }}
+        >
+          Koa Studio
+        </p>
+      </div>
+      <div>
+        <div className="flex items-end justify-between px-[40px] py-11">
+          
+            href="https://www.instagram.com/_koa_studio/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Koa Studio on Instagram"
+            className="transition-opacity hover:opacity-60"
+          >
+            <Instagram className="h-[34px] w-[34px]" strokeWidth={1.5} />
+          </a>
+          
+            href="mailto:kat@studio-koa.com"
+            className="transition-opacity hover:opacity-60"
             style={{
               fontFamily: "Poppins, sans-serif",
-              fontSize: "40px",
-              fontWeight: 700,
+              fontSize: "18px",
+              fontWeight: 500,
               lineHeight: "normal",
             }}
           >
-            Koa Studio
-          </p>
+            kat@studio-koa.com
+          </a>
         </div>
-        <div>
-          <div
-            className="flex items-end justify-between px-[40px] py-11"
-          >
-            <a
-              href="https://www.instagram.com/_koa_studio/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Koa Studio on Instagram"
-              className="transition-opacity hover:opacity-60"
-            >
-              <Instagram className="h-[34px] w-[34px]" strokeWidth={1.5} />
-            </a>
-            <a
-              href="mailto:kat@studio-koa.com"
-              className="transition-opacity hover:opacity-60"
-              style={{
-                fontFamily: "Poppins, sans-serif",
-                fontSize: "18px",
-                fontWeight: 500,
-                lineHeight: "normal",
-              }}
-            >
-              kat@studio-koa.com
-            </a>
-          </div>
-          <div
-            className="flex items-center justify-between border-t-2 border-paper px-[45px] py-11 uppercase"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "20px",
-              fontWeight: 400,
-              lineHeight: "normal",
-            }}
-          >
-            <span>London</span>
-            <span>Berlin</span>
-            <span>World Wide</span>
-          </div>
+        <div
+          className="flex items-center justify-between border-t-2 border-paper px-[45px] py-11 uppercase"
+          style={{
+            fontFamily: "Poppins, sans-serif",
+            fontSize: "20px",
+            fontWeight: 400,
+            lineHeight: "normal",
+          }}
+        >
+          <span>London</span>
+          <span>Berlin</span>
+          <span>World Wide</span>
         </div>
-      </footer>
-      <p className="sr-only">{projects.length} projects</p>
-    </main>
-  );
-}
+      </div>
+    </footer>
+    </div>
+
+    <p className="sr-only">{projects.length} projects</p>
+  </main>
+);
