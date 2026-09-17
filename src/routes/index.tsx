@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import heroPoster from "@/assets/hero-poster.jpg";
 import headerFallback from "@/assets/01.Header_fallback_up.jpg";
@@ -78,6 +78,7 @@ function GridTile({ tile }: { tile: Tile }) {
 
 function Index() {
   const [showFixedNav, setShowFixedNav] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   return (
     <main className="bg-paper">
@@ -97,7 +98,7 @@ function Index() {
         </div>
       </header>
 
-      <section className="relative w-full overflow-hidden bg-ink">
+      <section ref={heroRef} className="relative w-full overflow-hidden bg-ink">
         <div className="relative aspect-video w-full">
           <img src={headerFallback} alt="Koa Studio" className="absolute inset-0 w-full h-full object-cover" />
           <iframe src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1" title="Koa Studio showreel" allow="autoplay; fullscreen; picture-in-picture" className="absolute inset-0 h-full w-full border-0" />
@@ -117,7 +118,7 @@ function Index() {
         </div>
       </section>
 
-      <div style={{ position: showFixedNav ? "fixed" : "static", top: showFixedNav ? 0 : "auto", left: 0, right: 0, zIndex: 10, width: "100%" }}>
+      <div style={{ position: showFixedNav ? "fixed" : "static", top: showFixedNav ? `${heroRef.current?.offsetHeight || 0}px` : "auto", left: 0, right: 0, zIndex: 10, width: "100%" }}>
         <div className="w-full bg-black h-[0.1rem]" />
         <nav className="w-full bg-paper">
           <div className="flex items-center justify-between text-[24px] font-medium text-ink uppercase" style={{ paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
