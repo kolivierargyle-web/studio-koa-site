@@ -135,13 +135,20 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+
+useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
     const heroSection = document.querySelector('[data-hero]');
     
-    if (!container || !heroSection) return;
+    if (!container) return;
     
-    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    const heroBottom = heroSection 
+      ? heroSection.offsetTop + heroSection.offsetHeight 
+      : 800; // Fallback value
+    
     const currentScrollY = window.scrollY;
     
     if (currentScrollY >= heroBottom) {
