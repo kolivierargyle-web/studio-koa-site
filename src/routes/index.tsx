@@ -162,7 +162,7 @@ function Index() {
     <div className="text-center">
       <div style={{
         fontFamily: "Besley, serif",
-        fontSize: "70px",
+        fontSize: "72px",
         lineHeight: "1.056",
         textAlign: "center",
         fontWeight: 400,
