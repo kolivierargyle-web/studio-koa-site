@@ -185,7 +185,6 @@ V
 {/* Nav bar */}
 <nav className="w-full bg-paper">
   <div className="flex items-center justify-between text-[24px] font-medium text-ink" style={{ height: "95px", paddingLeft: "33px", paddingRight: "33px", paddingTop: "1.56rem", paddingBottom: "1.56rem" }}>
-style={{ height: "95px", paddingLeft: "33px", paddingRight: "33px", paddingTop: "1.56rem", paddingBottom: "1.56rem" }}>
     <div className="flex items-center gap-8">
       <a href="#about" className="transition-opacity hover:opacity-60">
         About
