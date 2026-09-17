@@ -156,10 +156,10 @@ function Index() {
         </div>
       </section>
 
- {/* Nav bar - sits on top of work grid, scrolls with it */}
-<nav className="w-full bg-ink" style={{ width: '1447px', height: '79px' }}>
-  <div className="flex items-center justify-between px-[40px] h-full text-[16px] font-medium text-paper">
-    <div className="flex items-center gap-[32px]">
+{/* Nav bar - sits on top of work grid, scrolls with it */}
+<nav className="w-full bg-black">
+  <div className="flex items-center justify-between px-[40px] py-[18px] text-[14px] font-medium text-white">
+    <div className="flex items-center gap-[40px]">
       <a href="#about" className="transition-opacity hover:opacity-60">
         About
       </a>
@@ -170,7 +170,7 @@ function Index() {
         Work
       </a>
     </div>
-    <div className="flex items-center gap-[32px]">
+    <div className="flex items-center gap-[40px]">
       <a href="#spotlight" className="transition-opacity hover:opacity-60">
         Creative spotlight
       </a>
