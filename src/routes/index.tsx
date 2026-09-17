@@ -138,7 +138,7 @@ useEffect(() => {
     if (!container || !introSection) return;
     
     const introTop = introSection.offsetTop;
-    const triggerPoint = introTop; // Starts at first line of intro
+    const triggerPoint = introTop - 300; // Start earlier
     const currentScrollY = window.scrollY;
     
     if (currentScrollY >= triggerPoint) {
