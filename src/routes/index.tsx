@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 import heroPoster from "@/assets/hero-poster.jpg";
 import headerFallback from "@/assets/01.Header_fallback_up.jpg";
@@ -120,6 +121,29 @@ function GridTile({ tile }: { tile: Tile }) {
 }
 
 function Index() {
+  const introRef = useRef<HTMLElement>(null);
+  const [scrollOffset, setScrollOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!introRef.current) return;
+
+      const introTop = introRef.current.offsetTop;
+      const currentScroll = window.scrollY;
+
+      // Start translating when you scroll to the intro section
+      if (currentScroll > introTop) {
+        const offset = currentScroll - introTop;
+        setScrollOffset(offset);
+      } else {
+        setScrollOffset(0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <main className="bg-paper">
       {/* Title bar */}
@@ -142,11 +166,11 @@ function Index() {
       {/* Hero */}
       <section className="relative w-full overflow-hidden bg-ink">
         <div className="relative aspect-video w-full">
-<img
-  src={headerFallback}
-  alt="Koa Studio"
-  className="absolute inset-0 w-full h-full object-cover"
-/>
+          <img
+            src={headerFallback}
+            alt="Koa Studio"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
           <iframe
             src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
             title="Koa Studio showreel"
@@ -156,58 +180,58 @@ function Index() {
         </div>
       </section>
 
-{/* Intro */}
-<section id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(3.3rem,9.75vw,141px)]">
-  <div className="mx-auto flex min-h-[199px] max-w-[1296px] items-center justify-center">
-    <div className="text-center">
-      <div style={{
-        fontFamily: "Besley, serif",
-        fontSize: "62.93px",
-        lineHeight: "1.056",
-        textAlign: "center",
-        fontWeight: 400,
-      }}>
-        <p style={{ margin: 0 }}>
-          <span style={{ fontStyle: "italic" }}>
-            Koa studio is a compact full-service creative direction & production studio.
-          </span>
-          {" "}Photography, video, motion & identity. We build the right team for every project, delivering impactful work without the cost or complexity of a large agency.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+      {/* Intro */}
+      <section ref={introRef} id="about" className="px-[clamp(0.44rem,2.3vw,33px)] py-[clamp(3.3rem,9.75vw,141px)]">
+        <div className="mx-auto flex min-h-[199px] max-w-[1296px] items-center justify-center">
+          <div className="text-center">
+            <div style={{
+              fontFamily: "Besley, serif",
+              fontSize: "62.93px",
+              lineHeight: "1.056",
+              textAlign: "center",
+              fontWeight: 400,
+            }}>
+              <p style={{ margin: 0 }}>
+                <span style={{ fontStyle: "italic" }}>
+                  Koa studio is a compact full-service creative direction & production studio.
+                </span>
+                {" "}Photography, video, motion & identity. We build the right team for every project, delivering impactful work without the cost or complexity of a large agency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-{/* Black banner divider */}
-<div className="w-full bg-black h-[0.43rem]"></div>
+      {/* Black banner divider */}
+      <div className="w-full bg-black h-[0.43rem]"></div>
 
-{/* Nav bar */}
-<nav className="w-full bg-black">
-  <div className="flex items-center justify-between text-[24px] font-medium text-paper" style={{ height: "95px", paddingLeft: "33px", paddingRight: "33px", paddingTop: "1.56rem", paddingBottom: "1.56rem" }}>
-    <div className="flex items-center gap-8">
-      <a href="#about" className="transition-opacity hover:opacity-60">
-        About
-      </a>
-      <a href="#services" className="transition-opacity hover:opacity-60">
-        Services
-      </a>
-      <a href="#work" className="transition-opacity hover:opacity-60">
-        Work
-      </a>
-    </div>
-    <div className="flex items-center gap-8">
-      <a href="#work" className="transition-opacity hover:opacity-60">
-        Creative spotlight
-      </a>
-      <a href="#contact" className="transition-opacity hover:opacity-60">
-        Contact
-      </a>
-    </div>
-  </div>
-</nav>
+      {/* Nav bar */}
+      <nav className="w-full bg-black" style={{ transform: `translateY(-${scrollOffset}px)` }}>
+        <div className="flex items-center justify-between text-[24px] font-medium text-paper" style={{ height: "95px", paddingLeft: "33px", paddingRight: "33px", paddingTop: "1.56rem", paddingBottom: "1.56rem" }}>
+          <div className="flex items-center gap-8">
+            <a href="#about" className="transition-opacity hover:opacity-60">
+              About
+            </a>
+            <a href="#services" className="transition-opacity hover:opacity-60">
+              Services
+            </a>
+            <a href="#work" className="transition-opacity hover:opacity-60">
+              Work
+            </a>
+          </div>
+          <div className="flex items-center gap-8">
+            <a href="#work" className="transition-opacity hover:opacity-60">
+              Creative spotlight
+            </a>
+            <a href="#contact" className="transition-opacity hover:opacity-60">
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
 
       {/* Work grid */}
-      <section id="work" aria-label="Selected work">
+      <section id="work" aria-label="Selected work" style={{ transform: `translateY(-${scrollOffset}px)` }}>
         <h2 className="sr-only">Selected work</h2>
         <div className="grid grid-cols-2 gap-1s m:grid-cols-3 lg:grid-cols-4">
           {tiles.map((tile, i) => (
@@ -235,7 +259,7 @@ function Index() {
           <div
             className="flex items-end justify-between px-[40px] py-11"
           >
-            <a
+            
               href="https://www.instagram.com/_koa_studio/"
               target="_blank"
               rel="noreferrer"
@@ -244,7 +268,7 @@ function Index() {
             >
               <Instagram className="h-[34px] w-[34px]" strokeWidth={1.5} />
             </a>
-            <a
+            
               href="mailto:kat@studio-koa.com"
               className="transition-opacity hover:opacity-60"
               style={{
