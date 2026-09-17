@@ -124,7 +124,6 @@ function Index() {
   const [activeNav, setActiveNav] = useState(null);
 
 const lastScrollRef = useRef(0);
-const isLockingRef = useRef(false);
 
 useEffect(() => {
   const handleScroll = () => {
@@ -135,24 +134,27 @@ useEffect(() => {
     
     const introTop = introSection.offsetTop;
     const currentScrollY = window.scrollY;
+    const attemptedScroll = currentScrollY; // Where they tried to scroll
     
-    if (currentScrollY > introTop) {
-      if (!isLockingRef.current) {
-        isLockingRef.current = true;
-        
-        // Calculate how much they tried to scroll past intro
-        const scrolledPastIntro = currentScrollY - introTop;
-        container.style.transform = `translateY(-${scrolledPastIntro}px)`;
-        
-        // Lock scroll at intro
-        window.scrollTo(0, introTop);
-        
-        isLockingRef.current = false;
-      }
+    if (attemptedScroll > introTop) {
+      // Calculate how much they scrolled since last time
+      const scrollDelta = attemptedScroll - lastScrollRef.current;
+      
+      // Get current transform and apply delta
+      const style = container.style.transform;
+      const match = style.match(/-?\d+/);
+      const currentTranslate = match ? parseInt(match[0]) : 0;
+      const newTranslate = currentTranslate - scrollDelta;
+      
+      container.style.transform = `translateY(${newTranslate}px)`;
+      
+      // Lock scroll at intro
+      window.scrollTo(0, introTop);
     } else {
-      // Before intro - normal scroll
       container.style.transform = 'translateY(0)';
     }
+    
+    lastScrollRef.current = attemptedScroll; // Store attempted position
   };
 
   window.addEventListener('scroll', handleScroll);
