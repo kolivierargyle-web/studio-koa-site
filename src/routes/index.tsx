@@ -127,29 +127,25 @@ const lastScrollRef = useRef(0);
 useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
-    const heroSection = document.querySelector('[data-hero]');
+    if (!container) return;
     
-    if (!container || !heroSection) return;
-    
-    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
     const currentScrollY = window.scrollY;
     const isScrollingDown = currentScrollY > lastScrollRef.current;
+    const triggerPoint = 900; // Start earlier
     
     lastScrollRef.current = currentScrollY;
     
-    // Only animate if scrolling down AND past hero bottom
-    if (isScrollingDown && currentScrollY > heroBottom) {
-      const scrolledPast = currentScrollY - heroBottom;
-      container.style.transform = `translateY(-${scrolledPast * 2}px)`;
-    } else if (!isScrollingDown) {
-      // Keep it still when scrolling up
-      container.style.transform = 'translateY(0)';
+    if (isScrollingDown && currentScrollY > triggerPoint) {
+      const scrolledPast = currentScrollY - triggerPoint;
+      container.style.transform = `translateY(-${scrolledPast}px)`;
     }
   };
 
   window.addEventListener('scroll', handleScroll);
   return () => window.removeEventListener('scroll', handleScroll);
 }, []);
+
+
 const handleNavClick = (e, section) => {
   e.preventDefault();
   setActiveNav(section);
