@@ -85,7 +85,7 @@ function Index() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-const navWorkTransform = Math.min(Math.max(scrollY - 800, 0), 650);
+const navWorkTransform = Math.min(Math.max(scrollY - 800, 0), 700);
 
   return (
     <main className="bg-paper">
