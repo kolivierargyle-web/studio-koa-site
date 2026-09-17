@@ -84,17 +84,7 @@ function Index() {
       {/* Header */}
       <header className="w-full bg-ink">
         <div className="flex h-[100px] items-center justify-center px-4">
-          <h1
-            className="text-center text-paper"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "clamp(1.5rem, 5vw, 40px)",
-              fontWeight: 700,
-              lineHeight: "normal",
-            }}
-          >
-            Koa Studio
-          </h1>
+          <h1 className="text-center text-paper" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(1.5rem, 5vw, 40px)", fontWeight: 700, lineHeight: "normal" }}>Koa Studio</h1>
         </div>
       </header>
 
@@ -160,3 +150,7 @@ function Index() {
           </div>
         </div>
       </footer>
+      <p className="sr-only">{projects.length} projects</p>
+    </main>
+  );
+}
