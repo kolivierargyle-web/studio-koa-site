@@ -122,9 +122,6 @@ function GridTile({ tile }: { tile: Tile }) {
 
 function Index() {
   const [activeNav, setActiveNav] = useState(null);
-
-const lastAttemptRef = useRef(0);
-
 useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
@@ -136,19 +133,18 @@ useEffect(() => {
     const currentScrollY = window.scrollY;
     
     if (currentScrollY > introTop) {
-      // User tried to scroll past intro
-      const scrollDelta = currentScrollY - lastAttemptRef.current;
+      // Calculate how far they tried to scroll past intro
+      const scrollPastIntro = currentScrollY - introTop;
       
-      // Move container up by the delta
-      container.style.transform = `translateY(${-scrollDelta}px)`;
+      // Apply transform
+      container.style.transform = `translateY(-${scrollPastIntro}px)`;
       
-      // Lock scroll back to intro
-      lastAttemptRef.current = introTop;
-      window.scrollTo(0, introTop);
+      // Immediately lock scroll without triggering another event
+      setTimeout(() => {
+        window.scrollTo(0, introTop);
+      }, 0);
     } else {
-      // Normal scroll, reset
       container.style.transform = 'translateY(0)';
-      lastAttemptRef.current = currentScrollY;
     }
   };
 
