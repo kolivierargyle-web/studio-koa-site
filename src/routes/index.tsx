@@ -149,7 +149,7 @@ function Index() {
         </section>
       </div>
 
-      {shouldSnap && <div style={{ height: "1200px" }} />}
+      {shouldSnap && <div style={{ height: "2200px" }} />}
 
       <footer id="contact" className="bg-ink text-paper">
         <div className="px-6 pb-[27px] pt-[177px] text-center">
