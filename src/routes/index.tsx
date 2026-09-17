@@ -163,14 +163,15 @@ function Index() {
       <div style={{
         fontFamily: "Besley, serif",
         fontSize: "62.93px",
-        lineHeight: "0.65",
+        lineHeight: "1.056",
         textAlign: "center",
+        fontWeight: 400,
       }}>
-        <p style={{ fontStyle: "italic", fontWeight: 400, margin: 0 }}>
-          Koa studio is a compact full-service creative direction & production studio. Photography, video, motion & identity.
-        </p>
-        <p style={{ fontWeight: 400, margin: "0.5em 0 0 0" }}>
-          We build the right team for every project, delivering impactful work without the cost or complexity of a large agency.
+        <p style={{ margin: 0 }}>
+          <span style={{ fontStyle: "italic" }}>
+            Koa studio is a compact full-service creative direction & production studio.
+          </span>
+          {" "}Photography, video, motion & identity. We build the right team for every project, delivering impactful work without the cost or complexity of a large agency.
         </p>
       </div>
     </div>
