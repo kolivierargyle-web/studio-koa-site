@@ -225,9 +225,7 @@ function Index() {
           </p>
         </div>
         <div>
-          <div
-            className="flex items-end justify-between px-[40px] py-11"
-          >
+          <div className="flex items-end justify-between px-[40px] py-11">
             
               href="https://www.instagram.com/_koa_studio/"
               target="_blank"
