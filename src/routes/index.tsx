@@ -85,10 +85,26 @@ function Index() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navWorkTransform = Math.min(Math.max(scrollY - 800, 0), 500);
+  const navWorkTransform = Math.min(Math.max(scrollY - 800, 0), 1200);
 
   return (
     <main className="bg-paper">
+      <header className="w-full bg-ink">
+        <div className="flex h-[100px] items-center justify-center px-4">
+          <h1
+            className="text-center text-paper"
+            style={{
+              fontFamily: "Poppins, sans-serif",
+              fontSize: "clamp(1.5rem, 5vw, 40px)",
+              fontWeight: 700,
+              lineHeight: "normal",
+            }}
+          >
+            Koa Studio
+          </h1>
+        </div>
+      </header>
+
       <section className="relative w-full overflow-hidden bg-ink">
         <div className="relative aspect-video w-full">
           <img src={headerFallback} alt="Koa Studio" className="absolute inset-0 w-full h-full object-cover" />
