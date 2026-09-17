@@ -240,7 +240,8 @@ function Index() {
         </div>
       </section>
 
- <footer id="contact" className="bg-ink text-paper">
+{/* Footer */}
+<footer id="contact" className="bg-ink text-paper">
   <div className="px-6 pb-[27px] pt-[177px] text-center">
     <p
       className="font-display text-paper"
@@ -293,3 +294,4 @@ function Index() {
     </div>
   </div>
 </footer>
+<p className="sr-only">{projects.length} projects</p>
