@@ -98,7 +98,7 @@ function Index() {
 
       {/* Nav Bar */}
       <nav className="w-full bg-ink">
-        <div className="flex items-center justify-between text-[24px] font-medium text-paper uppercase" style={{ paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem", borderBottom: "1px solid white" }}>
+        <div className="flex items-center justify-between text-[24px] font-medium text-paper uppercase" style={{ paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
           <div className="flex items-center gap-8">
             <a href="#about" className="transition-opacity hover:opacity-60">About</a>
             <a href="#services" className="transition-opacity hover:opacity-60">Services</a>
