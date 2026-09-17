@@ -1,6 +1,6 @@
- import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 import heroPoster from "@/assets/hero-poster.jpg";
 import headerFallback from "@/assets/01.Header_fallback_up.jpg";
@@ -77,23 +77,7 @@ function GridTile({ tile }: { tile: Tile }) {
 }
 
 function Index() {
-  const [scrollY, setScrollY] = useState(0);
-  const [introHeight, setIntroHeight] = useState(0);
-  const heroRef = useRef<HTMLDivElement>(null);
-  const introRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    
-    if (introRef.current && heroRef.current) {
-      setIntroHeight(introRef.current.offsetTop + introRef.current.offsetHeight);
-    }
-    
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const shouldSnap = scrollY >= introHeight;
+  const [showFixedNav, setShowFixedNav] = useState(false);
 
   return (
     <main className="bg-paper">
@@ -113,14 +97,14 @@ function Index() {
         </div>
       </header>
 
-      <section ref={heroRef} className="relative w-full overflow-hidden bg-ink">
+      <section className="relative w-full overflow-hidden bg-ink">
         <div className="relative aspect-video w-full">
           <img src={headerFallback} alt="Koa Studio" className="absolute inset-0 w-full h-full object-cover" />
           <iframe src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1" title="Koa Studio showreel" allow="autoplay; fullscreen; picture-in-picture" className="absolute inset-0 h-full w-full border-0" />
         </div>
       </section>
 
-      <section id="about" ref={introRef} className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,200px)]">
+      <section id="about" className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,200px)]">
         <div className="mx-auto flex min-h-[199px] max-w-[1600px] items-center justify-center">
           <div className="text-center">
             <div style={{ fontFamily: "Besley, serif", fontSize: "75px", lineHeight: "1.056", textAlign: "center", fontWeight: 400 }}>
@@ -133,17 +117,17 @@ function Index() {
         </div>
       </section>
 
-      <div style={{ position: shouldSnap ? "fixed" : "static", top: shouldSnap ? "100px" : "auto", left: 0, right: 0, zIndex: 10, width: "100%" }}>
+      <div style={{ position: showFixedNav ? "fixed" : "static", top: showFixedNav ? 0 : "auto", left: 0, right: 0, zIndex: 10, width: "100%" }}>
         <div className="w-full bg-black h-[0.1rem]" />
         <nav className="w-full bg-paper">
           <div className="flex items-center justify-between text-[24px] font-medium text-ink uppercase" style={{ paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
             <div className="flex items-center gap-8">
               <a href="#about" className="transition-opacity hover:opacity-60">About</a>
               <a href="#services" className="transition-opacity hover:opacity-60">Services</a>
-              <a href="#work" className="transition-opacity hover:opacity-60">Work</a>
+              <a href="#work" onClick={() => setShowFixedNav(true)} className="transition-opacity hover:opacity-60">Work</a>
             </div>
             <div className="flex items-center gap-8">
-              <a href="#work" className="transition-opacity hover:opacity-60">Creative spotlight</a>
+              <a href="#work" onClick={() => setShowFixedNav(true)} className="transition-opacity hover:opacity-60">Creative spotlight</a>
               <a href="#contact" className="transition-opacity hover:opacity-60">Contact</a>
             </div>
           </div>
@@ -155,8 +139,6 @@ function Index() {
           </div>
         </section>
       </div>
-
-      {shouldSnap && <div style={{ height: "3000px" }} />}
 
       <footer id="contact" className="bg-ink text-paper">
         <div className="px-6 pb-[27px] pt-[177px] text-center">
