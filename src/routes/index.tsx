@@ -131,21 +131,22 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+
+useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
-    const heroSection = document.querySelector('[data-hero]');
+    const introSection = document.getElementById('about');
     
-    if (!container) return;
+    if (!container || !introSection) return;
     
-    const heroBottom = heroSection 
-      ? heroSection.offsetTop + heroSection.offsetHeight 
-      : 600;
-    
+    const introTop = introSection.offsetTop; // White padding starts here
     const currentScrollY = window.scrollY;
     
-    if (currentScrollY >= heroBottom) {
-      const scrollPastHero = currentScrollY - heroBottom;
-      container.style.transform = `translateY(-${scrollPastHero}px)`;
+    if (currentScrollY >= introTop) {
+      const scrollPastIntro = currentScrollY - introTop;
+      container.style.transform = `translateY(-${scrollPastIntro}px)`;
     } else {
       container.style.transform = 'translateY(0)';
     }
