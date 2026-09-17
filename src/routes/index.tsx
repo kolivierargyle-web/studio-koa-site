@@ -135,6 +135,10 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+
+useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
     const introSection = document.getElementById('about');
