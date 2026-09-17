@@ -131,19 +131,22 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+
+useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector('[data-scroll-container]');
-    const introSection = document.getElementById('about');
+    const heroSection = document.querySelector('[data-hero]');
     
-    if (!container || !introSection) return;
+    if (!container || !heroSection) return;
     
-    const introTop = introSection.offsetTop;
-    const triggerPoint = introTop - 300; // Start earlier
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
     const currentScrollY = window.scrollY;
     
-    if (currentScrollY >= triggerPoint) {
-      const scrollPastTrigger = currentScrollY - triggerPoint;
-      container.style.transform = `translateY(-${scrollPastTrigger}px)`;
+    if (currentScrollY >= heroBottom) {
+      const scrollPastHero = currentScrollY - heroBottom;
+      container.style.transform = `translateY(-${scrollPastHero}px)`;
     } else {
       container.style.transform = 'translateY(0)';
     }
