@@ -138,11 +138,12 @@ useEffect(() => {
     if (!container || !introSection) return;
     
     const introTop = introSection.offsetTop;
+    const triggerPoint = introTop; // Starts at first line of intro
     const currentScrollY = window.scrollY;
     
-    if (currentScrollY >= introTop) {
-      const scrollPastIntro = currentScrollY - introTop;
-      container.style.transform = `translateY(-${scrollPastIntro}px)`;
+    if (currentScrollY >= triggerPoint) {
+      const scrollPastTrigger = currentScrollY - triggerPoint;
+      container.style.transform = `translateY(-${scrollPastTrigger}px)`;
     } else {
       container.style.transform = 'translateY(0)';
     }
