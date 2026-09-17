@@ -106,9 +106,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Black Divider Line */}
-      <div className="w-full bg-black h-[0.1rem]" />
-
       {/* Nav Bar */}
       <nav className="w-full bg-ink">
         <div className="flex items-center justify-between text-[24px] font-medium text-paper uppercase" style={{ paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
@@ -158,14 +155,4 @@ function Index() {
             </a>
             <a href="mailto:kat@studio-koa.com" className="transition-opacity hover:opacity-60" style={{ fontFamily: "Poppins, sans-serif", fontSize: "18px", fontWeight: 500, lineHeight: "normal" }}>kat@studio-koa.com</a>
           </div>
-          <div className="flex items-center justify-between border-t-2 border-paper px-[45px] py-11 uppercase" style={{ fontFamily: "Poppins, sans-serif", fontSize: "20px", fontWeight: 400, lineHeight: "normal" }}>
-            <span>London</span>
-            <span>Berlin</span>
-            <span>World Wide</span>
-          </div>
-        </div>
-      </footer>
-      <p className="sr-only">{projects.length} projects</p>
-    </main>
-  );
-}
+          <div className="flex items-center justify-between border-t-2
