@@ -132,11 +132,14 @@ function Index() {
       {/* Hero */}
       <section className="relative w-full overflow-hidden bg-ink flex-1 flex flex-col">
       <div className="relative w-full h-full">
-          <img
-            src={headerFallback}
-            alt="Koa Studio"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+      {/* Frosted background behind video */}
+<div 
+  className="absolute inset-0"
+  style={{
+    backgroundColor: "rgba(0, 0, 0, 0.6)",
+    backdropFilter: "blur(14px)",
+  }}
+/>
          <iframe
         src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
   title="Koa Studio showreel"
