@@ -199,10 +199,10 @@ function Index() {
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Mobile close button only - 20px from corner inside frame */}
+            {/* Mobile close button only */}
             <button
               onClick={closeModal}
-              className="md:hidden absolute hover:opacity-60 transition-opacity"
+              className="block md:hidden absolute hover:opacity-60 transition-opacity"
               aria-label="Close modal"
               style={{ 
                 top: "20px",
