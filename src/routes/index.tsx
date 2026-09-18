@@ -211,9 +211,25 @@ function Index() {
               onClick={closeModal}
               className="absolute top-6 right-6 hover:opacity-60 transition-opacity"
               aria-label="Close modal"
-              style={{ fontSize: "28px", fontWeight: "bold", color: "#000" }}
+              style={{ 
+                background: "none", 
+                border: "none", 
+                cursor: "pointer",
+                padding: "0",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
             >
-              ×
+              <svg 
+                width="30" 
+                height="27" 
+                viewBox="0 0 30 27" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line x1="1.41421" y1="1.41391" x2="28.5858" y2="26.5858" stroke="#C4FF4D" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="28.5858" y1="1.41391" x2="1.41421" y2="26.5858" stroke="#C4FF4D" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
             </button>
             <div style={{
               fontFamily: "Besley, serif",
