@@ -194,8 +194,8 @@ function Index() {
           <div 
             className="relative"
             style={{
-              width: "1601px",
-              height: "717px",
+              width: "1441px",
+              height: "645px",
               backgroundColor: "rgba(255, 255, 255, 0.4)",
               backdropFilter: "blur(14px)",
               borderRadius: "111px",
@@ -224,8 +224,8 @@ function Index() {
               }}
             >
               <svg 
-                width="30" 
-                height="27" 
+                width="15" 
+                height="14" 
                 viewBox="0 0 30 27" 
                 xmlns="http://www.w3.org/2000/svg"
               >
