@@ -145,25 +145,26 @@ function Index() {
     zIndex: 10,
   }}
 />
-  <button
+<button
   onClick={() => document.getElementById('nav').scrollIntoView({ behavior: 'smooth' })}
   style={{
     position: 'absolute',
     top: '10%',
     right: '70px',
-    transform: 'translateY(-50%)',
     background: 'none',
     border: 'none',
     cursor: 'pointer',
     zIndex: 50,
     padding: 0,
+    width: '120px',
+    height: '120px',
   }}
-  aria-label="Jump to work"
+  aria-label="Jump to nav"
 >
   <img 
     src={plusSymbol}
-    alt="Jump to work"
-    style={{ width: '120px', height: '120px' }}
+    alt="Jump to nav"
+    style={{ width: '100%', height: '100%' }}
   />
 </button>
 <iframe
