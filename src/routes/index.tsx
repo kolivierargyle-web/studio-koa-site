@@ -218,7 +218,7 @@ style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, paddingLeft: 
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-ink text-paper" style={{ width: "1445px", height: "273px" }}>
+      <footer id="contact" className="bg-ink text-paper" style={{ width: "100%", height: "273px" }}>
         <div>
           <div className="flex items-end justify-between px-[40px] py-11">
             <a 
