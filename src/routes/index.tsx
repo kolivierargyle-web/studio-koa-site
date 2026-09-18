@@ -137,7 +137,7 @@ function Index() {
   style={{
     position: 'absolute',
     top: '10%',
-    right: '12px',
+    right: '14px',
     transform: 'translateY(-50%)',
     background: 'none',
     border: 'none',
@@ -148,8 +148,8 @@ function Index() {
   aria-label="Jump to work"
 >
   <svg 
-    width="144" 
-    height="144" 
+    width="170" 
+    height="170" 
     viewBox="0 0 144 144" 
     xmlns="http://www.w3.org/2000/svg"
   >
