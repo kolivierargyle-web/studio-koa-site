@@ -202,7 +202,7 @@ function Index() {
             {/* Mobile close button only */}
             <button
               onClick={closeModal}
-              className="block md:hidden absolute hover:opacity-60 transition-opacity"
+              className="md:hidden absolute hover:opacity-60 transition-opacity"
               aria-label="Close modal"
               style={{ 
                 top: "20px",
@@ -211,9 +211,6 @@ function Index() {
                 border: "none", 
                 cursor: "pointer",
                 padding: "0",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center"
               }}
             >
               <svg 
@@ -239,8 +236,6 @@ function Index() {
                 border: "none", 
                 cursor: "pointer",
                 padding: "0",
-                alignItems: "center",
-                justifyContent: "center"
               }}
             >
               <svg 
