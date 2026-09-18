@@ -1,126 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Instagram } from "lucide-react";
-
-import heroPoster from "@/assets/hero-poster.jpg";
-import headerFallback from "@/assets/01.Header_fallback_up.jpg";
-import graphicFaster from "@/assets/graphic-faster.jpg";
-import graphicNeon from "@/assets/graphic-neon.jpg";
-import graphicRetro from "@/assets/graphic-retro.jpg";
-import koaLogoWhite from "@/assets/koa_studio_-white.png";
-import { projects, projectBySlug } from "@/lib/projects";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Koa Studio — Creative Direction & Production" },
-      {
-        name: "description",
-        content:
-          "Koa Studio is a full-service creative direction and production studio. Concept to final cut: photography, video, motion and brand identity.",
-      },
-      { property: "og:title", content: "Koa Studio — Creative Direction & Production" },
-      {
-        property: "og:description",
-        content:
-          "Concept to final cut. Photography, video and brand identity, without the cost or complexity of a large agency.",
-      },
-    ],
-  }),
-  component: Index,
-});
-
-type Tile =
-  | { kind: "image"; slug: string }
-  | { kind: "graphic"; slug: string; src: string; alt: string }
-  | { kind: "blank" };
-
-const tiles: Tile[] = [
-  { kind: "image", slug: "shyla-london" },
-  { kind: "image", slug: "terrace-hours" },
-  { kind: "graphic", slug: "faster-than-you", src: graphicFaster, alt: "Faster than you." },
-  { kind: "image", slug: "retire-rich" },
-
-
-  { kind: "image", slug: "second-season" },
-  { kind: "image", slug: "matchday" },
-  { kind: "image", slug: "hold-form" },
-  { kind: "image", slug: "first-touch" },
-
-  { kind: "image", slug: "night-tailoring" },
-  { kind: "image", slug: "wave-print" },
-  { kind: "image", slug: "chocolate-capital" },
-  { kind: "image", slug: "kit-still-life" },
- 
-
-  { kind: "image", slug: "table-for-one" },
-  { kind: "image", slug: "delivered-by-magic" },
-  { kind: "graphic", slug: "delivered-by-magic", src: graphicNeon, alt: "Gorillas doorstep delivery" },
-  { kind: "image", slug: "second-glass" },
-
-  { kind: "graphic", slug: "faster-than-you", src: graphicRetro, alt: "Gorillas retro grid" },
-  { kind: "image", slug: "faster-than-you" },
-  { kind: "image", slug: "own-blend" },
-  { kind: "image", slug: "rider-in-style" },
-];
-
-
-function TileLink({
-  slug,
-  className,
-  children,
-}: {
-  slug: string;
-  className?: string;
-  children: React.ReactNode;
-}) {
-  const project = projectBySlug(slug);
-  return (
-    <Link
-      to="/projects/$slug"
-      params={{ slug }}
-      aria-label={project ? `${project.title} — ${project.client}` : slug}
-      className={`group relative block aspect-[153/191] overflow-hidden ${className ?? ""}`}
-    >
-      {children}
-    </Link>
-  );
-}
-
-function GridTile({ tile }: { tile: Tile }) {
-  if (tile.kind === "blank") {
-    return <div className="aspect-[153/191] bg-ink" aria-hidden="true" />;
-  }
-
-  if (tile.kind === "graphic") {
-    return (
-      <TileLink slug={tile.slug} className="bg-ink">
-        <img
-          src={tile.src}
-          alt={tile.alt}
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-        />
-        <span className="pointer-events-none absolute inset-0 bg-paper/0 transition-colors duration-500 group-hover:bg-paper/10" />
-      </TileLink>
-    );
-  }
-
-  const project = projectBySlug(tile.slug)!;
-
-  return (
-    <TileLink slug={tile.slug}>
-      <img
-        src={project.image}
-        alt={`${project.title} — ${project.client}`}
-        loading="lazy"
-        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-      />
-      <span className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/20" />
-    </TileLink>
-  );
-}
-
 function Index() {
+  const [showIntroModal, setShowIntroModal] = React.useState(true);
+
+  const closeModal = () => setShowIntroModal(false);
+
   return (
     <main className="bg-paper">
       {/* Title bar */}
@@ -140,11 +22,11 @@ function Index() {
       {/* Hero */}
       <section className="relative w-full overflow-hidden bg-ink">
         <div className="relative aspect-video w-full">
-<img
-  src={headerFallback}
-  alt="Koa Studio"
-  className="absolute inset-0 w-full h-full object-cover"
-/>
+          <img
+            src={headerFallback}
+            alt="Koa Studio"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
           <iframe
             src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
             title="Koa Studio showreel"
@@ -154,56 +36,70 @@ function Index() {
         </div>
       </section>
 
-{/* Intro */}
-<section id="about" className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,200px)]">
-  <div className="mx-auto flex min-h-[199px] max-w-[1600px] items-center justify-center">
-    <div className="text-center">
-      <div style={{
-        fontFamily: "Besley, serif",
-        fontSize: "75px",
-        lineHeight: "1.056",
-        textAlign: "center",
-        fontWeight: 400,
-      }}>
-        <p style={{ margin: 0 }}>
-          <span style={{ fontStyle: "italic" }}>
-            Koa studio is a compact full-service<br />creative direction & production studio.
-          </span>
-          {" "}Photography, video, motion & identity.<br />We build the right team for every project,<br />delivering impactful work without the<br />cost or complexity of a large agency.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+      {/* Black banner divider */}
+      <div className="w-full bg-black h-[0.05rem]"></div>
 
-{/* Black banner divider */}
-<div className="w-full bg-black h-[0.05rem]"></div>
+      {/* Nav bar */}
+      <nav className="w-full bg-paper">
+        <div className="flex items-center justify-between text-[24px] text-ink uppercase" 
+          style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
+          <div className="flex items-center gap-8">
+            <a href="#about" onClick={closeModal} className="transition-opacity hover:opacity-60">
+              About
+            </a>
+            <a href="#services" onClick={closeModal} className="transition-opacity hover:opacity-60">
+              Services
+            </a>
+            <a href="#work" onClick={closeModal} className="transition-opacity hover:opacity-60">
+              Work
+            </a>
+          </div>
+          <div className="flex items-center gap-8">
+            <a href="#work" onClick={closeModal} className="transition-opacity hover:opacity-60">
+              Creative spotlight
+            </a>
+            <a href="#contact" onClick={closeModal} className="transition-opacity hover:opacity-60">
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
 
-{/* Nav bar */}
-<nav className="w-full bg-paper">
-<div className="flex items-center justify-between text-[24px] text-ink uppercase" 
-style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
-    <div className="flex items-center gap-8">
-      <a href="#about" className="transition-opacity hover:opacity-60">
-        About
-      </a>
-      <a href="#services" className="transition-opacity hover:opacity-60">
-        Services
-      </a>
-      <a href="#work" className="transition-opacity hover:opacity-60">
-        Work
-      </a>
-    </div>
-    <div className="flex items-center gap-8">
-      <a href="#work" className="transition-opacity hover:opacity-60">
-        Creative spotlight
-      </a>
-      <a href="#contact" className="transition-opacity hover:opacity-60">
-        Contact
-      </a>
-    </div>
-  </div>
-</nav>
+      {/* Intro Modal */}
+      {showIntroModal && (
+        <div 
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+          onClick={closeModal}
+        >
+          <div 
+            className="bg-paper p-12 max-w-2xl relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-6 right-6 text-ink hover:opacity-60 transition-opacity"
+              aria-label="Close modal"
+              style={{ fontSize: "28px", fontWeight: "bold" }}
+            >
+              ×
+            </button>
+            <div style={{
+              fontFamily: "Besley, serif",
+              fontSize: "75px",
+              lineHeight: "1.056",
+              textAlign: "center",
+              fontWeight: 400,
+            }}>
+              <p style={{ margin: 0 }}>
+                <span style={{ fontStyle: "italic" }}>
+                  Koa studio is a compact full-service<br />creative direction & production studio.
+                </span>
+                {" "}Photography, video, motion & identity.<br />We build the right team for every project,<br />delivering impactful work without the<br />cost or complexity of a large agency.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Work grid */}
       <section id="work" aria-label="Selected work">
