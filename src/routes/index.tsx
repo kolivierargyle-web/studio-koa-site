@@ -221,26 +221,10 @@ style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, paddingLeft: 
       <footer id="contact" className="bg-ink text-paper">
         <div style={{ width: "1443px", height: "276px", padding: "40px" }}>
           <div className="flex items-end justify-between" style={{ height: "100%" }}>
-            
-              href="https://www.instagram.com/_koa_studio/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Koa Studio on Instagram"
-              className="transition-opacity hover:opacity-60"
-            >
+            <a href="https://www.instagram.com/_koa_studio/" target="_blank" rel="noreferrer" aria-label="Koa Studio on Instagram" className="transition-opacity hover:opacity-60">
               <Instagram className="h-[34px] w-[34px]" strokeWidth={1.5} />
             </a>
-            
-              href="mailto:kat@studio-koa.com"
-              className="transition-opacity hover:opacity-60"
-              style={{
-                fontFamily: "Didact Gothic, sans-serif",
-                fontSize: "20px",
-                fontWeight: 400,
-                lineHeight: "normal",
-                color: "#FFF",
-              }}
-            >
+            <a href="mailto:kat@studio-koa.com" className="transition-opacity hover:opacity-60" style={{ fontFamily: "Didact Gothic, sans-serif", fontSize: "20px", fontWeight: 400, lineHeight: "normal", color: "#FFF" }}>
               kat@studio-koa.com
             </a>
             <div style={{ display: "flex", gap: "60px" }}>
@@ -251,7 +235,3 @@ style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, paddingLeft: 
           </div>
         </div>
       </footer>
-      <p className="sr-only">{projects.length} projects</p>
-    </main>
-  );
-}
