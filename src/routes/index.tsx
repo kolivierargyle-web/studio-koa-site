@@ -128,19 +128,6 @@ function Index() {
 
   {/* Header and Hero - Fixed */}
   <div className="fixed top-0 left-0 right-0 z-0 h-screen w-full flex flex-col">
-    {/* Title bar */}
-    <header className="w-full bg-ink">
-        <div className="flex h-[100px] items-center justify-center px-4">
-          <img
-            src={koaLogoWhite}
-            alt="Koa Studio"
-            style={{
-              maxHeight: "clamp(14px, 5vw, 28px)",
-              width: "auto"
-            }}
-          />
-        </div>
-      </header>
 
       {/* Hero */}
       <section className="relative w-full overflow-hidden bg-ink flex-1 flex flex-col">
