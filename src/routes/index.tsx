@@ -132,7 +132,7 @@ function Index() {
             src={koaLogoWhite}
             alt="Koa Studio"
             style={{
-              maxHeight: "40px",
+              maxHeight: "28px",
               width: "auto"
             }}
           />
