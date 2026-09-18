@@ -179,7 +179,7 @@ function Index() {
         </div>
       </nav>
 
-         {/* Intro Modal */}
+      {/* Intro Modal */}
       {showIntroModal && (
         <div 
           className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
@@ -204,8 +204,8 @@ function Index() {
               className="absolute hover:opacity-60 transition-opacity"
               aria-label="Close modal"
               style={{ 
-                top: "20px",
-                right: "20px",
+                top: "35px",
+                right: "35px",
                 background: "none", 
                 border: "none", 
                 cursor: "pointer",
@@ -216,8 +216,8 @@ function Index() {
               }}
             >
               <svg 
-                width="18" 
-                height="17" 
+                width="27" 
+                height="26" 
                 viewBox="0 0 30 27" 
                 xmlns="http://www.w3.org/2000/svg"
               >
