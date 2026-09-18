@@ -179,7 +179,7 @@ function Index() {
         </div>
       </nav>
 
-       {/* Intro Modal */}
+          {/* Intro Modal */}
       {showIntroModal && (
         <div 
           className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
@@ -227,8 +227,8 @@ function Index() {
             </button>
             <div className="px-6 sm:px-12" style={{
               fontFamily: "Besley, serif",
-              fontSize: "clamp(28px, 5vw, 58px)",
-              lineHeight: "clamp(32px, 5.5vw, 60px)",
+              fontSize: "clamp(18px, 4vw, 58px)",
+              lineHeight: "clamp(20px, 4.5vw, 60px)",
               textAlign: "center",
               fontWeight: 400,
               color: "#000",
