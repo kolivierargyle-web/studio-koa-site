@@ -216,6 +216,7 @@ style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, paddingLeft: 
           ))}
         </div>
       </section>
+
       {/* Footer */}
       <footer id="contact" className="bg-ink text-paper">
         <div style={{ width: "1443px", height: "276px" }}>
