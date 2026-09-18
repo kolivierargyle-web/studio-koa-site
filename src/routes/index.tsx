@@ -184,23 +184,42 @@ function Index() {
         <div className="flex items-center justify-between text-ink uppercase px-4 sm:px-[33px] py-4 sm:py-8" 
           style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, fontSize: "clamp(10px, 2.5vw, 24px)" }}>
           <div className="flex items-center gap-2 sm:gap-[40px]">
-           <a 
+<a 
   href="#about" 
   onClick={closeModal}
-  style={{ color: '#C4FF4D' }}
+  onMouseEnter={(e) => e.target.style.color = '#C4FF4D'}
+  onMouseLeave={(e) => e.target.style.color = ''}
   className="transition-opacity hover:opacity-60"
 >
   About
 </a>
-<a href="#services" onClick={closeModal} style={{ color: '#C4FF4D' }} className="transition-opacity hover:opacity-60">
+<a 
+  href="#services" 
+  onClick={closeModal}
+  onMouseEnter={(e) => e.target.style.color = '#C4FF4D'}
+  onMouseLeave={(e) => e.target.style.color = ''}
+  className="transition-opacity hover:opacity-60"
+>
   Services
 </a>
           </div>
-<a href="#work" onClick={closeModal} style={{ color: '#C4FF4D' }} className="transition-opacity hover:opacity-60 absolute left-1/2 transform -translate-x-1/2">
+<a 
+  href="#work" 
+  onClick={closeModal}
+  onMouseEnter={(e) => e.target.style.color = '#C4FF4D'}
+  onMouseLeave={(e) => e.target.style.color = ''}
+  className="transition-opacity hover:opacity-60 absolute left-1/2 transform -translate-x-1/2"
+>
   Work
 </a>
           <div className="flex items-center gap-2 sm:gap-8">
-          <a href="#contact" onClick={closeModal} style={{ color: '#C4FF4D' }} className="transition-opacity hover:opacity-60">
+<a 
+  href="#contact" 
+  onClick={closeModal}
+  onMouseEnter={(e) => e.target.style.color = '#C4FF4D'}
+  onMouseLeave={(e) => e.target.style.color = ''}
+  className="transition-opacity hover:opacity-60"
+>
   Contact
 </a>
           </div>
