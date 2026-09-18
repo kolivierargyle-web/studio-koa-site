@@ -179,7 +179,7 @@ function Index() {
         </div>
       </nav>
 
-      {/* Intro Modal */}
+       {/* Intro Modal */}
       {showIntroModal && (
         <div 
           className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
@@ -220,6 +220,33 @@ function Index() {
                 height="17" 
                 viewBox="0 0 30 27" 
                 xmlns="http://www.w3.org/2000/svg"
+              >
+                <line x1="1.41421" y1="1.41391" x2="28.5858" y2="26.5858" stroke="#C4FF4D" strokeWidth="4" strokeLinecap="round"/>
+                <line x1="28.5858" y1="1.41391" x2="1.41421" y2="26.5858" stroke="#C4FF4D" strokeWidth="4" strokeLinecap="round"/>
+              </svg>
+            </button>
+            <div className="px-6 sm:px-12" style={{
+              fontFamily: "Besley, serif",
+              fontSize: "clamp(28px, 5vw, 58px)",
+              lineHeight: "clamp(32px, 5.5vw, 60px)",
+              textAlign: "center",
+              fontWeight: 400,
+              color: "#000",
+              maxWidth: "90%",
+              margin: "0",
+            }}>
+              <p style={{ margin: 0 }}>
+                <span style={{ fontStyle: "italic" }}>Koa studio is a compact full-service</span><br />
+                <span style={{ fontStyle: "italic" }}>creative direction & production studio.</span><br />
+                Photography, video, motion & identity.<br />
+                We build the right team for every project,<br />
+                delivering impactful work without the<br />
+                cost or complexity of a large agency.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Work grid */}
       <section id="work" aria-label="Selected work">
