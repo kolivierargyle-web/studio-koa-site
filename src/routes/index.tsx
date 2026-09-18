@@ -211,7 +211,6 @@ function Index() {
                 border: "none", 
                 cursor: "pointer",
                 padding: "0",
-                display: "flex",
                 alignItems: "center",
                 justifyContent: "center"
               }}
