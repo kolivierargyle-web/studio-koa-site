@@ -136,8 +136,8 @@ function Index() {
   onClick={() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' })}
   style={{
     position: 'absolute',
-    top: '10%',
-    right: '14px',
+    top: '20%',
+    right: '16px',
     transform: 'translateY(-50%)',
     background: 'none',
     border: 'none',
@@ -148,8 +148,8 @@ function Index() {
   aria-label="Jump to work"
 >
   <svg 
-    width="170" 
-    height="170" 
+    width="180" 
+    height="180" 
     viewBox="0 0 144 144" 
     xmlns="http://www.w3.org/2000/svg"
   >
