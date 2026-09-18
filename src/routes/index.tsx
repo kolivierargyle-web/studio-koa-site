@@ -145,7 +145,6 @@ function Index() {
     zIndex: 10,
   }}
 />
-<button
   <button
   onClick={() => document.getElementById('nav').scrollIntoView({ behavior: 'smooth' })}
   style={{
