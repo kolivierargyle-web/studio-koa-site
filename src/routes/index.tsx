@@ -300,7 +300,7 @@ function Index() {
               className="transition-opacity hover:opacity-60" 
               style={{ 
                 fontFamily: "Didact Gothic, sans-serif", 
-                fontSize: "20px", 
+                fontSize: "clamp(15px, 4vw, 20px)", 
                 fontWeight: 400, 
                 lineHeight: "normal", 
                 color: "#FFF" 
@@ -313,7 +313,7 @@ function Index() {
             className="flex items-center justify-between border-t-2 border-paper px-[45px] uppercase" 
             style={{ 
               fontFamily: "Didact Gothic, sans-serif", 
-              fontSize: "20px", 
+              fontSize: "clamp(15px, 4vw, 20px)", 
               fontWeight: 400, 
               lineHeight: "normal", 
               color: "#FFF",
