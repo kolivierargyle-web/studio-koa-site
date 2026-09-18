@@ -219,24 +219,9 @@ style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, paddingLeft: 
 
       {/* Footer */}
       <footer id="contact" className="bg-ink text-paper">
-        <div className="px-6 pb-[27px] pt-[177px] text-center">
-          <p
-            className="font-display text-paper"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "40px",
-              fontWeight: 700,
-              lineHeight: "normal",
-            }}
-          >
-            Koa Studio
-          </p>
-        </div>
-        <div>
-          <div
-            className="flex items-end justify-between px-[40px] py-11"
-          >
-            <a
+        <div style={{ width: "1443px", height: "276px", padding: "40px" }}>
+          <div className="flex items-end justify-between" style={{ height: "100%" }}>
+            
               href="https://www.instagram.com/_koa_studio/"
               target="_blank"
               rel="noreferrer"
@@ -245,35 +230,24 @@ style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, paddingLeft: 
             >
               <Instagram className="h-[34px] w-[34px]" strokeWidth={1.5} />
             </a>
-            <a
+            
               href="mailto:kat@studio-koa.com"
               className="transition-opacity hover:opacity-60"
               style={{
-                fontFamily: "Poppins, sans-serif",
-                fontSize: "18px",
-                fontWeight: 500,
+                fontFamily: "Didact Gothic, sans-serif",
+                fontSize: "20px",
+                fontWeight: 400,
                 lineHeight: "normal",
+                color: "#FFF",
               }}
             >
               kat@studio-koa.com
             </a>
-          </div>
-          <div
-            className="flex items-center justify-between border-t-2 border-paper px-[45px] py-11 uppercase"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "20px",
-              fontWeight: 400,
-              lineHeight: "normal",
-            }}
-          >
-            <span>London</span>
-            <span>Berlin</span>
-            <span>World Wide</span>
+            <div style={{ display: "flex", gap: "60px" }}>
+              <span style={{ fontFamily: "Didact Gothic, sans-serif", fontSize: "20px", fontWeight: 400, lineHeight: "normal", color: "#FFF" }}>London</span>
+              <span style={{ fontFamily: "Didact Gothic, sans-serif", fontSize: "20px", fontWeight: 400, lineHeight: "normal", color: "#FFF" }}>Berlin</span>
+              <span style={{ fontFamily: "Didact Gothic, sans-serif", fontSize: "20px", fontWeight: 400, lineHeight: "normal", color: "#FFF" }}>World Wide</span>
+            </div>
           </div>
         </div>
       </footer>
-      <p className="sr-only">{projects.length} projects</p>
-    </main>
-  );
-}
