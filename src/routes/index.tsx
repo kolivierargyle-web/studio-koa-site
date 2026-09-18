@@ -166,14 +166,6 @@ function Index() {
     style={{ width: '120px', height: '120px' }}
   />
 </button>
-
-    {/* White background behind video */}
-    <div 
-      className="absolute inset-0"
-      style={{
-        backgroundColor: "rgba(255, 255, 255, 1)",
-      }}
-    />
   <iframe
         src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
   title="Koa Studio showreel"
