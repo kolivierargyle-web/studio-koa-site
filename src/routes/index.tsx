@@ -192,7 +192,17 @@ function Index() {
           onClick={closeModal}
         >
           <div 
-            className="bg-paper p-12 max-w-2xl relative"
+            className="relative"
+            style={{
+              width: "1268px",
+              height: "529px",
+              backgroundColor: "#FFF",
+              borderRadius: "111px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "0",
+            }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -205,16 +215,17 @@ function Index() {
             </button>
             <div style={{
               fontFamily: "Besley, serif",
-              fontSize: "75px",
-              lineHeight: "1.056",
+              fontSize: "52.438px",
+              lineHeight: "53.487px",
               textAlign: "center",
               fontWeight: 400,
+              fontStyle: "italic",
+              color: "rgba(0, 0, 0, 0.90)",
+              maxWidth: "90%",
+              margin: "0",
             }}>
               <p style={{ margin: 0 }}>
-                <span style={{ fontStyle: "italic" }}>
-                  Koa studio is a compact full-service<br />creative direction & production studio.
-                </span>
-                {" "}Photography, video, motion & identity.<br />We build the right team for every project,<br />delivering impactful work without the<br />cost or complexity of a large agency.
+                Koa studio is a compact full-service creative direction & production studio. Photography, video, motion & identity. We build the right team for every project, delivering impactful work without the cost or complexity of a large agency.
               </p>
             </div>
           </div>
