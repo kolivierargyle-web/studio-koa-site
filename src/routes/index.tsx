@@ -125,6 +125,7 @@ function Index() {
 
   return (
     <main className="bg-paper">
+
       {/* Title bar */}
       <header className="w-full bg-ink">
         <div className="flex h-[100px] items-center justify-center px-4">
@@ -132,7 +133,7 @@ function Index() {
             src={koaLogoWhite}
             alt="Koa Studio"
             style={{
-              maxHeight: "28px",
+              maxHeight: "clamp(14px, 5vw, 28px)",
               width: "auto"
             }}
           />
