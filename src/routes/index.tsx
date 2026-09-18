@@ -38,30 +38,23 @@ const tiles: Tile[] = [
   { kind: "image", slug: "terrace-hours" },
   { kind: "graphic", slug: "faster-than-you", src: graphicFaster, alt: "Faster than you." },
   { kind: "image", slug: "retire-rich" },
-
-
   { kind: "image", slug: "second-season" },
   { kind: "image", slug: "matchday" },
   { kind: "image", slug: "hold-form" },
   { kind: "image", slug: "first-touch" },
-
   { kind: "image", slug: "night-tailoring" },
   { kind: "image", slug: "wave-print" },
   { kind: "image", slug: "chocolate-capital" },
   { kind: "image", slug: "kit-still-life" },
- 
-
   { kind: "image", slug: "table-for-one" },
   { kind: "image", slug: "delivered-by-magic" },
   { kind: "graphic", slug: "delivered-by-magic", src: graphicNeon, alt: "Gorillas doorstep delivery" },
   { kind: "image", slug: "second-glass" },
-
   { kind: "graphic", slug: "faster-than-you", src: graphicRetro, alt: "Gorillas retro grid" },
   { kind: "image", slug: "faster-than-you" },
   { kind: "image", slug: "own-blend" },
   { kind: "image", slug: "rider-in-style" },
 ];
-
 
 function TileLink({
   slug,
@@ -142,11 +135,11 @@ function Index() {
       {/* Hero */}
       <section className="relative w-full overflow-hidden bg-ink">
         <div className="relative aspect-video w-full">
-<img
-  src={headerFallback}
-  alt="Koa Studio"
-  className="absolute inset-0 w-full h-full object-cover"
-/>
+          <img
+            src={headerFallback}
+            alt="Koa Studio"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
           <iframe
             src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
             title="Koa Studio showreel"
@@ -156,56 +149,55 @@ function Index() {
         </div>
       </section>
 
-{/* Intro */}
-<section id="about" className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,200px)]">
-  <div className="mx-auto flex min-h-[199px] max-w-[1600px] items-center justify-center">
-    <div className="text-center">
-      <div style={{
-        fontFamily: "Besley, serif",
-        fontSize: "75px",
-        lineHeight: "1.056",
-        textAlign: "center",
-        fontWeight: 400,
-      }}>
-        <p style={{ margin: 0 }}>
-          <span style={{ fontStyle: "italic" }}>
-            Koa studio is a compact full-service<br />creative direction & production studio.
-          </span>
-          {" "}Photography, video, motion & identity.<br />We build the right team for every project,<br />delivering impactful work without the<br />cost or complexity of a large agency.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+      {/* Intro */}
+      <section id="about" className="px-[clamp(0.44rem,1.5vw,20px)] py-[clamp(3.3rem,9.75vw,200px)]">
+        <div className="mx-auto flex min-h-[199px] max-w-[1600px] items-center justify-center">
+          <div className="text-center">
+            <div style={{
+              fontFamily: "Besley, serif",
+              fontSize: "75px",
+              lineHeight: "1.056",
+              textAlign: "center",
+              fontWeight: 400,
+            }}>
+              <p style={{ margin: 0 }}>
+                <span style={{ fontStyle: "italic" }}>
+                  Koa studio is a compact full-service<br />creative direction & production studio.
+                </span>
+                {" "}Photography, video, motion & identity.<br />We build the right team for every project,<br />delivering impactful work without the<br />cost or complexity of a large agency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-{/* Black banner divider */}
-<div className="w-full bg-black h-[0.05rem]"></div>
+      {/* Black banner divider */}
+      <div className="w-full bg-black h-[0.05rem]"></div>
 
-{/* Nav bar */}
-<nav className="w-full bg-paper">
-<div className="flex items-center justify-between text-ink uppercase" 
-style={{ fontFamily: "Didact Gothic, sans-serif", fontSize: "24px", fontWeight: 400, paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
-    <div className="flex items-center gap-8">
-      <a href="#about" className="transition-opacity hover:opacity-60">
-        About
-      </a>
-      <a href="#services" className="transition-opacity hover:opacity-60">
-        Services
-      </a>
-      <a href="#work" className="transition-opacity hover:opacity-60">
-        Work
-      </a>
-    </div>
-    <div className="flex items-center gap-8">
-      <a href="#work" className="transition-opacity hover:opacity-60">
-        Creative spotlight
-      </a>
-      <a href="#contact" className="transition-opacity hover:opacity-60">
-        Contact
-      </a>
-    </div>
-  </div>
-</nav>
+      {/* Nav bar */}
+      <nav className="w-full bg-paper">
+        <div className="flex items-center justify-between text-ink uppercase" style={{ fontFamily: "Didact Gothic, sans-serif", fontSize: "24px", fontWeight: 400, paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
+          <div className="flex items-center gap-8">
+            <a href="#about" className="transition-opacity hover:opacity-60">
+              About
+            </a>
+            <a href="#services" className="transition-opacity hover:opacity-60">
+              Services
+            </a>
+            <a href="#work" className="transition-opacity hover:opacity-60">
+              Work
+            </a>
+          </div>
+          <div className="flex items-center gap-8">
+            <a href="#work" className="transition-opacity hover:opacity-60">
+              Creative spotlight
+            </a>
+            <a href="#contact" className="transition-opacity hover:opacity-60">
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
 
       {/* Work grid */}
       <section id="work" aria-label="Selected work">
@@ -233,9 +225,7 @@ style={{ fontFamily: "Didact Gothic, sans-serif", fontSize: "24px", fontWeight: 
           </p>
         </div>
         <div>
-          <div
-            className="flex items-end justify-between px-[40px] py-11"
-          >
+          <div className="flex items-end justify-between px-[40px] py-11">
             
               href="https://www.instagram.com/_koa_studio/"
               target="_blank"
