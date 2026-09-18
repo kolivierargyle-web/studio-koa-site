@@ -132,12 +132,11 @@ function Index() {
       {/* Hero */}
       <section className="relative w-full overflow-hidden bg-ink flex-1 flex flex-col">
       <div className="relative w-full h-full">
-   {/* Frosted background behind video */}
+{/* White background behind video */}
 <div 
   className="absolute inset-0"
   style={{
-    backgroundColor: "rgba(255, 255, 255, 0.15)",
-    backdropFilter: "blur(14px)",
+    backgroundColor: "rgba(255, 255, 255, 1)",
   }}
 />
          <iframe
