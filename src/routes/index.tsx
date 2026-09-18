@@ -253,7 +253,7 @@ function Index() {
             <div className="px-6 sm:px-12" style={{
               fontFamily: "Besley, serif",
               fontSize: "clamp(12px, 2.5vw, 58px)",
-              lineHeight: "clamp(14px, 3vw, 60px)",
+              lineHeight: "clamp(14px, 3vw, 62px)",
               textAlign: "center",
               fontWeight: 400,
               color: "#000",
