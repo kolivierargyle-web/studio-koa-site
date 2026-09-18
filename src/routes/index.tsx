@@ -172,7 +172,7 @@ function Index() {
       </section>
 
       {/* Black banner divider */}
-      <div className="w-full bg-black h-[0.05rem]" />
+      <div className="w-full bg-black h-[0.05rem]"></div>
 
       {/* Nav bar */}
       <nav className="w-full bg-paper">
