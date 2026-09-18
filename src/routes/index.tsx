@@ -245,7 +245,7 @@ function Index() {
             }}>
               <p style={{ margin: 0 }}>
                 <span style={{ fontStyle: "italic" }}>Koa studio is a compact full-service</span><br />
-                creative direction & production studio.<br />
+                <span style={{ fontStyle: "italic" }}>creative direction & production studio.</span><br />
                 Photography, video, motion & identity.<br />
                 We build the right team for every project,<br />
                 delivering impactful work without the<br />
