@@ -170,7 +170,7 @@ function Index() {
   title="Koa Studio showreel"
   allow="autoplay; fullscreen; picture-in-picture"
   className="absolute inset-0 border-0"
- style={{ width: "100%", height: "100%", minWidth: "100%", minHeight: "100%", transform: "scale(1.1)" }}
+ style={{ width: "100%", height: "100%", minWidth: "100%", minHeight: "100%", transform: "scale(1.21)" }}
 />
         </div>
       </section>
