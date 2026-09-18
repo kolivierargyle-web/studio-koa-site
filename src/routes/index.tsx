@@ -156,13 +156,10 @@ function Index() {
         </div>
       </section>
 
-      {/* Black banner divider */}
-      <div className="w-full bg-black h-[0.05rem]"></div>
-
       {/* Nav bar */}
       <nav className="w-full bg-paper">
-        <div className="flex items-center justify-between text-[24px] text-ink uppercase" 
-          style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
+        <div className="flex items-center justify-between text-[24px] text-ink uppercase px-[33px] py-8" 
+          style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400 }}>
           <div className="flex items-center gap-8">
             <a href="#about" onClick={closeModal} className="transition-opacity hover:opacity-60">
               About
@@ -170,10 +167,10 @@ function Index() {
             <a href="#services" onClick={closeModal} className="transition-opacity hover:opacity-60">
               Services
             </a>
-            <a href="#work" onClick={closeModal} className="transition-opacity hover:opacity-60">
-              Work
-            </a>
           </div>
+          <a href="#work" onClick={closeModal} className="transition-opacity hover:opacity-60 absolute left-1/2 transform -translate-x-1/2">
+            Work
+          </a>
           <div className="flex items-center gap-8">
             <a href="#work" onClick={closeModal} className="transition-opacity hover:opacity-60">
               Creative spotlight
