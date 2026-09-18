@@ -136,7 +136,7 @@ function Index() {
   onClick={() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' })}
   style={{
     position: 'absolute',
-    top: '05%',
+    top: '08%',
     right: '10px',
     transform: 'translateY(-50%)',
     background: 'none',
