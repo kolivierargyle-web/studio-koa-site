@@ -132,12 +132,13 @@ function Index() {
 {/* Hero */}
 <section className="relative w-full overflow-hidden bg-ink flex-1 flex flex-col">
   <div className="relative w-full h-full">
-   <button
+<button
   onClick={() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' })}
   style={{
     position: 'absolute',
-    top: '82px',
+    top: '50%',
     right: '40px',
+    transform: 'translateY(-50%)',
     background: 'none',
     border: 'none',
     cursor: 'pointer',
