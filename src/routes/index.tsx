@@ -137,7 +137,7 @@ function Index() {
   style={{
     position: 'absolute',
     top: '10%',
-    right: '10px',
+    right: '12px',
     transform: 'translateY(-50%)',
     background: 'none',
     border: 'none',
