@@ -196,14 +196,14 @@ function Index() {
             style={{
               width: "1318px",
               height: "591px",
-              backgroundColor: "rgba(255, 255, 255, 0.7)",
+              background: "linear-gradient(135deg, rgba(26, 26, 26, 0.6) 0%, rgba(186, 140, 255, 0.4) 50%, rgba(196, 255, 77, 0.3) 100%)",
               backdropFilter: "blur(10px)",
               borderRadius: "111px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               padding: "0",
-              border: "1px solid rgba(255, 255, 255, 0.2)",
+              border: "1px solid rgba(196, 255, 77, 0.3)",
             }}
             onClick={(e) => e.stopPropagation()}
           >
