@@ -172,29 +172,19 @@ function Index() {
       </section>
 
       {/* Black banner divider */}
-      <div className="w-full bg-black h-[0.05rem]"></div>
+      <div className="w-full bg-black h-[0.05rem]" />
 
       {/* Nav bar */}
       <nav className="w-full bg-paper">
         <div className="flex items-center justify-between text-ink uppercase" style={{ fontFamily: "Didact Gothic, sans-serif", fontSize: "24px", fontWeight: 400, paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
           <div className="flex items-center gap-8">
-            <a href="#about" className="transition-opacity hover:opacity-60">
-              About
-            </a>
-            <a href="#services" className="transition-opacity hover:opacity-60">
-              Services
-            </a>
-            <a href="#work" className="transition-opacity hover:opacity-60">
-              Work
-            </a>
+            <a href="#about" className="transition-opacity hover:opacity-60">About</a>
+            <a href="#services" className="transition-opacity hover:opacity-60">Services</a>
+            <a href="#work" className="transition-opacity hover:opacity-60">Work</a>
           </div>
           <div className="flex items-center gap-8">
-            <a href="#work" className="transition-opacity hover:opacity-60">
-              Creative spotlight
-            </a>
-            <a href="#contact" className="transition-opacity hover:opacity-60">
-              Contact
-            </a>
+            <a href="#work" className="transition-opacity hover:opacity-60">Creative spotlight</a>
+            <a href="#contact" className="transition-opacity hover:opacity-60">Contact</a>
           </div>
         </div>
       </nav>
