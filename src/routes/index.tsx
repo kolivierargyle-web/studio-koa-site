@@ -138,8 +138,8 @@ function Index() {
   alt="Koa Studio"
   style={{
     position: 'absolute',
-    top: '60px',
-    left: '60px',
+    top: '70px',
+    left: '70px',
     maxHeight: '40px',
     width: 'auto',
     zIndex: 10,
