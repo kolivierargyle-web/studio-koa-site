@@ -184,20 +184,25 @@ function Index() {
         <div className="flex items-center justify-between text-ink uppercase px-4 sm:px-[33px] py-4 sm:py-8" 
           style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, fontSize: "clamp(10px, 2.5vw, 24px)" }}>
           <div className="flex items-center gap-2 sm:gap-[40px]">
-            <a href="#about" onClick={closeModal} className="transition-opacity hover:opacity-60">
-              About
-            </a>
-            <a href="#services" onClick={closeModal} className="transition-opacity hover:opacity-60">
-              Services
-            </a>
+           <a 
+  href="#about" 
+  onClick={closeModal}
+  style={{ color: '#C4FF4D' }}
+  className="transition-opacity hover:opacity-60"
+>
+  About
+</a>
+<a href="#services" onClick={closeModal} style={{ color: '#C4FF4D' }} className="transition-opacity hover:opacity-60">
+  Services
+</a>
           </div>
-          <a href="#work" onClick={closeModal} className="transition-opacity hover:opacity-60 absolute left-1/2 transform -translate-x-1/2">
-            Work
-          </a>
+<a href="#work" onClick={closeModal} style={{ color: '#C4FF4D' }} className="transition-opacity hover:opacity-60 absolute left-1/2 transform -translate-x-1/2">
+  Work
+</a>
           <div className="flex items-center gap-2 sm:gap-8">
-            <a href="#contact" onClick={closeModal} className="transition-opacity hover:opacity-60">
-              Contact
-            </a>
+          <a href="#contact" onClick={closeModal} style={{ color: '#C4FF4D' }} className="transition-opacity hover:opacity-60">
+  Contact
+</a>
           </div>
         </div>
       </nav>
