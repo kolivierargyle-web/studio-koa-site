@@ -251,3 +251,7 @@ style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, paddingLeft: 
           </div>
         </div>
       </footer>
+      <p className="sr-only">{projects.length} projects</p>
+    </main>
+  );
+}
