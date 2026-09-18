@@ -146,7 +146,7 @@ function Index() {
   }}
 />
 <button
-  onClick={() => document.getElementById('nav').scrollIntoView({ behavior: 'smooth' })}
+  onClick={() => alert('Button clicked!')}
   style={{
     position: 'absolute',
     top: '10%',
