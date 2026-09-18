@@ -243,13 +243,15 @@ style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, paddingLeft: 
             </a>
           </div>
           <div 
-            className="flex items-center justify-between border-t-2 border-paper px-[45px] py-11 uppercase" 
+            className="flex items-center justify-between border-t-2 border-paper px-[45px] uppercase" 
             style={{ 
               fontFamily: "Didact Gothic, sans-serif", 
               fontSize: "20px", 
               fontWeight: 400, 
               lineHeight: "normal", 
-              color: "#FFF" 
+              color: "#FFF",
+              paddingTop: "62px",
+              paddingBottom: "11px"
             }}
           >
             <span>London</span>
