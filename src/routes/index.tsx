@@ -183,8 +183,8 @@ function Index() {
 
 {/* Nav bar */}
 <nav className="w-full bg-paper">
-<div className="flex items-center justify-between text-[24px] font-medium text-ink uppercase" 
-style={{ paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
+<div className="flex items-center justify-between text-[24px] text-ink uppercase" 
+style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, paddingLeft: "33px", paddingRight: "33px", paddingTop: "2rem", paddingBottom: "2rem" }}>
     <div className="flex items-center gap-8">
       <a href="#about" className="transition-opacity hover:opacity-60">
         About
