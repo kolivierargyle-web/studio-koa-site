@@ -137,7 +137,7 @@ function Index() {
   onClick={() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' })}
   style={{
     position: 'absolute',
-    top: '50%',
+    top: '15%',
     right: '40px',
     transform: 'translateY(-50%)',
     background: 'none',
@@ -151,7 +151,7 @@ function Index() {
   <img 
     src={plusSymbol}
     alt="Jump to work"
-    style={{ width: '200px', height: '200px' }}
+    style={{ width: '150px', height: '150px' }}
   />
 </button>
 
