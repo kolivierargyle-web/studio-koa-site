@@ -124,10 +124,12 @@ function Index() {
   const closeModal = () => setShowIntroModal(false);
 
   return (
-    <main className="bg-paper">
+<main className="bg-paper relative">
 
-      {/* Title bar */}
-      <header className="w-full bg-ink">
+  {/* Header and Hero - Fixed */}
+  <div className="fixed top-0 left-0 right-0 z-0 h-screen w-full flex flex-col">
+    {/* Title bar */}
+    <header className="w-full bg-ink">
         <div className="flex h-[100px] items-center justify-center px-4">
           <img
             src={koaLogoWhite}
@@ -156,7 +158,9 @@ function Index() {
           />
         </div>
       </section>
-
+   </div>
+  {/* Content - Scrolls over fixed hero */}
+  <div className="relative z-10" style={{ paddingTop: "100vh" }}>
       {/* Nav bar */}
       <nav className="w-full bg-paper sticky top-0 z-40">
         <div className="flex items-center justify-between text-ink uppercase px-4 sm:px-[33px] py-4 sm:py-8" 
@@ -327,6 +331,8 @@ function Index() {
           </div>
         </div>
       </footer>
+     </div>
+
       <p className="sr-only">{projects.length} projects</p>
     </main>
   );
