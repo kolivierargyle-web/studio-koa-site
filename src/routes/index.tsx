@@ -235,7 +235,7 @@ function Index() {
             </button>
             <div style={{
               fontFamily: "Besley, serif",
-              fontSize: "52.438px",
+              fontSize: "58px",
               lineHeight: "53.487px",
               textAlign: "center",
               fontWeight: 400,
