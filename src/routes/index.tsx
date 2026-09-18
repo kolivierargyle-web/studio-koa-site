@@ -199,14 +199,14 @@ function Index() {
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Mobile close button */}
+            {/* Mobile close button only */}
             <button
               onClick={closeModal}
               className="md:hidden absolute hover:opacity-60 transition-opacity"
               aria-label="Close modal"
               style={{ 
-                top: "20px",
-                right: "20px",
+                top: "15px",
+                right: "15px",
                 background: "none", 
                 border: "none", 
                 cursor: "pointer",
@@ -227,7 +227,7 @@ function Index() {
               </svg>
             </button>
 
-            {/* Desktop close button */}
+            {/* Desktop close button only */}
             <button
               onClick={closeModal}
               className="hidden md:flex absolute hover:opacity-60 transition-opacity"
