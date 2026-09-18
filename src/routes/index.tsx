@@ -158,9 +158,9 @@ function Index() {
 
       {/* Nav bar */}
       <nav className="w-full bg-paper sticky top-0 z-40">
-        <div className="flex items-center justify-between text-[24px] md:text-[24px] text-sm sm:text-base text-ink uppercase px-4 sm:px-[33px] py-4 sm:py-8" 
-          style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400 }}>
-          <div className="flex items-center gap-4 sm:gap-[40px]">
+        <div className="flex items-center justify-between text-ink uppercase px-4 sm:px-[33px] py-4 sm:py-8" 
+          style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, fontSize: "clamp(10px, 2.5vw, 24px)" }}>
+          <div className="flex items-center gap-2 sm:gap-[40px]">
             <a href="#about" onClick={closeModal} className="transition-opacity hover:opacity-60">
               About
             </a>
@@ -171,7 +171,7 @@ function Index() {
           <a href="#work" onClick={closeModal} className="transition-opacity hover:opacity-60 absolute left-1/2 transform -translate-x-1/2">
             Work
           </a>
-          <div className="flex items-center gap-4 sm:gap-8">
+          <div className="flex items-center gap-2 sm:gap-8">
             <a href="#contact" onClick={closeModal} className="transition-opacity hover:opacity-60">
               Contact
             </a>
