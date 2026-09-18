@@ -236,7 +236,7 @@ function Index() {
             <div style={{
               fontFamily: "Besley, serif",
               fontSize: "58px",
-              lineHeight: "53.487px",
+              lineHeight: "58px",
               textAlign: "center",
               fontWeight: 400,
               color: "#000",
