@@ -194,8 +194,8 @@ function Index() {
           <div 
             className="relative"
             style={{
-              width: "1318px",
-              height: "591px",
+              width: "1713px",
+              height: "768px",
               backgroundColor: "rgba(255, 255, 255, 0.4)",
               backdropFilter: "blur(14px)",
               borderRadius: "111px",
