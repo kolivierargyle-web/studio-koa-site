@@ -8,7 +8,7 @@ import graphicFaster from "@/assets/graphic-faster.jpg";
 import graphicNeon from "@/assets/graphic-neon.jpg";
 import graphicRetro from "@/assets/graphic-retro.jpg";
 import plusSymbol from "@/assets/plus_symbol.png";
-import koaLogoWhite from "@/assets/koa_studio_-white.png";
+import koaStudioLime from "@/assets/koa_studio_lime.png";
 import { projects, projectBySlug } from "@/lib/projects";
 
 export const Route = createFileRoute("/")({
@@ -134,7 +134,7 @@ function Index() {
 <section className="relative w-full overflow-hidden bg-ink flex-1 flex flex-col">
   <div className="relative w-full h-full">
 <img
-  src={koaLogoWhite}
+  src={koaStudioLime}
   alt="Koa Studio"
   style={{
     position: 'absolute',
