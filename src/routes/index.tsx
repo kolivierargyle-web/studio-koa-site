@@ -185,7 +185,7 @@ function Index() {
         </div>
       </nav>
 
-         {/* Intro Modal */}
+      {/* Intro Modal */}
       {showIntroModal && (
         <div 
           className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
@@ -198,7 +198,7 @@ function Index() {
               height: "645px",
               backgroundColor: "rgba(255, 255, 255, 0.4)",
               backdropFilter: "blur(14px)",
-              borderRadius: "111px",
+              borderRadius: "57px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -239,7 +239,7 @@ function Index() {
               lineHeight: "53.487px",
               textAlign: "center",
               fontWeight: 400,
-              color: "rgba(0, 0, 0, 0.90)",
+              color: "#000",
               maxWidth: "90%",
               margin: "0",
             }}>
