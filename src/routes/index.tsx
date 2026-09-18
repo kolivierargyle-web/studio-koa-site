@@ -212,8 +212,8 @@ function Index() {
               className="absolute hover:opacity-60 transition-opacity"
               aria-label="Close modal"
               style={{ 
-                top: "60px",
-                right: "60px",
+                top: "80px",
+                right: "80px",
                 background: "none", 
                 border: "none", 
                 cursor: "pointer",
@@ -224,8 +224,8 @@ function Index() {
               }}
             >
               <svg 
-                width="15" 
-                height="14" 
+                width="18" 
+                height="17" 
                 viewBox="0 0 30 27" 
                 xmlns="http://www.w3.org/2000/svg"
               >
