@@ -7,6 +7,7 @@ import headerFallback from "@/assets/01.Header_fallback_up.jpg";
 import graphicFaster from "@/assets/graphic-faster.jpg";
 import graphicNeon from "@/assets/graphic-neon.jpg";
 import graphicRetro from "@/assets/graphic-retro.jpg";
+import plusSymbol from "@/assets/plus_symbol.png";
 import koaLogoWhite from "@/assets/koa_studio_-white.png";
 import { projects, projectBySlug } from "@/lib/projects";
 
@@ -136,8 +137,8 @@ function Index() {
   onClick={() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' })}
   style={{
     position: 'absolute',
-    top: '20%',
-    right: '16px',
+    top: '50%',
+    right: '40px',
     transform: 'translateY(-50%)',
     background: 'none',
     border: 'none',
@@ -147,15 +148,11 @@ function Index() {
   }}
   aria-label="Jump to work"
 >
-  <svg 
-    width="180" 
-    height="180" 
-    viewBox="0 0 144 144" 
-    xmlns="http://www.w3.org/2000/svg"
-  >
- <line x1="72" y1="30" x2="72" y2="114" stroke="#C4FF4D" strokeWidth="4" strokeLinecap="round"/>
-<line x1="30" y1="72" x2="114" y2="72" stroke="#C4FF4D" strokeWidth="4" strokeLinecap="round"/>
-  </svg>
+  <img 
+    src={plusSymbol}
+    alt="Jump to work"
+    style={{ width: '200px', height: '200px' }}
+  />
 </button>
 
     {/* White background behind video */}
