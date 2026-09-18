@@ -145,28 +145,6 @@ function Index() {
     zIndex: 10,
   }}
 />
-<button
-  onClick={() => alert('Button clicked!')}
-  style={{
-    position: 'absolute',
-    top: '10%',
-    right: '70px',
-    background: 'none',
-    border: 'none',
-    cursor: 'pointer',
-    zIndex: 50,
-    padding: 0,
-    width: '120px',
-    height: '120px',
-  }}
-  aria-label="Jump to nav"
->
-  <img 
-    src={plusSymbol}
-    alt="Jump to nav"
-    style={{ width: '100%', height: '100%' }}
-  />
-</button>
 <iframe
   src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
   title="Koa Studio showreel"
