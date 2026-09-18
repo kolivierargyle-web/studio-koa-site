@@ -132,25 +132,30 @@ function Index() {
 {/* Hero */}
 <section className="relative w-full overflow-hidden bg-ink flex-1 flex flex-col">
   <div className="relative w-full h-full">
-    <button
-      onClick={() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' })}
-      style={{
-        position: 'absolute',
-        top: '82px',
-        right: '40px',
-        background: 'none',
-        border: 'none',
-        fontSize: '48px',
-        color: '#000',
-        cursor: 'pointer',
-        zIndex: 10,
-        padding: 0,
-        fontWeight: 300,
-      }}
-      aria-label="Jump to work"
-    >
-      +
-    </button>
+   <button
+  onClick={() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' })}
+  style={{
+    position: 'absolute',
+    top: '82px',
+    right: '40px',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    zIndex: 10,
+    padding: 0,
+  }}
+  aria-label="Jump to work"
+>
+  <svg 
+    width="144" 
+    height="144" 
+    viewBox="0 0 144 144" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="72" y1="30" x2="72" y2="114" stroke="#000" strokeWidth="2" strokeLinecap="round"/>
+    <line x1="30" y1="72" x2="114" y2="72" stroke="#000" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+</button>
 
     {/* White background behind video */}
     <div 
