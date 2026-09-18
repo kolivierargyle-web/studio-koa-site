@@ -196,14 +196,14 @@ function Index() {
             style={{
               width: "1318px",
               height: "591px",
-              background: "linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(186, 140, 255, 0.2) 50%, rgba(196, 255, 77, 0.15) 100%)",
+              background: "linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(196, 255, 77, 0.2) 100%)",
               backdropFilter: "blur(10px)",
               borderRadius: "111px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               padding: "0",
-              border: "1px solid rgba(196, 255, 77, 0.2)",
+              border: "1px solid rgba(196, 255, 77, 0.3)",
             }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -211,7 +211,7 @@ function Index() {
               onClick={closeModal}
               className="absolute top-6 right-6 hover:opacity-60 transition-opacity"
               aria-label="Close modal"
-              style={{ fontSize: "28px", fontWeight: "bold", color: "#FFF" }}
+              style={{ fontSize: "28px", fontWeight: "bold", color: "#000" }}
             >
               ×
             </button>
@@ -222,7 +222,7 @@ function Index() {
               textAlign: "center",
               fontWeight: 400,
               fontStyle: "italic",
-              color: "#FFF",
+              color: "#000",
               maxWidth: "90%",
               margin: "0",
             }}>
