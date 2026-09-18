@@ -194,8 +194,8 @@ function Index() {
           <div 
             className="relative"
             style={{
-              width: "1455px",
-              height: "652px",
+              width: "1601px",
+              height: "717px",
               backgroundColor: "rgba(255, 255, 255, 0.4)",
               backdropFilter: "blur(14px)",
               borderRadius: "111px",
@@ -212,8 +212,8 @@ function Index() {
               className="absolute hover:opacity-60 transition-opacity"
               aria-label="Close modal"
               style={{ 
-                top: "32px",
-                right: "32px",
+                top: "45px",
+                right: "45px",
                 background: "none", 
                 border: "none", 
                 cursor: "pointer",
@@ -229,8 +229,8 @@ function Index() {
                 viewBox="0 0 30 27" 
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <line x1="1.41421" y1="1.41391" x2="28.5858" y2="26.5858" stroke="#C4FF4D" strokeWidth="2" strokeLinecap="round"/>
-                <line x1="28.5858" y1="1.41391" x2="1.41421" y2="26.5858" stroke="#C4FF4D" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="1.41421" y1="1.41391" x2="28.5858" y2="26.5858" stroke="#C4FF4D" strokeWidth="4" strokeLinecap="round"/>
+                <line x1="28.5858" y1="1.41391" x2="1.41421" y2="26.5858" stroke="#C4FF4D" strokeWidth="4" strokeLinecap="round"/>
               </svg>
             </button>
             <div style={{
