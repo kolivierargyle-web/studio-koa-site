@@ -240,12 +240,17 @@ function Index() {
               textAlign: "center",
               fontWeight: 400,
               fontStyle: "italic",
-              color: "#000",
+              color: "rgba(0, 0, 0, 0.90)",
               maxWidth: "90%",
               margin: "0",
             }}>
               <p style={{ margin: 0 }}>
-                Koa studio is a compact full-service creative direction & production studio. Photography, video, motion & identity. We build the right team for every project, delivering impactful work without the cost or complexity of a large agency.
+                Koa studio is a compact full-service<br />
+                creative direction & production studio.<br />
+                Photography, video, motion & identity.<br />
+                We build the right team for every project,<br />
+                delivering impactful work without the<br />
+                cost or complexity of a large agency.
               </p>
             </div>
           </div>
