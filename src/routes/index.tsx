@@ -131,7 +131,7 @@ function Index() {
 
       {/* Hero */}
       <section className="relative w-full overflow-hidden bg-ink flex-1 flex flex-col">
-      <div className="relative aspect-video w-full">
+      <div className="relative w-full h-full">
           <img
             src={headerFallback}
             alt="Koa Studio"
