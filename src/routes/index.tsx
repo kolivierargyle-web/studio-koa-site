@@ -1,185 +1,18 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Instagram } from "lucide-react";
 import React from "react";
-
-import heroPoster from "@/assets/hero-poster.jpg";
-import headerFallback from "@/assets/01.Header_fallback_up.jpg";
-import graphicFaster from "@/assets/graphic-faster.jpg";
-import graphicNeon from "@/assets/graphic-neon.jpg";
-import graphicRetro from "@/assets/graphic-retro.jpg";
+import { useNavigate } from "@tanstack/react-router";
 import koaLogoWhite from "@/assets/koa_studio_-white.png";
-import { projects, projectBySlug } from "@/lib/projects";
+import headerFallback from "@/assets/header-fallback.jpg";
+import { Instagram } from "lucide-react";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Koa Studio — Creative Direction & Production" },
-      {
-        name: "description",
-        content:
-          "Koa Studio is a full-service creative direction and production studio. Concept to final cut: photography, video, motion and brand identity.",
-      },
-      { property: "og:title", content: "Koa Studio — Creative Direction & Production" },
-      {
-        property: "og:description",
-        content:
-          "Concept to final cut. Photography, video and brand identity, without the cost or complexity of a large agency.",
-      },
-    ],
-  }),
-  component: Index,
-});
-
-type Tile =
-  | { kind: "image"; slug: string }
-  | { kind: "graphic"; slug: string; src: string; alt: string }
-  | { kind: "blank" };
-
-const tiles: Tile[] = [
-  { kind: "image", slug: "shyla-london" },
-  { kind: "image", slug: "terrace-hours" },
-  { kind: "graphic", slug: "faster-than-you", src: graphicFaster, alt: "Faster than you." },
-  { kind: "image", slug: "retire-rich" },
-
-  { kind: "image", slug: "second-season" },
-  { kind: "image", slug: "matchday" },
-  { kind: "image", slug: "hold-form" },
-  { kind: "image", slug: "first-touch" },
-
-  { kind: "image", slug: "night-tailoring" },
-  { kind: "image", slug: "wave-print" },
-  { kind: "image", slug: "chocolate-capital" },
-  { kind: "image", slug: "kit-still-life" },
-
-  { kind: "image", slug: "table-for-one" },
-  { kind: "image", slug: "delivered-by-magic" },
-  { kind: "graphic", slug: "delivered-by-magic", src: graphicNeon, alt: "Gorillas doorstep delivery" },
-  { kind: "image", slug: "second-glass" },
-
-  { kind: "graphic", slug: "faster-than-you", src: graphicRetro, alt: "Gorillas retro grid" },
-  { kind: "image", slug: "faster-than-you" },
-  { kind: "image", slug: "own-blend" },
-  { kind: "image", slug: "rider-in-style" },
-];
-
-function TileLink({
-  slug,
-  className,
-  children,
-}: {
-  slug: string;
-  className?: string;
-  children: React.ReactNode;
-}) {
-  const project = projectBySlug(slug);
-  return (
-    <Link
-      to="/projects/$slug"
-      params={{ slug }}
-      aria-label={project ? `${project.title} — ${project.client}` : slug}
-      className={`group relative block aspect-[153/191] overflow-hidden ${className ?? ""}`}
-    >
-      {children}
-    </Link>
-  );
-}
-
-function GridTile({ tile }: { tile: Tile }) {
-  if (tile.kind === "blank") {
-    return <div className="aspect-[153/191] bg-ink" aria-hidden="true" />;
-  }
-
-  if (tile.kind === "graphic") {
-    return (
-      <TileLink slug={tile.slug} className="bg-ink">
-        <img
-          src={tile.src}
-          alt={tile.alt}
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-        />
-        <span className="pointer-events-none absolute inset-0 bg-paper/0 transition-colors duration-500 group-hover:bg-paper/10" />
-      </TileLink>
-    );
-  }
-
-  const project = projectBySlug(tile.slug)!;
-
-  return (
-    <TileLink slug={tile.slug}>
-      <img
-        src={project.image}
-        alt={`${project.title} — ${project.client}`}
-        loading="lazy"
-        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-      />
-      <span className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/20" />
-    </TileLink>
-  );
-}
-
-function Index() {
+export function Index() {
   const [showIntroModal, setShowIntroModal] = React.useState(true);
+  const navigate = useNavigate();
 
-  const closeModal = () => setShowIntroModal(false);
+  const closeModal = () => {
+    setShowIntroModal(false);
+  };
 
   return (
-    <main className="bg-paper">
-
-      {/* Title bar */}
-      <header className="w-full bg-ink">
-        <div className="flex h-[100px] items-center justify-center px-4">
-          <img
-            src={koaLogoWhite}
-            alt="Koa Studio"
-            style={{
-              maxHeight: "clamp(14px, 5vw, 28px)",
-              width: "auto"
-            }}
-          />
-        </div>
-      </header>
-
-      {/* Hero */}
-      <section className="relative w-full overflow-hidden bg-ink">
-        <div className="relative aspect-video w-full">
-          <img
-            src={headerFallback}
-            alt="Koa Studio"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <iframe
-            src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
-            title="Koa Studio showreel"
-            allow="autoplay; fullscreen; picture-in-picture"
-            className="absolute inset-0 h-full w-full border-0"
-          />
-        </div>
-      </section>
-
-      {/* Nav bar */}
-      <nav className="w-full bg-paper sticky top-0 z-40">
-        <div className="flex items-center justify-between text-ink uppercase px-4 sm:px-[33px] py-4 sm:py-8" 
-          style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, fontSize: "clamp(10px, 2.5vw, 24px)" }}>
-          <div className="flex items-center gap-2 sm:gap-[40px]">
-            <a href="#about" onClick={closeModal} className="transition-opacity hover:opacity-60">
-              About
-            </a>
-            <a href="#services" onClick={closeModal} className="transition-opacity hover:opacity-60">
-              Services
-            </a>
-          </div>
-          <a href="#work" onClick={closeModal} className="transition-opacity hover:opacity-60 absolute left-1/2 transform -translate-x-1/2">
-            Work
-          </a>
-          <div className="flex items-center gap-2 sm:gap-8">
-            <a href="#contact" onClick={closeModal} className="transition-opacity hover:opacity-60">
-              Contact
-            </a>
-          </div>
-        </div>
-      </nav>
-
     <main className="bg-paper relative">
       {/* Intro Modal */}
       {showIntroModal && (
@@ -335,7 +168,7 @@ function Index() {
 
         {/* Work grid */}
         <section id="work" aria-label="Selected work" className="bg-paper px-[40px] py-[100px]">
-          {/* Your work grid content here */}
+          {/* Work grid content goes here */}
         </section>
 
         {/* Footer */}
@@ -385,3 +218,5 @@ function Index() {
         </footer>
       </div>
     </main>
+  );
+}
