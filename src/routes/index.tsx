@@ -137,13 +137,13 @@ function Index() {
             alt="Koa Studio"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <iframe
-            src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
-            title="Koa Studio showreel"
-            allow="autoplay; fullscreen; picture-in-picture"
-            className="absolute inset-0 h-full w-full border-0"
-            style={{ objectFit: "cover" }}
-          />
+         <iframe
+        src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
+  title="Koa Studio showreel"
+  allow="autoplay; fullscreen; picture-in-picture"
+  className="absolute inset-0 border-0"
+  style={{ width: "100%", height: "100%", minWidth: "100%", minHeight: "100%" }}
+/>
         </div>
       </section>
    </div>
