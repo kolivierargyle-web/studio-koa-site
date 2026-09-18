@@ -129,17 +129,37 @@ function Index() {
   {/* Header and Hero - Fixed */}
   <div className="fixed top-0 left-0 right-0 z-0 h-screen w-full flex flex-col">
 
-      {/* Hero */}
-      <section className="relative w-full overflow-hidden bg-ink flex-1 flex flex-col">
-      <div className="relative w-full h-full">
-{/* White background behind video */}
-<div 
-  className="absolute inset-0"
-  style={{
-    backgroundColor: "rgba(255, 255, 255, 1)",
-  }}
-/>
-         <iframe
+{/* Hero */}
+<section className="relative w-full overflow-hidden bg-ink flex-1 flex flex-col">
+  <div className="relative w-full h-full">
+    <button
+      onClick={() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' })}
+      style={{
+        position: 'absolute',
+        top: '82px',
+        right: '40px',
+        background: 'none',
+        border: 'none',
+        fontSize: '48px',
+        color: '#000',
+        cursor: 'pointer',
+        zIndex: 10,
+        padding: 0,
+        fontWeight: 300,
+      }}
+      aria-label="Jump to work"
+    >
+      +
+    </button>
+
+    {/* White background behind video */}
+    <div 
+      className="absolute inset-0"
+      style={{
+        backgroundColor: "rgba(255, 255, 255, 1)",
+      }}
+    />
+  <iframe
         src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
   title="Koa Studio showreel"
   allow="autoplay; fullscreen; picture-in-picture"
