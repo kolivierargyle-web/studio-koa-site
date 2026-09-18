@@ -160,7 +160,7 @@ function Index() {
       <nav className="w-full bg-paper">
         <div className="flex items-center justify-between text-[24px] text-ink uppercase px-[33px] py-8" 
           style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400 }}>
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-[40px]">
             <a href="#about" onClick={closeModal} className="transition-opacity hover:opacity-60">
               About
             </a>
@@ -172,9 +172,6 @@ function Index() {
             Work
           </a>
           <div className="flex items-center gap-8">
-            <a href="#work" onClick={closeModal} className="transition-opacity hover:opacity-60">
-              Creative spotlight
-            </a>
             <a href="#contact" onClick={closeModal} className="transition-opacity hover:opacity-60">
               Contact
             </a>
