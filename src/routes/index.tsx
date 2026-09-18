@@ -194,14 +194,16 @@ function Index() {
           <div 
             className="relative"
             style={{
-              width: "1268px",
-              height: "529px",
-              backgroundColor: "#FFF",
+              width: "1318px",
+              height: "591px",
+              backgroundColor: "rgba(255, 255, 255, 0.7)",
+              backdropFilter: "blur(10px)",
               borderRadius: "111px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               padding: "0",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
             }}
             onClick={(e) => e.stopPropagation()}
           >
