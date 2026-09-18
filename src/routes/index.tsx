@@ -6,6 +6,7 @@ import headerFallback from "@/assets/01.Header_fallback_up.jpg";
 import graphicFaster from "@/assets/graphic-faster.jpg";
 import graphicNeon from "@/assets/graphic-neon.jpg";
 import graphicRetro from "@/assets/graphic-retro.jpg";
+import koaLogoWhite from "@/assets/koa_studio_-white.png";
 import { projects, projectBySlug } from "@/lib/projects";
 
 export const Route = createFileRoute("/")({
