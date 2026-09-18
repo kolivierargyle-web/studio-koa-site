@@ -142,6 +142,7 @@ function Index() {
             title="Koa Studio showreel"
             allow="autoplay; fullscreen; picture-in-picture"
             className="absolute inset-0 h-full w-full border-0"
+            style={{ objectFit: "cover" }}
           />
         </div>
       </section>
