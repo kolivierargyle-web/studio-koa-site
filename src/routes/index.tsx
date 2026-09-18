@@ -137,7 +137,7 @@ function Index() {
   style={{
     position: 'absolute',
     top: '10%',
-    right: '7.5px',
+    right: '8.5px',
     transform: 'translateY(-50%)',
     background: 'none',
     border: 'none',
@@ -153,8 +153,8 @@ function Index() {
     viewBox="0 0 144 144" 
     xmlns="http://www.w3.org/2000/svg"
   >
- <line x1="72" y1="30" x2="72" y2="114" stroke="#C4FF4D" strokeWidth="3.2" strokeLinecap="round"/>
-<line x1="30" y1="72" x2="114" y2="72" stroke="#C4FF4D" strokeWidth="3.2" strokeLinecap="round"/>
+ <line x1="72" y1="30" x2="72" y2="114" stroke="#C4FF4D" strokeWidth="4" strokeLinecap="round"/>
+<line x1="30" y1="72" x2="114" y2="72" stroke="#C4FF4D" strokeWidth="4" strokeLinecap="round"/>
   </svg>
 </button>
 
