@@ -212,8 +212,8 @@ function Index() {
               className="absolute hover:opacity-60 transition-opacity"
               aria-label="Close modal"
               style={{ 
-                top: "45px",
-                right: "45px",
+                top: "60px",
+                right: "60px",
                 background: "none", 
                 border: "none", 
                 cursor: "pointer",
