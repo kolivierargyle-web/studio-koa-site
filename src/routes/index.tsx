@@ -179,7 +179,7 @@ function Index() {
         </div>
       </nav>
 
-          {/* Intro Modal */}
+           {/* Intro Modal */}
       {showIntroModal && (
         <div 
           className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
@@ -227,8 +227,8 @@ function Index() {
             </button>
             <div className="px-6 sm:px-12" style={{
               fontFamily: "Besley, serif",
-              fontSize: "clamp(18px, 4vw, 58px)",
-              lineHeight: "clamp(20px, 4.5vw, 60px)",
+              fontSize: "clamp(16px, 3.5vw, 58px)",
+              lineHeight: "clamp(18px, 4vw, 60px)",
               textAlign: "center",
               fontWeight: 400,
               color: "#000",
@@ -236,12 +236,13 @@ function Index() {
               margin: "0",
             }}>
               <p style={{ margin: 0 }}>
-                <span style={{ fontStyle: "italic" }}>Koa studio is a compact full-service</span><br />
-                <span style={{ fontStyle: "italic" }}>creative direction & production studio.</span><br />
-                Photography, video, motion & identity.<br />
-                We build the right team for every project,<br />
-                delivering impactful work without the<br />
-                cost or complexity of a large agency.
+                <span style={{ fontStyle: "italic" }}>Koa studio is a compact full-service<br />creative direction & production</span><br />
+                <span style={{ fontStyle: "italic" }}>studio.</span><br />
+                Photography, video, motion &<br />
+                identity. We build the right team for every<br />
+                project, delivering impactful work without<br />
+                the cost or complexity of a large<br />
+                agency.
               </p>
             </div>
           </div>
