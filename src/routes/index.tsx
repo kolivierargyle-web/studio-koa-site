@@ -182,21 +182,19 @@ function Index() {
       {/* Intro Modal */}
       {showIntroModal && (
         <div 
-          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
           onClick={closeModal}
         >
           <div 
-            className="relative"
+            className="relative w-full max-w-[1441px]"
             style={{
-              width: "1441px",
-              height: "645px",
+              aspectRatio: "1441/645",
               backgroundColor: "rgba(255, 255, 255, 0.4)",
               backdropFilter: "blur(14px)",
               borderRadius: "57px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              padding: "0",
               border: "1px solid rgba(255, 255, 255, 0.5)",
             }}
             onClick={(e) => e.stopPropagation()}
@@ -206,8 +204,8 @@ function Index() {
               className="absolute hover:opacity-60 transition-opacity"
               aria-label="Close modal"
               style={{ 
-                top: "80px",
-                right: "80px",
+                top: "20px",
+                right: "20px",
                 background: "none", 
                 border: "none", 
                 cursor: "pointer",
@@ -222,33 +220,6 @@ function Index() {
                 height="17" 
                 viewBox="0 0 30 27" 
                 xmlns="http://www.w3.org/2000/svg"
-              >
-                <line x1="1.41421" y1="1.41391" x2="28.5858" y2="26.5858" stroke="#C4FF4D" strokeWidth="4" strokeLinecap="round"/>
-                <line x1="28.5858" y1="1.41391" x2="1.41421" y2="26.5858" stroke="#C4FF4D" strokeWidth="4" strokeLinecap="round"/>
-              </svg>
-            </button>
-            <div style={{
-              fontFamily: "Besley, serif",
-              fontSize: "58px",
-              lineHeight: "60px",
-              textAlign: "center",
-              fontWeight: 400,
-              color: "#000",
-              maxWidth: "90%",
-              margin: "0",
-            }}>
-              <p style={{ margin: 0 }}>
-                <span style={{ fontStyle: "italic" }}>Koa studio is a compact full-service</span><br />
-                <span style={{ fontStyle: "italic" }}>creative direction & production studio.</span><br />
-                Photography, video, motion & identity.<br />
-                We build the right team for every project,<br />
-                delivering impactful work without the<br />
-                cost or complexity of a large agency.
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Work grid */}
       <section id="work" aria-label="Selected work">
