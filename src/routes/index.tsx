@@ -1,3 +1,123 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Instagram } from "lucide-react";
+import React from "react";
+
+import heroPoster from "@/assets/hero-poster.jpg";
+import headerFallback from "@/assets/01.Header_fallback_up.jpg";
+import graphicFaster from "@/assets/graphic-faster.jpg";
+import graphicNeon from "@/assets/graphic-neon.jpg";
+import graphicRetro from "@/assets/graphic-retro.jpg";
+import koaLogoWhite from "@/assets/koa_studio_-white.png";
+import { projects, projectBySlug } from "@/lib/projects";
+
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Koa Studio — Creative Direction & Production" },
+      {
+        name: "description",
+        content:
+          "Koa Studio is a full-service creative direction and production studio. Concept to final cut: photography, video, motion and brand identity.",
+      },
+      { property: "og:title", content: "Koa Studio — Creative Direction & Production" },
+      {
+        property: "og:description",
+        content:
+          "Concept to final cut. Photography, video and brand identity, without the cost or complexity of a large agency.",
+      },
+    ],
+  }),
+  component: Index,
+});
+
+type Tile =
+  | { kind: "image"; slug: string }
+  | { kind: "graphic"; slug: string; src: string; alt: string }
+  | { kind: "blank" };
+
+const tiles: Tile[] = [
+  { kind: "image", slug: "shyla-london" },
+  { kind: "image", slug: "terrace-hours" },
+  { kind: "graphic", slug: "faster-than-you", src: graphicFaster, alt: "Faster than you." },
+  { kind: "image", slug: "retire-rich" },
+
+  { kind: "image", slug: "second-season" },
+  { kind: "image", slug: "matchday" },
+  { kind: "image", slug: "hold-form" },
+  { kind: "image", slug: "first-touch" },
+
+  { kind: "image", slug: "night-tailoring" },
+  { kind: "image", slug: "wave-print" },
+  { kind: "image", slug: "chocolate-capital" },
+  { kind: "image", slug: "kit-still-life" },
+
+  { kind: "image", slug: "table-for-one" },
+  { kind: "image", slug: "delivered-by-magic" },
+  { kind: "graphic", slug: "delivered-by-magic", src: graphicNeon, alt: "Gorillas doorstep delivery" },
+  { kind: "image", slug: "second-glass" },
+
+  { kind: "graphic", slug: "faster-than-you", src: graphicRetro, alt: "Gorillas retro grid" },
+  { kind: "image", slug: "faster-than-you" },
+  { kind: "image", slug: "own-blend" },
+  { kind: "image", slug: "rider-in-style" },
+];
+
+function TileLink({
+  slug,
+  className,
+  children,
+}: {
+  slug: string;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  const project = projectBySlug(slug);
+  return (
+    <Link
+      to="/projects/$slug"
+      params={{ slug }}
+      aria-label={project ? `${project.title} — ${project.client}` : slug}
+      className={`group relative block aspect-[153/191] overflow-hidden ${className ?? ""}`}
+    >
+      {children}
+    </Link>
+  );
+}
+
+function GridTile({ tile }: { tile: Tile }) {
+  if (tile.kind === "blank") {
+    return <div className="aspect-[153/191] bg-ink" aria-hidden="true" />;
+  }
+
+  if (tile.kind === "graphic") {
+    return (
+      <TileLink slug={tile.slug} className="bg-ink">
+        <img
+          src={tile.src}
+          alt={tile.alt}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+        />
+        <span className="pointer-events-none absolute inset-0 bg-paper/0 transition-colors duration-500 group-hover:bg-paper/10" />
+      </TileLink>
+    );
+  }
+
+  const project = projectBySlug(tile.slug)!;
+
+  return (
+    <TileLink slug={tile.slug}>
+      <img
+        src={project.image}
+        alt={`${project.title} — ${project.client}`}
+        loading="lazy"
+        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+      />
+      <span className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/20" />
+    </TileLink>
+  );
+}
+
 function Index() {
   const [showIntroModal, setShowIntroModal] = React.useState(true);
 
