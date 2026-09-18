@@ -216,24 +216,37 @@ style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, paddingLeft: 
           ))}
         </div>
       </section>
-
-      {/* Footer */}
+{/* Footer */}
       <footer id="contact" className="bg-ink text-paper" style={{ width: "1445px", height: "273px" }}>
-        <div
-          className="flex items-end justify-between px-[40px] py-11"
-        >
-          
-            href="https://www.instagram.com/_koa_studio/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Koa Studio on Instagram"
-            className="transition-opacity hover:opacity-60"
+        <div>
+          <div
+            className="flex items-end justify-between px-[40px] py-11"
           >
-            <Instagram className="h-[34px] w-[34px]" strokeWidth={1.5} />
-          </a>
-          
-            href="mailto:kat@studio-koa.com"
-            className="transition-opacity hover:opacity-60"
+            
+              href="https://www.instagram.com/_koa_studio/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Koa Studio on Instagram"
+              className="transition-opacity hover:opacity-60"
+            >
+              <Instagram className="h-[34px] w-[34px]" strokeWidth={1.5} />
+            </a>
+            
+              href="mailto:kat@studio-koa.com"
+              className="transition-opacity hover:opacity-60"
+              style={{
+                fontFamily: "Didact Gothic, sans-serif",
+                fontSize: "20px",
+                fontWeight: 400,
+                lineHeight: "normal",
+                color: "#FFF",
+              }}
+            >
+              kat@studio-koa.com
+            </a>
+          </div>
+          <div
+            className="flex items-center justify-between border-t-2 border-paper px-[45px] py-11 uppercase"
             style={{
               fontFamily: "Didact Gothic, sans-serif",
               fontSize: "20px",
@@ -242,21 +255,9 @@ style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, paddingLeft: 
               color: "#FFF",
             }}
           >
-            kat@studio-koa.com
-          </a>
-        </div>
-        <div
-          className="flex items-center justify-between border-t-2 border-paper px-[45px] py-11 uppercase"
-          style={{
-            fontFamily: "Didact Gothic, sans-serif",
-            fontSize: "20px",
-            fontWeight: 400,
-            lineHeight: "normal",
-            color: "#FFF",
-          }}
-        >
-          <span>London</span>
-          <span>Berlin</span>
-          <span>World Wide</span>
+            <span>London</span>
+            <span>Berlin</span>
+            <span>World Wide</span>
+          </div>
         </div>
       </footer>
