@@ -194,8 +194,8 @@ function Index() {
           <div 
             className="relative"
             style={{
-              width: "1713px",
-              height: "768px",
+              width: "1455px",
+              height: "652px",
               backgroundColor: "rgba(255, 255, 255, 0.4)",
               backdropFilter: "blur(14px)",
               borderRadius: "111px",
@@ -209,9 +209,11 @@ function Index() {
           >
             <button
               onClick={closeModal}
-              className="absolute top-6 right-6 hover:opacity-60 transition-opacity"
+              className="absolute hover:opacity-60 transition-opacity"
               aria-label="Close modal"
               style={{ 
+                top: "32px",
+                right: "32px",
                 background: "none", 
                 border: "none", 
                 cursor: "pointer",
