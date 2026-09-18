@@ -205,12 +205,13 @@ function Index() {
               className="md:hidden absolute hover:opacity-60 transition-opacity"
               aria-label="Close modal"
               style={{ 
-                top: "15px",
-                right: "15px",
+                top: "5px",
+                right: "5px",
                 background: "none", 
                 border: "none", 
                 cursor: "pointer",
                 padding: "0",
+                display: "flex",
                 alignItems: "center",
                 justifyContent: "center"
               }}
