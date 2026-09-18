@@ -138,7 +138,7 @@ function Index() {
   style={{
     position: 'absolute',
     top: '15%',
-    right: '40px',
+    right: '50px',
     transform: 'translateY(-50%)',
     background: 'none',
     border: 'none',
@@ -151,7 +151,7 @@ function Index() {
   <img 
     src={plusSymbol}
     alt="Jump to work"
-    style={{ width: '150px', height: '150px' }}
+    style={{ width: '120px', height: '120px' }}
   />
 </button>
 
