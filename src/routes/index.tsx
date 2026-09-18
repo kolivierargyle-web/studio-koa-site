@@ -128,7 +128,7 @@ function Index() {
 <main className="bg-paper relative">
 
   {/* Header and Hero - Fixed */}
-  <div className="fixed top-0 left-0 right-0 z-0 h-screen w-full flex flex-col">
+  <div className="fixed top-0 left-0 right-0 z-0 h-screen w-full flex flex-col" style={{ pointerEvents: 'auto' }}>
 
 {/* Hero */}
 <section className="relative w-full overflow-hidden bg-ink flex-1 flex flex-col">
