@@ -155,7 +155,7 @@ function Index() {
     background: 'none',
     border: 'none',
     cursor: 'pointer',
-    zIndex: 10,
+    zIndex: 50,
     padding: 0,
   }}
   aria-label="Jump to work"
