@@ -239,7 +239,7 @@ function Index() {
               lineHeight: "53.487px",
               textAlign: "center",
               fontWeight: 400,
-              color: "rgba(255, 255, 255, 0.90)",
+              color: "rgba(0, 0, 0, 0.90)",
               maxWidth: "90%",
               margin: "0",
             }}>
