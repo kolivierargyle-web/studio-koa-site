@@ -199,18 +199,42 @@ function Index() {
             }}
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Mobile close button */}
             <button
               onClick={closeModal}
-              className="absolute hover:opacity-60 transition-opacity"
+              className="absolute hover:opacity-60 transition-opacity md:hidden top-[20px] right-[20px]"
               aria-label="Close modal"
               style={{ 
-                top: "35px",
-                right: "35px",
                 background: "none", 
                 border: "none", 
                 cursor: "pointer",
                 padding: "0",
                 display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
+              <svg 
+                width="18" 
+                height="17" 
+                viewBox="0 0 30 27" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line x1="1.41421" y1="1.41391" x2="28.5858" y2="26.5858" stroke="#C4FF4D" strokeWidth="4" strokeLinecap="round"/>
+                <line x1="28.5858" y1="1.41391" x2="1.41421" y2="26.5858" stroke="#C4FF4D" strokeWidth="4" strokeLinecap="round"/>
+              </svg>
+            </button>
+
+            {/* Desktop close button */}
+            <button
+              onClick={closeModal}
+              className="absolute hover:opacity-60 transition-opacity hidden md:flex top-[50px] right-[50px]"
+              aria-label="Close modal"
+              style={{ 
+                background: "none", 
+                border: "none", 
+                cursor: "pointer",
+                padding: "0",
                 alignItems: "center",
                 justifyContent: "center"
               }}
@@ -225,6 +249,7 @@ function Index() {
                 <line x1="28.5858" y1="1.41391" x2="1.41421" y2="26.5858" stroke="#C4FF4D" strokeWidth="4" strokeLinecap="round"/>
               </svg>
             </button>
+
             <div className="px-6 sm:px-12" style={{
               fontFamily: "Besley, serif",
               fontSize: "clamp(12px, 2.5vw, 58px)",
