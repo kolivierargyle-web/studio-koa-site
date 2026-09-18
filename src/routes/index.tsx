@@ -133,6 +133,18 @@ function Index() {
 {/* Hero */}
 <section className="relative w-full overflow-hidden bg-ink flex-1 flex flex-col">
   <div className="relative w-full h-full">
+<img
+  src={koaLogoWhite}
+  alt="Koa Studio"
+  style={{
+    position: 'absolute',
+    top: '40px',
+    left: '40px',
+    maxHeight: '40px',
+    width: 'auto',
+    zIndex: 10,
+  }}
+/>
 <button
   onClick={() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' })}
   style={{
