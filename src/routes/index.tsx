@@ -191,7 +191,7 @@ function Index() {
 <a 
   href="#about" 
   onClick={closeModal}
-  onMouseEnter={(e) => e.target.style.color = '#4D4D4D'}
+  onMouseEnter={(e) => e.target.style.color = '#6663FD'}
   onMouseLeave={(e) => e.target.style.color = ''}
   className="transition-opacity hover:opacity-60"
 >
@@ -200,7 +200,7 @@ function Index() {
 <a 
   href="#services" 
   onClick={closeModal}
-  onMouseEnter={(e) => e.target.style.color = '#4D4D4D'}
+  onMouseEnter={(e) => e.target.style.color = '#6663FD'}
   onMouseLeave={(e) => e.target.style.color = ''}
   className="transition-opacity hover:opacity-60"
 >
@@ -210,7 +210,7 @@ function Index() {
 <a 
   href="#work" 
   onClick={closeModal}
-  onMouseEnter={(e) => e.target.style.color = '#4D4D4D'}
+  onMouseEnter={(e) => e.target.style.color = '#6663FD'}
   onMouseLeave={(e) => e.target.style.color = ''}
   className="transition-opacity hover:opacity-60 absolute left-1/2 transform -translate-x-1/2"
 >
@@ -220,7 +220,7 @@ function Index() {
 <a 
   href="#contact" 
   onClick={closeModal}
-  onMouseEnter={(e) => e.target.style.color = '#4D4D4D'}
+  onMouseEnter={(e) => e.target.style.color = '#46663FD'}
   onMouseLeave={(e) => e.target.style.color = ''}
   className="transition-opacity hover:opacity-60"
 >
