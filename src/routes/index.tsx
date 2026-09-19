@@ -145,13 +145,26 @@ function Index() {
     zIndex: 10,
   }}
 />
-<iframe
-  src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
-  title="Koa Studio showreel"
-  allow="autoplay; fullscreen; picture-in-picture"
-  className="absolute inset-0 border-0"
-  style={{ width: "100%", height: "100%", minWidth: "100%", minHeight: "100%", transform: "scale(1.21)", pointerEvents: "none" }}
-/>
+{/* Video - Responsive for mobile/desktop */}
+{typeof window !== 'undefined' && window.innerWidth < 768 ? (
+  // Mobile vertical video
+  <iframe
+    src="https://player.vimeo.com/video/1228331683?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
+    title="Koa Studio showreel mobile"
+    allow="autoplay; fullscreen; picture-in-picture"
+    className="absolute inset-0 h-full w-full border-0"
+    style={{ width: "100%", height: "100%", minWidth: "100%", minHeight: "100%", transform: "scale(1.21)", pointerEvents: "none" }}
+  />
+) : (
+  // Desktop landscape video
+  <iframe
+    src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
+    title="Koa Studio showreel"
+    allow="autoplay; fullscreen; picture-in-picture"
+    className="absolute inset-0 h-full w-full border-0"
+    style={{ width: "100%", height: "100%", minWidth: "100%", minHeight: "100%", transform: "scale(1.21)", pointerEvents: "none" }}
+  />
+)}
         </div>
       </section>
    </div>
