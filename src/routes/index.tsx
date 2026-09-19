@@ -131,7 +131,7 @@ function Index() {
 <div className="fixed top-0 left-0 right-0 z-0 h-screen w-full flex flex-col" style={{ pointerEvents: 'auto' }}>
   {/* Hero */}
   <section className="relative w-full overflow-hidden bg-ink flex-1 flex flex-col">
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full" style={{ overflow: 'hidden' }}>
       <img
         src={koaStudioLime}
         alt="Koa Studio"
@@ -156,14 +156,14 @@ function Index() {
         }, []);
         
         return isMobile ? (
-// Mobile vertical video
-<iframe
-  src="https://player.vimeo.com/video/1228331683?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
-  title="Koa Studio showreel mobile"
-  allow="autoplay; fullscreen; picture-in-picture"
-  className="absolute inset-0 h-full w-full border-0"
-  style={{ width: "100%", height: "100%", minWidth: "100%", minHeight: "100%", transform: "scale(1.5)", pointerEvents: "none" }}
-/>
+          // Mobile vertical video
+          <iframe
+            src="https://player.vimeo.com/video/1228331683?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
+            title="Koa Studio showreel mobile"
+            allow="autoplay; fullscreen; picture-in-picture"
+            className="absolute inset-0 h-full w-full border-0"
+            style={{ width: "100%", height: "100%", minWidth: "100%", minHeight: "100%", transform: "scale(3.5)", pointerEvents: "none" }}
+          />
         ) : (
           // Desktop landscape video
           <iframe
@@ -178,7 +178,6 @@ function Index() {
     </div>
   </section>
 </div>
-
   {/* Content - Scrolls over fixed hero */}
   <div className="relative z-10" style={{ paddingTop: "100vh" }}>
        {/* Nav bar */}
