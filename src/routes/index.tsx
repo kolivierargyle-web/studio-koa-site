@@ -328,6 +328,7 @@ function Index() {
           ))}
         </div>
       </section>
+    </div>
 
 {/* Footer */}
 <footer id="contact" className="bg-ink text-paper" style={{ width: "100%", height: "273px" }}>
