@@ -332,7 +332,7 @@ function Index() {
       {/* Footer */}
       <footer id="contact" className="bg-ink text-paper" style={{ width: "100%", height: "273px" }}>
         <div>
-          <div className="flex items-end justify-between px-[40px] py-11">
+          <div className="flex items-end justify-between px-[40px] py-16">
             <a 
               href="https://www.instagram.com/_koa_studio/" 
               target="_blank" 
@@ -340,7 +340,7 @@ function Index() {
               aria-label="Koa Studio on Instagram" 
               className="transition-opacity hover:opacity-60"
             >
-              <Instagram className="h-[34px] w-[34px]" strokeWidth={1.5} />
+              <Instagram className="h-[28px] w-[28px]" strokeWidth={1.5} />
             </a>
             <a 
               href="mailto:kat@studio-koa.com" 
