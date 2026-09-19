@@ -148,9 +148,9 @@ function Index() {
               alt="Koa Studio"
               style={{
                 position: 'absolute',
-                top: isMobile ? '25px' : '65px',
-                left: isMobile ? '25px' : '65px',
-                maxHeight: isMobile ? '18px' : '40px',
+                top: isMobile ? '25px' : '50px',
+                left: isMobile ? '25px' : '50px',
+                maxHeight: isMobile ? '18px' : '35px',
                 width: 'auto',
                 zIndex: 10,
               }}
