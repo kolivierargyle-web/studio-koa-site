@@ -132,47 +132,50 @@ function Index() {
   {/* Hero */}
   <section className="relative w-full overflow-hidden bg-ink flex-1 flex flex-col">
     <div className="relative w-full h-full" style={{ overflow: 'hidden' }}>
-      <img
-        src={koaStudioLime}
-        alt="Koa Studio"
-        style={{
-          position: 'absolute',
-          top: '65px',
-          left: '65px',
-          maxHeight: '40px',
-          width: 'auto',
-          zIndex: 10,
-        }}
-      />
-
       {(() => {
         const [isMobile, setIsMobile] = React.useState(false);
-        
         React.useEffect(() => {
           const handleResize = () => setIsMobile(window.innerWidth < 768);
           handleResize();
           window.addEventListener('resize', handleResize);
           return () => window.removeEventListener('resize', handleResize);
         }, []);
-        
-        return isMobile ? (
-          // Mobile vertical video
-          <iframe
-            src="https://player.vimeo.com/video/1228331683?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
-            title="Koa Studio showreel mobile"
-            allow="autoplay; fullscreen; picture-in-picture"
-            className="absolute inset-0 h-full w-full border-0"
-            style={{ width: "100%", height: "100%", minWidth: "100%", minHeight: "100%", transform: "scale(3.5)", pointerEvents: "none" }}
-          />
-        ) : (
-          // Desktop landscape video
-          <iframe
-            src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
-            title="Koa Studio showreel"
-            allow="autoplay; fullscreen; picture-in-picture"
-            className="absolute inset-0 h-full w-full border-0"
-            style={{ width: "100%", height: "100%", minWidth: "100%", minHeight: "100%", transform: "scale(1.21)", pointerEvents: "none" }}
-          />
+
+        return (
+          <>
+            <img
+              src={koaStudioLime}
+              alt="Koa Studio"
+              style={{
+                position: 'absolute',
+                top: isMobile ? '20px' : '65px',
+                left: isMobile ? '15px' : '65px',
+                maxHeight: isMobile ? '16px' : '40px',
+                width: 'auto',
+                zIndex: 10,
+              }}
+            />
+
+            {isMobile ? (
+              // Mobile vertical video
+              <iframe
+                src="https://player.vimeo.com/video/1228331683?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
+                title="Koa Studio showreel mobile"
+                allow="autoplay; fullscreen; picture-in-picture"
+                className="absolute inset-0 h-full w-full border-0"
+                style={{ width: "100%", height: "100%", minWidth: "100%", minHeight: "100%", transform: "scale(3.5)", pointerEvents: "none" }}
+              />
+            ) : (
+              // Desktop landscape video
+              <iframe
+                src="https://player.vimeo.com/video/1223954801?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1"
+                title="Koa Studio showreel"
+                allow="autoplay; fullscreen; picture-in-picture"
+                className="absolute inset-0 h-full w-full border-0"
+                style={{ width: "100%", height: "100%", minWidth: "100%", minHeight: "100%", transform: "scale(1.21)", pointerEvents: "none" }}
+              />
+            )}
+          </>
         );
       })()}
     </div>
