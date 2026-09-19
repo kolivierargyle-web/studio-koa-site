@@ -334,47 +334,34 @@ function Index() {
 
       {/* Footer */}
       <footer id="contact" className="bg-ink text-paper" style={{ width: "100%", height: "273px" }}>
-        <div>
-          <div className="flex items-end justify-between px-[40px] py-11">
-            <a 
-              href="https://www.instagram.com/_koa_studio/" 
-              target="_blank" 
-              rel="noreferrer" 
-              aria-label="Koa Studio on Instagram" 
-              className="transition-opacity hover:opacity-60"
-            >
-              <Instagram className="h-[34px] w-[34px]" strokeWidth={1.5} />
-            </a>
-            <a 
-              href="mailto:kat@studio-koa.com" 
-              className="transition-opacity hover:opacity-60" 
-              style={{ 
-                fontFamily: "Didact Gothic, sans-serif", 
-                fontSize: "clamp(15px, 4vw, 20px)", 
-                fontWeight: 400, 
-                lineHeight: "normal", 
-                color: "#FFF" 
-              }}
-            >
-              kat@studio-koa.com
-            </a>
-          </div>
-          <div 
-            className="flex items-center justify-between border-t-2 border-paper px-[45px] uppercase" 
-            style={{ 
-              fontFamily: "Didact Gothic, sans-serif", 
-              fontSize: "clamp(15px, 4vw, 20px)", 
-              fontWeight: 400, 
-              lineHeight: "normal", 
-              color: "#FFF",
-              paddingTop: "62px",
-              paddingBottom: "11px"
-            }}
-          >
-            <span>London</span>
-            <span>Berlin</span>
-            <span>World Wide</span>
-          </div>
+{(() => {
+  const [isMobile, setIsMobile] = React.useState(false);
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return (
+    <div
+      className="flex items-center justify-between border-t-2 border-paper px-[45px] uppercase"
+      style={{
+        fontFamily: "Didact Gothic, sans-serif",
+        fontSize: isMobile ? "clamp(12px, 3vw, 16px)" : "clamp(15px, 4vw, 20px)",
+        fontWeight: 400,
+        lineHeight: "normal",
+        color: "#FFF",
+        paddingTop: "62px",
+        paddingBottom: "11px"
+      }}
+    >
+      <span>London</span>
+      <span>Berlin</span>
+      <span>World Wide</span>
+    </div>
+  );
+})()}
         </div>
       </footer>
      </div>
