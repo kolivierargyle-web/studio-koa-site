@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+cat src/routes/projects.slug.tsximport { useEffect, useState } from 'react';
 import { useParams } from '@tanstack/react-router';
 
 export default function ProjectPage() {
