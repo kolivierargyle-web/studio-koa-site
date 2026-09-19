@@ -356,22 +356,34 @@ function Index() {
               kat@studio-koa.com
             </a>
           </div>
-          <div 
-            className="flex items-center justify-between border-t-2 border-paper px-[45px] uppercase" 
-            style={{ 
-              fontFamily: "Didact Gothic, sans-serif", 
-              fontSize: "clamp(15px, 4vw, 20px)", 
-              fontWeight: 400, 
-              lineHeight: "normal", 
-              color: "#FFF",
-              paddingTop: "62px",
-              paddingBottom: "11px"
-            }}
-          >
-            <span>London</span>
-            <span>Berlin</span>
-            <span>World Wide</span>
-          </div>
+{(() => {
+  const [isMobile, setIsMobile] = React.useState(false);
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return (
+    <div
+   className="flex items-center justify-between border-t-2 border-paper px-[45px]" uppercase"
+      style={{
+        fontFamily: "Didact Gothic, sans-serif",
+        fontSize: isMobile ? "clamp(12px, 3vw, 16px)" : "clamp(15px, 4vw, 20px)",
+        fontWeight: 400,
+        lineHeight: "normal",
+        color: "#FFF",
+        paddingTop: "62px",
+        paddingBottom: "11px"
+      }}
+    >
+      <span>London</span>
+      <span>Berlin</span>
+      <span>World Wide</span>
+    </div>
+  );
+})()}
         </div>
       </footer>
      </div>
