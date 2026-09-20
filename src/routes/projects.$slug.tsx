@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Instagram } from "lucide-react";
 import { projectBySlug } from "@/lib/projects";
+import creditTextShyla from "@/assets/credit_text_shyla.png";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -174,23 +175,17 @@ function ProjectPage() {
             </div>
         </section>
         )}
-
-        <header className="mx-auto max-w-2xl bg-paper px-6 text-center mb-[56px]">
-          <h1 className="font-display text-4xl font-normal tracking-tight sm:text-5xl lg:text-[50px]" style={{ fontFamily: "Didact Gothic, sans-serif", textTransform: "uppercase", lineHeight: "1.2" }}>
-            Brand shoot:<br />{project.title}
-          </h1>
-        </header>
-        <section className="mx-auto bg-paper px-6 py-16 text-center sm:py-20" style={{ marginTop: "220px" }}>
-          <img
-            src="/assets/Credit_text_shyla.png"
-            alt="Credits"
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-              width: "100%",
-            }}
-          />
-        </section>
+<section className="mx-auto max-w-2xl bg-paper px-6 py-16 text-center sm:py-20" style={{ marginTop: "220px" }}>
+  <img
+    src={creditTextShyla}
+    alt="Credits"
+    style={{
+      maxWidth: "100%",
+      height: "auto",
+      width: "100%",
+    }}
+  />
+</section>
       </article>
 
     {/* Footer */}
