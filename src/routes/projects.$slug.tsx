@@ -55,14 +55,14 @@ function ProjectPage() {
         </section>
 
         <section className={`w-full bg-white ${isMobile ? 'px-5 py-20' : 'px-12 py-20'}`}>
-          <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-2'} gap-6 w-full`}>
+          <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-2'}`} style={{ gap: '50px', justifyContent: 'start' }}>
             {gridImages.map((src, idx) => (
               <img
                 key={idx}
                 src={src}
                 alt={`Shyla Product ${idx + 1}`}
-                className="w-full h-auto object-cover"
-                style={{ aspectRatio: '4/5' }}
+                className="object-cover"
+                style={{ width: '1227.36px', height: '1534.2px' }}
                 loading="lazy"
               />
             ))}
