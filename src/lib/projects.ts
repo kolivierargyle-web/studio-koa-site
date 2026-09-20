@@ -48,14 +48,15 @@ export const projects: Project[] = [
     credits: ["Creative direction: Koa Studio", "Photography: L. Marchetti", "Styling: Ida Sørensen"],
   },
   {
-    slug: "tr-urban-lifestyle",
-    title: "Trade Republic Urban Lifestyle",
-    client: "Trade Republic",
-    discipline: "Brand campaign — video & photography",
+    slug: "terrace-hours",
+    title: "Terrace Hours",
+    client: "Casa Verde",
+    discipline: "Brand film + stills",
     year: "2026",
-    summary: "Urban lifestyle campaign showcasing Trade Republic's modern brand identity through dynamic video and curated imagery.",
+    summary:
+      "Hospitality brand launch shot across one long afternoon. Menu, space and people captured as one continuous story.",
     image: tile02,
-    credits: ["Creative direction: Koa Studio", "Video: [Production]", "Photography: [Photographer]"],
+    credits: ["Creative direction: Koa Studio", "DOP: R. Abioye", "Production: Koa Studio"],
   },
   {
     slug: "retire-rich",
