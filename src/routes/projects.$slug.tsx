@@ -1,7 +1,8 @@
-cat src/routes/projects.slug.tsximport { useEffect, useState } from 'react';
+import { createFileRoute } from '@tanstack/react-router';
+import { useEffect, useState } from 'react';
 import { useParams } from '@tanstack/react-router';
 
-export default function ProjectPage() {
+function ProjectPage() {
   const { slug } = useParams({ from: '/projects/$slug' });
   const [isMobile, setIsMobile] = useState(false);
 
@@ -81,7 +82,7 @@ export default function ProjectPage() {
         <footer className={`w-full bg-black text-white ${isMobile ? 'px-5 py-16' : 'px-[166px] py-[145px]'} text-center`}>
           <div className="max-w-2xl mx-auto">
             <div className="flex flex-col gap-4 mb-6">
-              <a
+              
                 href="https://instagram.com/koastudio"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -89,7 +90,7 @@ export default function ProjectPage() {
               >
                 INSTAGRAM
               </a>
-              <a
+              
                 href="mailto:hello@koastudio.com"
                 className={`${isMobile ? 'text-xs' : 'text-xs'} tracking-widest hover:text-[#BA8CFF] transition-colors`}
               >
@@ -115,3 +116,7 @@ export default function ProjectPage() {
     </main>
   );
 }
+
+export const Route = createFileRoute('/projects/$slug')({
+  component: ProjectPage,
+});
