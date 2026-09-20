@@ -21,6 +21,7 @@ import shylaGrid2 from "@/assets/shyla-grid-2.png";
 import shylaGrid3 from "@/assets/shyla-grid-3.png";
 import shylaGrid4 from "@/assets/shyla-grid-4.png";
 import shylaGrid5 from "@/assets/shyla-grid-5.png";
+
 export type Project = {
   slug: string;
   title: string;
@@ -211,7 +212,7 @@ export const projects: Project[] = [
     image: tile15,
     credits: ["Design: Koa Studio", "Photography: M. Kohl", "Illustration: Nell Park"],
   },
-    {
+  {
     slug: "rider-in-style",
     title: "Rider In Style",
     client: "Your Client",
@@ -222,7 +223,7 @@ export const projects: Project[] = [
     image: tile17,
     credits: ["Credit 1", "Credit 2", "Credit 3"],
   },
-    {
+  {
     slug: "shyla-london",
     title: "Shyla London",
     client: "Shyla London",
@@ -231,10 +232,9 @@ export const projects: Project[] = [
     summary: "Stills shoot for Shyla London, a fresh, elegant jewellery brand\ncreating delicate, high-quality pieces. Morally motivated,\nShyla offers timeless, wearable jewellery designed to suit\nwomen of all ages.\n\nThe photography direction draws from the brand's clean,\ncontemporary aesthetic, combining soft, organic shapes with\na refined and understated feel.",
     image: tile01,
     heroes: [shylaHeader],
-    gallery: [shylaGrid1, shylaGrid2, shylaGrid3, shylaGrid4, shylaGrid5, shylaGrid6],
+    gallery: [shylaGrid1, shylaGrid2, shylaGrid3, shylaGrid4, shylaGrid5],
     credits: ["Creative production: Koa Studio", "Photography: Sofia Farnesi"],
   },
 ];
-
 
 export const projectBySlug = (slug: string) => projects.find((p) => p.slug === slug);
