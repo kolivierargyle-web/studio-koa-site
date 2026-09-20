@@ -90,7 +90,16 @@ function ProjectPage() {
 ) : (
   <div className="flex flex-col items-center bg-paper px-[clamp(1rem,7vw,350px)] pt-0 mb-[72px]">
     {(project.heroes ?? [project.image]).map((src, i) => (
-      <img ... />
+          <img
+        key={i}
+        src={src}
+        alt={`${project.title}`}
+        loading="lazy"
+        style={{
+          maxWidth: "100%",
+          height: "auto",
+        }}
+      />
     ))}
   </div>
 )}
