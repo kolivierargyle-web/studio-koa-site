@@ -175,7 +175,7 @@ function ProjectPage() {
             </div>
         </section>
         )}
-<section className="mx-auto max-w-2xl bg-paper px-6 py-16 text-center sm:py-20" style={{ marginTop: "220px" }}>
+<section className="bg-paper py-16 text-center sm:py-20" style={{ marginTop: "220px", width: "100%" }}>
   <img
     src={creditTextShyla}
     alt="Credits"
