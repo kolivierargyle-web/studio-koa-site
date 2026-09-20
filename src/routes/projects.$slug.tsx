@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Instagram } from "lucide-react";
-import { projectBySlug } from "@/lib/projects";
+import { projects, projectBySlug } from "@/lib/projects";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
