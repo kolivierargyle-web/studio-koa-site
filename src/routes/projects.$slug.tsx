@@ -20,7 +20,7 @@ import carouselImage7 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel ima
 import carouselImage8 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 8.png";
 import carouselImage9 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 9.png";
 import carouselImage10 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 10.png";
-import creditTextTR from "@/assets/tr-urban-lifestyle/credit_text_TR-Urban-LS.png";
+
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -67,6 +67,7 @@ function ProjectPage() {
           </a>
         </div>
       </nav>
+      <article>
 
 {project.slug === "tr-urban-lifestyle" ? (
   <div className="flex flex-col items-center bg-paper mb-[72px]">
