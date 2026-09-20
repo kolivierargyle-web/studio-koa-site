@@ -26,34 +26,32 @@ function ProjectPage() {
 
   if (slug === 'shyla-london' || slug === 'shyla') {
     return (
-      <main className="w-full bg-white">
-        <section className={`w-full flex min-h-screen bg-white ${isMobile ? 'flex-col' : ''}`}>
-          <div className={`${isMobile ? 'w-full' : 'w-3/4'} bg-white flex items-center justify-center overflow-hidden`}>
-            <img
-              src={shylaHeader}
-              alt="Shyla London Hero"
-              className="w-full h-full object-cover"
-              loading="eager"
-            />
-          </div>
+      <main className="w-full bg-white relative">
+        {/* Logo in Top Right Corner */}
+        <div className="absolute top-0 right-0 z-10">
+          <img
+            src={shylaLondonLogo}
+            alt="Shyla London"
+            className="object-contain"
+            style={{ width: '710px', height: '503px' }}
+            loading="eager"
+          />
+        </div>
 
-          <div className={`${isMobile ? 'w-full py-12' : 'w-1/4 py-16'} flex flex-col items-center justify-center px-6 bg-white`}>
-            <div className="text-center flex flex-col items-center gap-6">
-              <h2 className={`${isMobile ? 'text-sm' : 'text-lg'} uppercase tracking-wider font-light`} style={{ fontFamily: 'Didact Gothic, sans-serif', color: '#000000' }}>
-                Brand Shoot For
-              </h2>
-              <img
-                src={shylaLondonLogo}
-                alt="Shyla London Logo"
-                className={`${isMobile ? 'h-48' : 'h-64'} object-contain`}
-              />
-            </div>
-          </div>
+        {/* Hero Section - Full Width */}
+        <section className="w-full min-h-screen bg-white flex items-center justify-center overflow-hidden">
+          <img
+            src={shylaHeader}
+            alt="Shyla London Hero"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
         </section>
 
+        {/* Image Grid Section */}
         <section className="w-full bg-white py-20">
-          {/* Centered Image with Logo in Top Right */}
-          <div className="w-full flex justify-center mb-12 relative">
+          {/* Centered Image */}
+          <div className="w-full flex justify-center mb-12">
             <img
               src={shylaGrid2}
               alt="Shyla Product 2"
@@ -61,15 +59,6 @@ function ProjectPage() {
               style={{ width: '1227.36px', height: '1534.2px' }}
               loading="lazy"
             />
-            <div className="absolute top-0 right-0">
-              <img
-                src={shylaLondonLogo}
-                alt="Shyla London"
-                className="object-contain"
-                style={{ width: '710px', height: '503px' }}
-                loading="eager"
-              />
-            </div>
           </div>
 
           {/* Two Column Layout */}
@@ -112,6 +101,7 @@ function ProjectPage() {
           </div>
         </section>
 
+        {/* Credits Section */}
         <section className={`w-full bg-white flex items-center justify-center ${isMobile ? 'px-5 py-20' : 'px-12 py-20'}`}>
           <div className="text-center max-w-3xl">
             <p className="uppercase tracking-wider font-light" style={{ fontSize: isMobile ? '12px' : '15px', color: '#4D4D4D', fontFamily: 'Didact Gothic, sans-serif' }}>
@@ -121,6 +111,7 @@ function ProjectPage() {
           </div>
         </section>
 
+        {/* Footer */}
         <footer id="contact" className="bg-ink text-paper" style={{ width: "100%", height: "273px" }}>
           <div>
             <div className="flex items-end justify-between px-[40px] py-11">
