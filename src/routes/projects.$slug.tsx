@@ -1,125 +1,154 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, Instagram } from "lucide-react";
-import { projectBySlug } from "@/lib/projects";
+import { createFileRoute } from '@tanstack/react-router';
+import { useEffect, useState } from 'react';
+import { useParams } from '@tanstack/react-router';
+import { Instagram } from 'lucide-react';
+import shylaHeader from "@/assets/0-shyla-header.png";
+import shylaLondonLogo from "@/assets/Shyla-london-logo.jpeg";
+import shylaGrid1 from "@/assets/shyla-grid-1.png";
+import shylaGrid2 from "@/assets/shyla-grid-2.png";
+import shylaGrid3 from "@/assets/shyla-grid-3.png";
+import shylaGrid4 from "@/assets/shyla-grid-4.png";
+import shylaGrid5 from "@/assets/shyla-grid-5.png";
+import shylaGrid6 from "@/assets/shyla-grid-6.png";
 
-export const Route = createFileRoute("/projects/$slug")({
-  loader: ({ params }) => {
-    const project = projectBySlug(params.slug);
-    if (!project) throw notFound();
-    return { project };
-  },
-  head: ({ loaderData }) => {
-    if (!loaderData) {
-      return {
-        meta: [
-          { title: "Project unavailable — Koa Studio" },
-          { name: "robots", content: "noindex" },
-        ],
-      };
-    }
-    const { project } = loaderData;
-    const title = `${project.title} — Koa Studio`;
-    return {
-      meta: [
-        { title },
-        { name: "description", content: project.summary },
-        { property: "og:title", content: title },
-        { property: "og:description", content: project.summary },
-      ],
-    };
-  },
-  component: ProjectPage,
-});
+const gridImages = [shylaGrid1, shylaGrid2, shylaGrid3, shylaGrid4, shylaGrid5, shylaGrid6];
 
 function ProjectPage() {
-  const { project } = Route.useLoaderData();
+  const { slug } = useParams({ from: '/projects/$slug' });
+  const [isMobile, setIsMobile] = useState(false);
 
-  return (
-    <main className="bg-paper text-ink">
-      <nav className="sticky top-0 z-30 bg-ink">
-        <div className="flex items-center justify-between px-4 py-3 text-[11px] uppercase tracking-[0.08em] text-paper sm:px-6 sm:text-xs">
-          <Link to="/" className="flex items-center gap-2 transition-opacity hover:opacity-60">
-            <ArrowLeft className="h-3.5 w-3.5" strokeWidth={2} />
-            All work
-          </Link>
-          <a href="mailto:kat@studio-koa.com" className="transition-opacity hover:opacity-60">
-            Contact
-          </a>
-        </div>
-      </nav>
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
-      <article>
-        <div className="flex flex-col items-center bg-paper px-[clamp(1rem,7vw,350px)] pt-0 mb-[72px]">
-          {(project.heroes ?? [project.image]).map((src, i) => (
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Shyla Project Page
+  if (slug === 'shyla-london' || slug === 'shyla') {
+    return (
+      <main className="w-full bg-white">
+        {/* Hero Section - 75% left, 25% right */}
+        <section className={`w-full flex min-h-screen bg-white ${isMobile ? 'flex-col' : ''}`}>
+          {/* Hero Image - 75% width (desktop) / 100% (mobile) */}
+          <div className={`${isMobile ? 'w-full' : 'w-3/4'} bg-white flex items-center justify-center overflow-hidden`}>
             <img
-              key={src}
-              src={src}
-              alt={`${project.title} — ${project.client}`}
-              className="aspect-[4/5] w-full max-w-[795px] object-cover"
-              loading={i === 0 ? "eager" : "lazy"}
+              src={shylaHeader}
+              alt="Shyla London Hero"
+              className={`w-full h-full object-cover`}
+              loading="eager"
             />
-          ))}
-        </div>
+          </div>
 
-        <header className="bg-paper px-6 text-center mb-[56px]">
-          <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-[50px]">
-            {project.title}
-          </h1>
-        </header>
-
-        <section className="mx-auto max-w-[829px] bg-paper px-6 text-center mb-[114px]">
-          <p className="whitespace-pre-line text-[20px] font-normal leading-[140%] text-ink">
-            {project.summary}
-          </p>
-        </section>
-
-        {project.gallery && project.gallery.length > 0 && (
-          <section className="bg-paper px-2 sm:px-3 lg:px-0">
-            <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-[10px] sm:gap-[15px] lg:grid-cols-3">
-              {project.gallery.map((src) => (
-                <img
-                  key={src}
-                  src={src}
-                  alt={`${project.title} — ${project.client}`}
-                  loading="lazy"
-                  className="aspect-[4/5] w-full object-cover"
-                />
-              ))}
+          {/* Brand Shoot For + Logo - 25% width (desktop) / 100% (mobile) */}
+          <div className={`${isMobile ? 'w-full py-12' : 'w-1/4 py-16'} flex flex-col items-center justify-center px-6 bg-white`}>
+            <div className="text-center flex flex-col items-center gap-6">
+              <h2 className={`${isMobile ? 'text-xs' : 'text-sm'} uppercase tracking-wider font-light`}
+                style={{ fontFamily: 'Didact Gothic, sans-serif', color: '#000000' }}>
+                Brand Shoot For
+              </h2>
+              <img
+                src={shylaLondonLogo}
+                alt="Shyla London Logo"
+                className={`${isMobile ? 'h-24' : 'h-32'} object-contain`}
+              />
             </div>
-          </section>
-        )}
-
-        <section className="mx-auto max-w-2xl bg-paper px-6 py-16 text-center sm:py-20">
-          <ul className="space-y-2 text-xs uppercase tracking-[0.08em] text-ink/50">
-            {project.credits.map((credit) => (
-              <li key={credit}>{credit}</li>
-            ))}
-          </ul>
+          </div>
         </section>
-      </article>
 
-      <footer id="contact" className="bg-ink text-paper">
-        <div className="px-6 pb-[27px] pt-[177px] text-center">
-          <p className="font-display text-paper" style={{ fontFamily: "Poppins, sans-serif", fontSize: "40px", fontWeight: 700, lineHeight: "normal" }}>
-            Koa Studio
-          </p>
-        </div>
-        <div>
-          <div className="flex items-end justify-between px-[40px] py-11">
-            <a href="https://www.instagram.com/_koa_studio/" target="_blank" rel="noreferrer" aria-label="Koa Studio on Instagram" className="transition-opacity hover:opacity-60">
-              <Instagram className="h-[34px] w-[34px]" strokeWidth={1.5} />
-            </a>
-            <a href="mailto:kat@studio-koa.com" className="transition-opacity hover:opacity-60" style={{ fontFamily: "Poppins, sans-serif", fontSize: "18px", fontWeight: 500, lineHeight: "normal" }}>
-              kat@studio-koa.com
-            </a>
+        {/* Image Grid Section - 2 columns x 3 rows */}
+        <section className={`w-full bg-white ${isMobile ? 'px-5 py-20' : 'px-12 py-20'}`}>
+          <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-2'} gap-0 w-full`}>
+            {gridImages.map((src, idx) => (
+              <img
+                key={idx}
+                src={src}
+                alt={`Shyla Product ${idx + 1}`}
+                className="w-full h-auto object-cover"
+                style={{ aspectRatio: '4/5' }}
+                loading="lazy"
+              />
+            ))}
           </div>
-          <div className="flex items-center justify-between border-t-2 border-paper px-[45px] py-11 uppercase" style={{ fontFamily: "Poppins, sans-serif", fontSize: "20px", fontWeight: 400, lineHeight: "normal" }}>
-            <span>London</span>
-            <span>Berlin</span>
-            <span>World Wide</span>
+        </section>
+
+        {/* Credits Section */}
+        <section className={`w-full bg-white flex items-center justify-center ${isMobile ? 'px-5 py-20' : 'px-12 py-20'}`}>
+          <div className="text-center max-w-3xl">
+            <p
+              className="uppercase tracking-wider font-light"
+              style={{
+                fontSize: isMobile ? '12px' : '15px',
+                color: '#4D4D4D',
+                fontFamily: 'Didact Gothic, sans-serif',
+              }}
+            >
+              CREATIVE PRODUCTION: KOA STUDIO<br />
+              PHOTOGRAPHY: SOFIA FARNESI
+            </p>
           </div>
-        </div>
-      </footer>
+        </section>
+
+        {/* Footer */}
+        <footer id="contact" className="bg-ink text-paper" style={{ width: "100%", height: "273px" }}>
+          <div>
+            <div className="flex items-end justify-between px-[40px] py-11">
+              <a 
+                href="https://www.instagram.com/_koa_studio/" 
+                target="_blank" 
+                rel="noreferrer" 
+                aria-label="Koa Studio on Instagram" 
+                className="transition-opacity hover:opacity-60"
+              >
+                <Instagram className="h-[34px] w-[34px]" strokeWidth={1.5} />
+              </a>
+              <a 
+                href="mailto:kat@studio-koa.com" 
+                className="transition-opacity hover:opacity-60" 
+                style={{ 
+                  fontFamily: "Didact Gothic, sans-serif", 
+                  fontSize: "clamp(15px, 4vw, 20px)", 
+                  fontWeight: 400, 
+                  lineHeight: "normal", 
+                  color: "#FFF" 
+                }}
+              >
+                kat@studio-koa.com
+              </a>
+            </div>
+            <div 
+              className="flex items-center justify-between border-t-2 border-paper px-[45px] uppercase" 
+              style={{ 
+                fontFamily: "Didact Gothic, sans-serif", 
+                fontSize: "clamp(15px, 4vw, 20px)", 
+                fontWeight: 400, 
+                lineHeight: "normal", 
+                color: "#FFF",
+                paddingTop: "62px",
+                paddingBottom: "11px"
+              }}
+            >
+              <span>London</span>
+              <span>Berlin</span>
+              <span>World Wide</span>
+            </div>
+          </div>
+        </footer>
+      </main>
+    );
+  }
+
+  // Default fallback for other projects
+  return (
+    <main className="w-full h-screen flex items-center justify-center bg-white">
+      <p className="text-gray-400">Project "{slug}" not yet implemented</p>
     </main>
   );
 }
+
+export const Route = createFileRoute('/projects/$slug')({
+  component: ProjectPage,
+});
