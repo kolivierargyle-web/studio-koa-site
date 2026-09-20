@@ -135,7 +135,7 @@ function ProjectPage() {
         <img src={carouselImage9} alt="Carousel 9" style={{ width: "100%", height: "auto" }} />
       </SwiperSlide>
       <SwiperSlide>
-        <img src={carouselImage10} alt="Carousel 10" style={{ width: "100%", height: "auto" }} />
+       <img src={carouselImage10} alt="Carousel 10" style={{ width: "100%", height: "auto" }} />
       </SwiperSlide>
     </Swiper>
   </div>
