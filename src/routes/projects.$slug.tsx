@@ -1,9 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router';
+ import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
 import { useParams } from '@tanstack/react-router';
 import { Instagram } from 'lucide-react';
 import shylaHeader from "@/assets/0-shyla-header.png";
-import shylaLondonLogo from "@/assets/Shyla-london-logo.jpeg";
+import shylaLondonLogo from "@/assets/Shyla-london-logo.png";
 import shylaGrid1 from "@/assets/shyla-grid-1.png";
 import shylaGrid2 from "@/assets/shyla-grid-2.png";
 import shylaGrid3 from "@/assets/shyla-grid-3.png";
