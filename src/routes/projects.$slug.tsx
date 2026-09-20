@@ -175,7 +175,7 @@ function ProjectPage() {
             </div>
         </section>
         )}
-<section className="bg-paper py-6 text-center" style={{ marginTop: "150px", width: "50%" }}>
+<section className="bg-paper py-6 text-center" style={{ marginTop: "50px", width: "100%" }}>
   <img
     src={creditTextShyla}
     alt="Credits"
