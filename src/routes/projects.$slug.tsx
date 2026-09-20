@@ -175,13 +175,13 @@ function ProjectPage() {
           </section>
         )}
 
-<section className="mx-auto max-w-2xl bg-paper px-6 py-16 text-center sm:py-20" style={{ marginTop: "220px" }}>
-  <ul className="space-y-2 uppercase tracking-[0.08em] text-ink/50" style={{ fontFamily: "Didact Gothic, sans-serif", fontSize: "24px", fontWeight: 400, lineHeight: "normal" }}>
-    {project.credits.map((credit) => (
-      <li key={credit}>{credit}</li>
-    ))}
-  </ul>
-</section>
+        <section className="mx-auto max-w-2xl bg-paper px-6 py-16 text-center sm:py-20" style={{ marginTop: "220px" }}>
+          <ul className="space-y-2 uppercase tracking-[0.08em] text-ink/50" style={{ fontFamily: "Didact Gothic, sans-serif", fontSize: "24px", fontWeight: 400, lineHeight: "normal" }}>
+            {project.credits.map((credit) => (
+              <li key={credit}>{credit}</li>
+            ))}
+          </ul>
+        </section>
 
     {/* Footer */}
       <footer id="contact" className="bg-ink text-paper" style={{ width: "100%", height: "273px" }}>
