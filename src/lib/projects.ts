@@ -21,7 +21,6 @@ import shylaGrid2 from "@/assets/shyla-grid-2.png";
 import shylaGrid3 from "@/assets/shyla-grid-3.png";
 import shylaGrid4 from "@/assets/shyla-grid-4.png";
 import shylaGrid5 from "@/assets/shyla-grid-5.png";
-import shylaGrid6 from "@/assets/shyla-grid-6.png";
 export type Project = {
   slug: string;
   title: string;
