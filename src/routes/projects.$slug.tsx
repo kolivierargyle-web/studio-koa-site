@@ -60,19 +60,6 @@ function ProjectPage() {
             />
           ))}
         </div>
-
-        <header className="bg-paper px-6 text-center mb-[56px]">
-          <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-[50px]">
-            {project.title}
-          </h1>
-        </header>
-
-        <section className="mx-auto max-w-[829px] bg-paper px-6 text-center mb-[114px]">
-          <p className="whitespace-pre-line text-[20px] font-normal leading-[140%] text-ink">
-            {project.summary}
-          </p>
-        </section>
-
         {project.slug === "shyla-london" && project.gallery && project.gallery.length > 0 && (
           <section className="bg-paper flex justify-center px-4 sm:px-6" style={{ marginBottom: "220px" }}>
             <div style={{
