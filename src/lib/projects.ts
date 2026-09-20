@@ -22,12 +22,6 @@ import shylaGrid3 from "@/assets/shyla-grid-3.png";
 import shylaGrid4 from "@/assets/shyla-grid-4.png";
 import shylaGrid5 from "@/assets/shyla-grid-5.png";
 import shylaGrid6 from "@/assets/shyla-grid-6.png";
-import shylaGrid7 from "@/assets/shyla-grid-7.png";
-import shylaGrid8 from "@/assets/shyla-grid-8.png";
-import shylaGrid9 from "@/assets/shyla-grid-9.png";
-import shylaGrid10 from "@/assets/shyla-grid-10.png";
-import shylaGrid11 from "@/assets/shyla-grid-11.png";
-import shylaGrid12 from "@/assets/shyla-grid-12.png";
 export type Project = {
   slug: string;
   title: string;
@@ -238,7 +232,7 @@ export const projects: Project[] = [
     summary: "Stills shoot for Shyla London, a fresh, elegant jewellery brand\ncreating delicate, high-quality pieces. Morally motivated,\nShyla offers timeless, wearable jewellery designed to suit\nwomen of all ages.\n\nThe photography direction draws from the brand's clean,\ncontemporary aesthetic, combining soft, organic shapes with\na refined and understated feel.",
     image: tile01,
     heroes: [shylaHeader],
-    gallery: [shylaGrid1, shylaGrid2, shylaGrid3, shylaGrid4, shylaGrid5, shylaGrid6, shylaGrid7, shylaGrid8, shylaGrid9, shylaGrid10, shylaGrid11, shylaGrid12],
+    gallery: [shylaGrid1, shylaGrid2, shylaGrid3, shylaGrid4, shylaGrid5, shylaGrid6],
     credits: ["Creative production: Koa Studio", "Photography: Sofia Farnesi"],
   },
 ];
