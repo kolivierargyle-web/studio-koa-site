@@ -175,7 +175,8 @@ function ProjectPage() {
           </section>
         )}
 
-<ul className="space-y-2 uppercase tracking-[0.08em] text-ink/50" style={{ fontSize: "24px", fontFamily: "Didact Gothic, sans-serif", lineHeight: "1" }}>
+<ul className="space-y-2 uppercase tracking-[0.08em] text-ink/50" style={{ fontSize: "24px", lineHeight: "1" }}>
+
             {project.credits.map((credit) => (
               <li key={credit}>{credit}</li>
             ))}
