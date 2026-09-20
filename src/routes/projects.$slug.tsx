@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Instagram } from "lucide-react";
 import { projectBySlug } from "@/lib/projects";
 import creditTextShyla from "@/assets/credit_text_shyla.png";
-import creditTextTR from "../assets/tr-urban-lifestyle/credit_text_TR-Urban-LS.png";
+import creditTextTR from "@/assets/tr-urban-lifestyle/credit_text_TR-Urban-LS.png";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
