@@ -176,17 +176,20 @@ function ProjectPage() {
         )}
 
         <header className="mx-auto max-w-2xl bg-paper px-6 text-center mb-[56px]">
-          <h1 className="font-display text-4xl font-normal tracking-tight sm:text-5xl lg:text-[50px]" style={{ fontFamily: "Didact Gothic, sans-serif", textTransform: "uppercase", lineHeight: "1.4" }}>
+          <h1 className="font-display text-4xl font-normal tracking-tight sm:text-5xl lg:text-[50px]" style={{ fontFamily: "Didact Gothic, sans-serif", textTransform: "uppercase", lineHeight: "1.2" }}>
             Brand shoot:<br />{project.title}
           </h1>
         </header>
-
-        <section className="mx-auto max-w-2xl bg-paper px-6 py-16 text-center sm:py-20" style={{ marginTop: "220px" }}>
-          <ul className="space-y-2 uppercase tracking-[0.08em] text-ink/50" style={{ fontSize: "24px", lineHeight: "1" }}>
-            {project.credits.map((credit) => (
-              <li key={credit}>{credit}</li>
-            ))}
-          </ul>
+        <section className="mx-auto bg-paper px-6 py-16 text-center sm:py-20" style={{ marginTop: "220px" }}>
+          <img
+            src="/assets/Credit_text_shyla.png"
+            alt="Credits"
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+              width: "100%",
+            }}
+          />
         </section>
       </article>
 
