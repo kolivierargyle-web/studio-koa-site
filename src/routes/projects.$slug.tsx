@@ -27,27 +27,22 @@ function ProjectPage() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Shyla Project Page
   if (slug === 'shyla-london' || slug === 'shyla') {
     return (
       <main className="w-full bg-white">
-        {/* Hero Section - 75% left, 25% right */}
         <section className={`w-full flex min-h-screen bg-white ${isMobile ? 'flex-col' : ''}`}>
-          {/* Hero Image - 75% width (desktop) / 100% (mobile) */}
           <div className={`${isMobile ? 'w-full' : 'w-3/4'} bg-white flex items-center justify-center overflow-hidden`}>
             <img
               src={shylaHeader}
               alt="Shyla London Hero"
-              className={`w-full h-full object-cover`}
+              className="w-full h-full object-cover"
               loading="eager"
             />
           </div>
 
-          {/* Brand Shoot For + Logo - 25% width (desktop) / 100% (mobile) */}
           <div className={`${isMobile ? 'w-full py-12' : 'w-1/4 py-16'} flex flex-col items-center justify-center px-6 bg-white`}>
             <div className="text-center flex flex-col items-center gap-6">
-              <h2 className={`${isMobile ? 'text-sm' : 'text-lg'} uppercase tracking-wider font-light`}
-                style={{ fontFamily: 'Didact Gothic, sans-serif', color: '#000000' }}>
+              <h2 className={`${isMobile ? 'text-sm' : 'text-lg'} uppercase tracking-wider font-light`} style={{ fontFamily: 'Didact Gothic, sans-serif', color: '#000000' }}>
                 Brand Shoot For
               </h2>
               <img
@@ -59,7 +54,6 @@ function ProjectPage() {
           </div>
         </section>
 
-        {/* Image Grid Section - 2 columns x 3 rows */}
         <section className={`w-full bg-white ${isMobile ? 'px-5 py-20' : 'px-12 py-20'}`}>
           <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-2'} gap-6 w-full`}>
             {gridImages.map((src, idx) => (
@@ -75,62 +69,26 @@ function ProjectPage() {
           </div>
         </section>
 
-        {/* Credits Section */}
         <section className={`w-full bg-white flex items-center justify-center ${isMobile ? 'px-5 py-20' : 'px-12 py-20'}`}>
           <div className="text-center max-w-3xl">
-            <p
-              className="uppercase tracking-wider font-light"
-              style={{
-                fontSize: isMobile ? '12px' : '15px',
-                color: '#4D4D4D',
-                fontFamily: 'Didact Gothic, sans-serif',
-              }}
-            >
+            <p className="uppercase tracking-wider font-light" style={{ fontSize: isMobile ? '12px' : '15px', color: '#4D4D4D', fontFamily: 'Didact Gothic, sans-serif' }}>
               CREATIVE PRODUCTION: KOA STUDIO<br />
               PHOTOGRAPHY: SOFIA FARNESI
             </p>
           </div>
         </section>
 
-        {/* Footer */}
         <footer id="contact" className="bg-ink text-paper" style={{ width: "100%", height: "273px" }}>
           <div>
             <div className="flex items-end justify-between px-[40px] py-11">
-              
-                href="https://www.instagram.com/_koa_studio/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Koa Studio on Instagram"
-                className="transition-opacity hover:opacity-60"
-              >
+              <a href="https://www.instagram.com/_koa_studio/" target="_blank" rel="noreferrer" aria-label="Koa Studio on Instagram" className="transition-opacity hover:opacity-60">
                 <Instagram className="h-[34px] w-[34px]" strokeWidth={1.5} />
               </a>
-              
-                href="mailto:kat@studio-koa.com"
-                className="transition-opacity hover:opacity-60"
-                style={{
-                  fontFamily: "Didact Gothic, sans-serif",
-                  fontSize: "clamp(15px, 4vw, 20px)",
-                  fontWeight: 400,
-                  lineHeight: "normal",
-                  color: "#FFF"
-                }}
-              >
+              <a href="mailto:kat@studio-koa.com" className="transition-opacity hover:opacity-60" style={{ fontFamily: "Didact Gothic, sans-serif", fontSize: "clamp(15px, 4vw, 20px)", fontWeight: 400, lineHeight: "normal", color: "#FFF" }}>
                 kat@studio-koa.com
               </a>
             </div>
-            <div
-              className="flex items-center justify-between border-t-2 border-paper px-[45px] uppercase"
-              style={{
-                fontFamily: "Didact Gothic, sans-serif",
-                fontSize: "clamp(15px, 4vw, 20px)",
-                fontWeight: 400,
-                lineHeight: "normal",
-                color: "#FFF",
-                paddingTop: "62px",
-                paddingBottom: "11px"
-              }}
-            >
+            <div className="flex items-center justify-between border-t-2 border-paper px-[45px] uppercase" style={{ fontFamily: "Didact Gothic, sans-serif", fontSize: "clamp(15px, 4vw, 20px)", fontWeight: 400, lineHeight: "normal", color: "#FFF", paddingTop: "62px", paddingBottom: "11px" }}>
               <span>London</span>
               <span>Berlin</span>
               <span>World Wide</span>
@@ -141,7 +99,6 @@ function ProjectPage() {
     );
   }
 
-  // Default fallback for other projects
   return (
     <main className="w-full h-screen flex items-center justify-center bg-white">
       <p className="text-gray-400">Project "{slug}" not yet implemented</p>
