@@ -52,8 +52,8 @@ function ProjectPage() {
         </section>
 
         <section className="w-full bg-white py-20">
-          {/* Centered Image - shyla-grid-2 */}
-          <div className="w-full flex justify-center mb-12">
+          {/* Centered Image with Logo in Top Right */}
+          <div className="w-full flex justify-center mb-12 relative">
             <img
               src={shylaGrid2}
               alt="Shyla Product 2"
@@ -61,10 +61,19 @@ function ProjectPage() {
               style={{ width: '1227.36px', height: '1534.2px' }}
               loading="lazy"
             />
+            <div className="absolute top-0 right-0">
+              <img
+                src={shylaLondonLogo}
+                alt="Shyla London"
+                className="object-contain"
+                style={{ width: '710px', height: '503px' }}
+                loading="eager"
+              />
+            </div>
           </div>
 
           {/* Two Column Layout */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1227.36px 1227.36px', gap: '40px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1227.36px 1227.36px', gap: '40px', justifyContent: 'start' }}>
             {/* Left Column */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
               <img
