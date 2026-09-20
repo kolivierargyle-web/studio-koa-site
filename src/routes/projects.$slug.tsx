@@ -2,6 +2,25 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Instagram } from "lucide-react";
 import { projectBySlug } from "@/lib/projects";
 import creditTextShyla from "@/assets/credit_text_shyla.png";
+import creditTextTR from "../assets/tr-urban-lifestyle/credit_text_TR-Urban-LS.png";
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import carouselImage1 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 1.png";
+import carouselImage2 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 2.png";
+import carouselImage3 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 3.png";
+import carouselImage4 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 4.png";
+import carouselImage5 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 5.png";
+import carouselImage6 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 6.png";
+import carouselImage7 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 7.png";
+import carouselImage8 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 8.png";
+import carouselImage9 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 9.png";
+import carouselImage10 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 10.png";
+import creditTextTR from "@/assets/tr-urban-lifestyle/credit_text_TR-Urban-LS.png";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -49,18 +68,86 @@ function ProjectPage() {
         </div>
       </nav>
 
-      <article>
-        <div className="flex flex-col items-center bg-paper px-[clamp(1rem,7vw,350px)] pt-0 mb-[72px]">
-          {(project.heroes ?? [project.image]).map((src, i) => (
-            <img
-              key={src}
-              src={src}
-              alt={`${project.title} — ${project.client}`}
-              className="w-full object-cover"
-              loading={i === 0 ? "eager" : "lazy"}
-            />
-          ))}
-        </div>
+{project.slug === "tr-urban-lifestyle" ? (
+  <div className="flex flex-col items-center bg-paper mb-[72px]">
+    <div className="w-full">
+      <iframe
+        src="https://player.vimeo.com/video/1194035603"
+        width="100%"
+        height="600"
+        frameBorder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowFullScreen
+        className="w-full"
+        style={{
+          aspectRatio: "16 / 9",
+          height: "auto",
+        }}
+      />
+    </div>
+  </div>
+) : (
+  <div className="flex flex-col items-center bg-paper px-[clamp(1rem,7vw,350px)] pt-0 mb-[72px]">
+    {(project.heroes ?? [project.image]).map((src, i) => (
+      <img ... />
+    ))}
+  </div>
+)}
+{project.slug === "tr-urban-lifestyle" && (
+  <div className="w-full bg-paper py-16">
+    <Swiper
+      modules={[Navigation, Pagination]}
+      spaceBetween={0}
+      slidesPerView={1}
+      navigation
+      pagination={{ clickable: true }}
+      className="w-full"
+      style={{
+        maxWidth: "100%",
+      }}
+    >
+      <SwiperSlide>
+        <img src={carouselImage1} alt="Carousel 1" style={{ width: "100%", height: "auto" }} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={carouselImage2} alt="Carousel 2" style={{ width: "100%", height: "auto" }} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={carouselImage3} alt="Carousel 3" style={{ width: "100%", height: "auto" }} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={carouselImage4} alt="Carousel 4" style={{ width: "100%", height: "auto" }} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={carouselImage5} alt="Carousel 5" style={{ width: "100%", height: "auto" }} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={carouselImage6} alt="Carousel 6" style={{ width: "100%", height: "auto" }} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={carouselImage7} alt="Carousel 7" style={{ width: "100%", height: "auto" }} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={carouselImage8} alt="Carousel 8" style={{ width: "100%", height: "auto" }} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={carouselImage9} alt="Carousel 9" style={{ width: "100%", height: "auto" }} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={carouselImage10} alt="Carousel 10" style={{ width: "100%", height: "auto" }} />
+      </SwiperSlide>
+    </Swiper>
+  </div>
+)}
+{project.slug === "tr-urban-lifestyle" && (
+  <div className="bg-paper py-10 text-center w-full" style={{ marginTop: "150px" }}>
+    <img 
+      src={creditTextTR} 
+      alt="Trade Republic Urban Lifestyle Credits" 
+      style={{ maxWidth: "100%", height: "auto", width: "100%" }}
+    />
+  </div>
+)}
         {project.slug === "shyla-london" && project.gallery && project.gallery.length > 0 && (
           <section className="bg-paper flex justify-center px-4 sm:px-6" style={{ marginBottom: "220px" }}>
             <div style={{
