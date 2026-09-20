@@ -176,7 +176,7 @@ function ProjectPage() {
         )}
 
         <header className="mx-auto max-w-2xl bg-paper px-6 text-center mb-[56px]">
-          <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-[50px]" style={{ fontFamily: "Didact Gothic, sans-serif", textTransform: "uppercase" }}>
+          <h1 className="font-display text-4xl font-normal tracking-tight sm:text-5xl lg:text-[50px]" style={{ fontFamily: "Didact Gothic, sans-serif", textTransform: "uppercase", lineHeight: "1.4" }}>
             Brand shoot:<br />{project.title}
           </h1>
         </header>
