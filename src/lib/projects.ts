@@ -34,7 +34,7 @@ export type Project = {
   heroes?: string[];
   gallery?: string[];
 };
-
+X
 export const projects: Project[] = [
   {
     slug: "quiet-gold",
