@@ -10,8 +10,6 @@ import shylaGrid3 from "@/assets/shyla-grid-3.png";
 import shylaGrid4 from "@/assets/shyla-grid-4.png";
 import shylaGrid5 from "@/assets/shyla-grid-5.png";
 
-const gridImages = [shylaGrid1, shylaGrid2, shylaGrid3, shylaGrid4, shylaGrid5];
-
 function ProjectPage() {
   const { slug } = useParams({ from: '/projects/$slug' });
   const [isMobile, setIsMobile] = useState(false);
@@ -54,51 +52,54 @@ function ProjectPage() {
         </section>
 
         <section className="w-full bg-white py-20">
-          <div className="grid gap-12" style={{ gridTemplateColumns: '1fr 1fr 1fr', gridAutoRows: 'auto' }}>
-            {/* Image 1 - Tall left */}
-            <img
-              src={shylaGrid1}
-              alt="Shyla Product 1"
-              className="object-cover"
-              style={{ width: '1227.36px', height: '1534.2px', gridColumn: '1 / 2', gridRow: '1 / 3' }}
-              loading="lazy"
-            />
-            
-            {/* Image 2 - Top right */}
+          {/* Centered Image - shyla-grid-2 */}
+          <div className="w-full flex justify-center mb-12">
             <img
               src={shylaGrid2}
               alt="Shyla Product 2"
               className="object-cover"
-              style={{ width: '1227.36px', height: '1534.2px', gridColumn: '2 / 4', gridRow: '1 / 2' }}
+              style={{ width: '1227.36px', height: '1534.2px' }}
               loading="lazy"
             />
-            
-            {/* Image 3 - Middle left */}
-            <img
-              src={shylaGrid3}
-              alt="Shyla Product 3"
-              className="object-cover"
-              style={{ width: '500px', height: '600px', gridColumn: '1 / 2', gridRow: '3 / 4' }}
-              loading="lazy"
-            />
-            
-            {/* Image 4 - Middle right tall */}
-            <img
-              src={shylaGrid4}
-              alt="Shyla Product 4"
-              className="object-cover"
-              style={{ width: '800px', height: '1000px', gridColumn: '2 / 4', gridRow: '2 / 4' }}
-              loading="lazy"
-            />
-            
-            {/* Image 5 - Bottom left */}
-            <img
-              src={shylaGrid5}
-              alt="Shyla Product 5"
-              className="object-cover"
-              style={{ width: '600px', height: '700px', gridColumn: '1 / 2', gridRow: '4 / 5' }}
-              loading="lazy"
-            />
+          </div>
+
+          {/* Two Column Layout */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1227.36px 1227.36px', gap: '40px' }}>
+            {/* Left Column */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+              <img
+                src={shylaGrid4}
+                alt="Shyla Product 4"
+                className="object-cover"
+                style={{ width: '1227.36px', height: '1534.2px' }}
+                loading="lazy"
+              />
+              <img
+                src={shylaGrid5}
+                alt="Shyla Product 5"
+                className="object-cover"
+                style={{ width: '1227.36px', height: '1534.2px' }}
+                loading="lazy"
+              />
+            </div>
+
+            {/* Right Column */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+              <img
+                src={shylaGrid3}
+                alt="Shyla Product 3"
+                className="object-cover"
+                style={{ width: '1227.36px', height: '1534.2px' }}
+                loading="lazy"
+              />
+              <img
+                src={shylaGrid1}
+                alt="Shyla Product 1"
+                className="object-cover"
+                style={{ width: '1227.36px', height: '1534.2px' }}
+                loading="lazy"
+              />
+            </div>
           </div>
         </section>
 
