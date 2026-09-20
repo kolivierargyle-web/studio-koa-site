@@ -172,8 +172,15 @@ function ProjectPage() {
                 />
               ))}
             </div>
-          </section>
+        </section>
         )}
+
+        <header className="mx-auto max-w-2xl bg-paper px-6 text-center mb-[56px]">
+          <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-[50px]">
+            {project.title}
+          </h1>
+        </header>
+
         <section className="mx-auto max-w-2xl bg-paper px-6 py-16 text-center sm:py-20" style={{ marginTop: "220px" }}>
           <ul className="space-y-2 uppercase tracking-[0.08em] text-ink/50" style={{ fontSize: "24px", lineHeight: "1" }}>
             {project.credits.map((credit) => (
