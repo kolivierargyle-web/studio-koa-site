@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from '@tanstack/react-router';
 import { Instagram } from 'lucide-react';
 import shylaHeader from "@/assets/0-shyla-header.png";
-import shylaLondonLogo from "@/assets/Shyla-london-logo.jpeg";
+import shylaLondonLogo from "@/assets/Shyla-london-logo.png";
 import shylaGrid1 from "@/assets/shyla-grid-1.png";
 import shylaGrid2 from "@/assets/shyla-grid-2.png";
 import shylaGrid3 from "@/assets/shyla-grid-3.png";
@@ -27,8 +27,8 @@ function ProjectPage() {
   if (slug === 'shyla-london' || slug === 'shyla') {
     return (
       <main className="w-full bg-white relative">
-        {/* Logo in Top Right Corner */}
-        <div className="absolute top-0 right-0 z-10">
+        {/* Logo Centered on Page */}
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
           <img
             src={shylaLondonLogo}
             alt="Shyla London"
