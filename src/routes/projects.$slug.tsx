@@ -229,7 +229,6 @@ function ProjectPage() {
           </div>
         </div>
       </footer>
-     </div>
 
       <p className="sr-only">{projects.length} projects</p>
     </main>
