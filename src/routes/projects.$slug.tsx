@@ -55,7 +55,7 @@ function ProjectPage() {
               key={src}
               src={src}
               alt={`${project.title} — ${project.client}`}
-              className="aspect-[4/5] w-full max-w-[795px] object-cover"
+              className="w-full object-cover"
               loading={i === 0 ? "eager" : "lazy"}
             />
           ))}
@@ -73,7 +73,106 @@ function ProjectPage() {
           </p>
         </section>
 
-        {project.gallery && project.gallery.length > 0 && (
+        {project.slug === "shyla-london" && project.gallery && project.gallery.length > 0 && (
+          <section className="bg-paper flex justify-center px-4 sm:px-6" style={{ marginBottom: "220px" }}>
+            <div style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "40px",
+            }}>
+              {/* Grid 2 - centered */}
+              <img
+                src={project.gallery[1]}
+                alt={`${project.title} gallery`}
+                loading="lazy"
+                style={{
+                  width: "1227.36px",
+                  height: "1534.2px",
+                  objectFit: "cover",
+                  maxWidth: "100%",
+                  height: "auto",
+                }}
+              />
+
+              {/* Grid 4 & 3 row */}
+              <div style={{
+                display: "flex",
+                gap: "40px",
+                justifyContent: "flex-start",
+                width: "100%",
+                maxWidth: "2494.72px",
+              }}>
+                {/* Grid 4 - left */}
+                <img
+                  src={project.gallery[3]}
+                  alt={`${project.title} gallery`}
+                  loading="lazy"
+                  style={{
+                    width: "1227.36px",
+                    height: "1534.2px",
+                    objectFit: "cover",
+                    maxWidth: "100%",
+                    height: "auto",
+                  }}
+                />
+
+                {/* Grid 3 - right */}
+                <img
+                  src={project.gallery[2]}
+                  alt={`${project.title} gallery`}
+                  loading="lazy"
+                  style={{
+                    width: "1227.36px",
+                    height: "1534.2px",
+                    objectFit: "cover",
+                    maxWidth: "100%",
+                    height: "auto",
+                  }}
+                />
+              </div>
+
+              {/* Grid 5 & 1 row */}
+              <div style={{
+                display: "flex",
+                gap: "40px",
+                justifyContent: "flex-start",
+                width: "100%",
+                maxWidth: "2494.72px",
+              }}>
+                {/* Grid 5 - left */}
+                <img
+                  src={project.gallery[4]}
+                  alt={`${project.title} gallery`}
+                  loading="lazy"
+                  style={{
+                    width: "1227.36px",
+                    height: "1534.2px",
+                    objectFit: "cover",
+                    maxWidth: "100%",
+                    height: "auto",
+                  }}
+                />
+
+                {/* Grid 1 - right */}
+                <img
+                  src={project.gallery[0]}
+                  alt={`${project.title} gallery`}
+                  loading="lazy"
+                  style={{
+                    width: "1227.36px",
+                    height: "1534.2px",
+                    objectFit: "cover",
+                    maxWidth: "100%",
+                    height: "auto",
+                  }}
+                />
+              </div>
+            </div>
+          </section>
+        )}
+
+        {project.slug !== "shyla-london" && project.gallery && project.gallery.length > 0 && (
           <section className="bg-paper px-2 sm:px-3 lg:px-0">
             <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-[10px] sm:gap-[15px] lg:grid-cols-3">
               {project.gallery.map((src) => (
@@ -89,7 +188,7 @@ function ProjectPage() {
           </section>
         )}
 
-        <section className="mx-auto max-w-2xl bg-paper px-6 py-16 text-center sm:py-20">
+        <section className="mx-auto max-w-2xl bg-paper px-6 py-16 text-center sm:py-20" style={{ marginTop: "220px" }}>
           <ul className="space-y-2 text-xs uppercase tracking-[0.08em] text-ink/50">
             {project.credits.map((credit) => (
               <li key={credit}>{credit}</li>
