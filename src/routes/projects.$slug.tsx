@@ -75,8 +75,8 @@ function ProjectPage() {
                 alt={`${project.title} gallery`}
                 loading="lazy"
                 style={{
-                  width: "1227.36px",
-                  height: "1534.2px",
+                  width: "981.89px",
+                  height: "1227.36px",
                   objectFit: "cover",
                   maxWidth: "100%",
                 }}
