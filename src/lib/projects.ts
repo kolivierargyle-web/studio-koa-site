@@ -21,6 +21,16 @@ import shylaGrid2 from "@/assets/shyla-grid-2.png";
 import shylaGrid3 from "@/assets/shyla-grid-3.png";
 import shylaGrid4 from "@/assets/shyla-grid-4.png";
 import shylaGrid5 from "@/assets/shyla-grid-5.png";
+import trCarousel1 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 1.png";
+import trCarousel2 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 2.png";
+import trCarousel3 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 3.png";
+import trCarousel4 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 4.png";
+import trCarousel5 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 5.png";
+import trCarousel6 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 6.png";
+import trCarousel7 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 7.png";
+import trCarousel8 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 8.png";
+import trCarousel9 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 9.png";
+import trCarousel10 from "@/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 10.png";
 
 export type Project = {
   slug: string;
@@ -57,18 +67,7 @@ export const projects: Project[] = [
     image: tile02,
     credits: ["Creative direction: Koa Studio", "Direction: Koa Studio", "Production: Koa Studio"],
     heroes: ["https://player.vimeo.com/video/1194035603"],
-gallery: [
-  "/src/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 1.png",
-  "/src/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 2.png",
-  "/src/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 3.png",
-  "/src/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 4.png",
-  "/src/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 5.png",
-  "/src/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 6.png",
-  "/src/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 7.png",
-  "/src/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 8.png",
-  "/src/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 9.png",
-  "/src/assets/tr-urban-lifestyle/TR-urban-LS-carousel image 10.png",
-],
+gallery: [trCarousel1, trCarousel2, trCarousel3, trCarousel4, trCarousel5, trCarousel6, trCarousel7, trCarousel8, trCarousel9, trCarousel10],
   },
   {
     slug: "retire-rich",
