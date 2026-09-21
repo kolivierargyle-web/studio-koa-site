@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+zimport { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Instagram } from "lucide-react";
 import { projectBySlug } from "@/lib/projects";
 import creditTextShyla from "@/assets/credit_text_shyla.png";
@@ -97,8 +97,8 @@ function ProjectPage() {
                   alt={`${project.title} gallery`}
                   loading="lazy"
                   style={{
-                    width: "1227.36px",
-                    height: "1534.2px",
+                    width: "797.78px",
+                    height: "997.23px",
                     objectFit: "cover",
                     maxWidth: "100%",
                     height: "auto",
@@ -111,8 +111,8 @@ function ProjectPage() {
                   alt={`${project.title} gallery`}
                   loading="lazy"
                   style={{
-                    width: "1227.36px",
-                    height: "1534.2px",
+                    width: "797.78px",
+                    height: "997.23px",
                     objectFit: "cover",
                     maxWidth: "100%",
                     height: "auto",
@@ -134,8 +134,8 @@ function ProjectPage() {
                   alt={`${project.title} gallery`}
                   loading="lazy"
                   style={{
-                    width: "1227.36px",
-                    height: "1534.2px",
+                    width: "797.78px",
+                    height: "997.23px",
                     objectFit: "cover",
                     maxWidth: "100%",
                     height: "auto",
@@ -148,8 +148,8 @@ function ProjectPage() {
                   alt={`${project.title} gallery`}
                   loading="lazy"
                   style={{
-                    width: "1227.36px",
-                    height: "1534.2px",
+                    width: "797.78px",
+                    height: "997.23px",
                     objectFit: "cover",
                     maxWidth: "100%",
                     height: "auto",
