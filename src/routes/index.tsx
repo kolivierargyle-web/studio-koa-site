@@ -246,7 +246,7 @@ React.useEffect(() => {
           onClick={closeModal}
         >
           <div 
-            className="relative w-full max-w-[1441px]"
+            className="relative w-full max-w-[1152px]"
             style={{
               aspectRatio: "1441/645",
               backgroundColor: "rgba(255, 255, 255, 0.4)",
