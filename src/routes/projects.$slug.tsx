@@ -52,7 +52,7 @@ function ProjectPage() {
       <article>
         <div className="flex flex-col items-center bg-paper px-[clamp(1rem,7vw,350px)] pt-0 mb-[72px]">
        {project.slug === "tr-urban-lifestyle" ? (
-  <div className="w-full h-[120vh] bg-black">
+  <div className="w-full h-screen bg-black">
     <iframe
       src="https://player.vimeo.com/video/1194035603?autoplay=0&loop=0&byline=0&portrait=0&title=0"
       width="100%"
