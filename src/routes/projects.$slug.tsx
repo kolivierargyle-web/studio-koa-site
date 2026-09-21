@@ -159,7 +159,6 @@ function ProjectPage() {
             </div>
           </section>
         )}
-
         {project.slug !== "shyla-london" && project.gallery && project.gallery.length > 0 && (
           <section className="bg-paper px-2 sm:px-3 lg:px-0">
             <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-[10px] sm:gap-[15px] lg:grid-cols-3">
