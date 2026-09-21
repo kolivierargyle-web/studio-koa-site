@@ -159,7 +159,7 @@ React.useEffect(() => {
                 position: 'absolute',
                 top: isMobile ? '25px' : '60px',
                 left: isMobile ? '25px' : '60px',
-                maxHeight: isMobile ? '18px' : '35px',
+                maxHeight: isMobile ? '18px' : '28px',
                 width: 'auto',
                 zIndex: 10,
               }}
