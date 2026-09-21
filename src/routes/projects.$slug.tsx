@@ -2,6 +2,11 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Instagram } from "lucide-react";
 import { projectBySlug } from "@/lib/projects";
 import creditTextShyla from "@/assets/credit_text_shyla.png";
+import creditTextTR from "/src/assets/tr-urban-lifestyle/credit_text_TR-Urban-LS.png";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -36,7 +41,7 @@ function ProjectPage() {
   const { project } = Route.useLoaderData();
 
   return (
-    <main className="bg-paper text-ink">
+    <main className="bg-black text-paper">
       <nav className="sticky top-0 z-30 bg-ink">
         <div className="flex items-center justify-between px-4 py-3 text-[11px] uppercase tracking-[0.08em] text-paper sm:px-6 sm:text-xs">
           <Link to="/" className="flex items-center gap-2 transition-opacity hover:opacity-60">
@@ -50,9 +55,9 @@ function ProjectPage() {
       </nav>
 
       <article>
-        <div className="flex flex-col items-center bg-paper px-[clamp(1rem,7vw,350px)] pt-0 mb-[72px]">
-       {project.slug === "tr-urban-lifestyle" ? (
-  <div className="w-full h-screen bg-black">
+        <div className="flex flex-col items-center bg-black px-[clamp(1rem,7vw,350px)] pt-0 mb-[72px]">
+     {project.gallery && project.gallery.length > 0 && (
+  <div className="w-full h-screen bg-black mt-6">
     <iframe
       src="https://player.vimeo.com/video/1194035603?autoplay=0&loop=0&byline=0&portrait=0&title=0"
       width="100%"
@@ -62,19 +67,33 @@ function ProjectPage() {
       allowFullScreen
     />
   </div>
-) : (
-  (project.heroes ?? [project.image]).map((src, i) => (
-    <img
-      key={src}
-      src={src}
-      alt={`${project.title} — ${project.client}`}
-      className="w-full object-cover"
-      loading={i === 0 ? "eager" : "lazy"}
-    />
-  ))
+)}
+{project.gallery && project.gallery.length > 0 && ( 
+    <section className="bg-black py-12 px-4 mt-10">
+    <div className="mx-auto w-full max-w-[85vw]">
+      <Swiper
+        modules={[Navigation]}
+        navigation
+        spaceBetween={30}
+        slidesPerView={1}
+        className="tr-carousel"
+      >
+        {project.gallery.map((src, idx) => (
+          <SwiperSlide key={idx}>
+            <img
+              src={src}
+              alt={`${project.title} — ${project.client}`}
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  </section>
 )}
         </div>
-        {project.slug === "shyla-london" && project.gallery && project.gallery.length > 0 && (
+{project.slug !== "shyla-london" && project.slug !== "tr-urban-lifestyle" && project.gallery && project.gallery.length > 0 && (
           <section className="bg-paper flex justify-center px-4 sm:px-6" style={{ marginBottom: "220px" }}>
             <div style={{
               display: "flex",
@@ -171,32 +190,19 @@ function ProjectPage() {
             </div>
           </section>
         )}
-        {project.slug !== "shyla-london" && project.gallery && project.gallery.length > 0 && (
-          <section className="bg-paper px-2 sm:px-3 lg:px-0">
-            <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-[10px] sm:gap-[15px] lg:grid-cols-3">
-              {project.gallery.map((src) => (
-                <img
-                  key={src}
-                  src={src}
-                  alt={`${project.title} — ${project.client}`}
-                  loading="lazy"
-                  className="aspect-[4/5] w-full object-cover"
-                />
-              ))}
-            </div>
-        </section>
-        )}
-<section className="bg-paper py-4 text-center" style={{ marginTop: "50px", width: "100%" }}>
-  <img
-    src={creditTextShyla}
-    alt="Credits"
-    style={{
-      maxWidth: "100%",
-      height: "auto",
-      width: "100%",
-    }}
-  />
-</section>
+{(project.slug === "tr-urban-lifestyle" || project.slug === "shyla-london") && (
+ <section className="bg-black py-4 text-center" style={{ marginTop: "50px", width: "100%" }}>
+    <img
+      src={project.slug === "tr-urban-lifestyle" ? creditTextTR : creditTextShyla}
+      alt="Credits"
+      style={{
+        maxWidth: "100%",
+        height: "auto",
+        width: "100%",
+      }}
+    />
+  </section>
+)}
       </article>
 
     {/* Footer */}
@@ -243,7 +249,19 @@ function ProjectPage() {
             <span>World Wide</span>
           </div>
         </div>
-      </footer>
-    </main>
+    </footer>
+
+    <style>{`
+      .tr-carousel .swiper-button-next,
+      .tr-carousel .swiper-button-prev {
+        color: #C4FF4D;
+      }
+      
+      .tr-carousel .swiper-button-next::after,
+      .tr-carousel .swiper-button-prev::after {
+        color: #C4FF4D;
+      }
+    `}</style>
+  </main>
   );
 }
