@@ -195,7 +195,7 @@ React.useEffect(() => {
        {/* Nav bar */}
        <nav className="w-full bg-paper sticky top-0 z-40" id="nav">
         <div className="flex items-center justify-between text-ink uppercase px-4 sm:px-[33px] py-4 sm:py-8" 
-          style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, fontSize: "clamp(10px, 2.5vw, 24px)" }}>
+          style={{ fontFamily: "Didact Gothic, sans-serif", fontWeight: 400, fontSize: "clamp(10px, 2.5vw, 18px)" }}>
           <div className="flex items-center gap-2 sm:gap-[40px]">
 <a 
   href="#about" 
