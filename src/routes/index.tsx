@@ -157,8 +157,8 @@ React.useEffect(() => {
               alt="Koa Studio"
               style={{
                 position: 'absolute',
-                top: isMobile ? '25px' : '60px',
-                left: isMobile ? '25px' : '60px',
+                top: isMobile ? '25px' : '40px',
+                left: isMobile ? '25px' : '40px',
                 maxHeight: isMobile ? '18px' : '28px',
                 width: 'auto',
                 zIndex: 10,
