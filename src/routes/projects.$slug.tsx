@@ -1,4 +1,4 @@
-zimport { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Instagram } from "lucide-react";
 import { projectBySlug } from "@/lib/projects";
 import creditTextShyla from "@/assets/credit_text_shyla.png";
@@ -79,7 +79,6 @@ function ProjectPage() {
                   height: "1534.2px",
                   objectFit: "cover",
                   maxWidth: "100%",
-                  height: "auto",
                 }}
               />
 
