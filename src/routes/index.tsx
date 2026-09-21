@@ -122,7 +122,16 @@ function GridTile({ tile }: { tile: Tile }) {
 function Index() {
   const [showIntroModal, setShowIntroModal] = React.useState(true);
 
-  const closeModal = () => setShowIntroModal(false);
+  const closeModal = () => {
+  localStorage.setItem('introModalShown', 'true');
+  setShowIntroModal(false);
+};
+React.useEffect(() => {
+  const hasSeenIntro = localStorage.getItem('introModalShown');
+  if (hasSeenIntro === 'true') {
+    setShowIntroModal(false);
+  }
+}, []);
 
   return (
 <main className="bg-paper relative">
