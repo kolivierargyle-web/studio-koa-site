@@ -38,7 +38,7 @@ type Tile =
 
 const tiles: Tile[] = [
   { kind: "image", slug: "shyla-london" },
-  { kind: "image", slug: "terrace-hours" },
+  { kind: "image", slug: "tr-urban-lifestyle" },
   { kind: "graphic", slug: "faster-than-you", src: graphicFaster, alt: "Faster than you." },
   { kind: "image", slug: "retire-rich" },
 
